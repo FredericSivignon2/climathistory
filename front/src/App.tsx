@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { TemperatureHistory } from './Components/TemperatureHistory'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Grid } from '@mui/material'
+import { Grid, SelectChangeEvent } from '@mui/material'
+import FilterPanel from './Components/FilterPanel/FilterPanel'
 
 const queryClient = new QueryClient()
 /*
@@ -16,36 +17,40 @@ xl, extra-large: 1536px
 */
 
 function App() {
+	const [selectedLocation, setSelectedLocation] = useState<string>('Tournus')
+
+	const onLocationChange = (newLocation: string) => {
+		setSelectedLocation(newLocation)
+		console.log('[101] New location: ' + newLocation)
+	}
+
 	return (
 		<QueryClientProvider client={queryClient}>
 			<LocalizationProvider dateAdapter={AdapterDayjs}>
 				<div className='App'>
 					<header className='App-header'>Climat History</header>
 					<body className='App-body'>
+						<FilterPanel
+							defaultTown={selectedLocation}
+							onLocationChange={onLocationChange}
+						/>
 						<Grid
 							container
 							rowSpacing={1}
 							spacing={0}>
 							<Grid
 								item
-								xl={12}
+								sm={12}
 								lg={12}
-								sm={12}>
-								<TemperatureHistory
-									startDate={new Date()}
-									endDate={new Date()}
-									location={{ x: 0, y: 0 }}></TemperatureHistory>
+								xl={6}>
+								<TemperatureHistory location={selectedLocation}></TemperatureHistory>
 							</Grid>
 							<Grid
 								item
-								xl={4}
-								lg={6}
-								sm={12}>
-								Other graph 1
-								{/* <TemperatureHistory
-									startDate={new Date()}
-									endDate={new Date()}
-									location={{ x: 0, y: 0 }}></TemperatureHistory> */}
+								sm={12}
+								lg={12}
+								xl={6}>
+								<TemperatureHistory location={selectedLocation}></TemperatureHistory>
 							</Grid>
 							<Grid
 								item

@@ -14,40 +14,17 @@ import { QueryClient, useQuery, useQueryClient } from '@tanstack/react-query'
 import { TemperatureHistoryDto, TemperatureHistoryProps } from './types'
 import { DatePicker } from '@mui/x-date-pickers'
 import { getTemperatureHistory } from '../Api/api'
-import { CircularProgress, Container, MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import { CircularProgress, Container, MenuItem, Select, SelectChangeEvent, ThemeProvider } from '@mui/material'
 import { getRandomInt, isNil } from '../utils'
 import { Chart } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import { getChartData } from './data.mapper'
-import { backgroundColor, textColor } from '../colors'
+import annotationPlugin from 'chartjs-plugin-annotation'
+import { options } from './chart.options'
+import { theme } from '../theme'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
-
-export const options = {
-	responsive: true,
-	maintainAspectRatio: false,
-	pointStyle: false,
-	plugins: {
-		legend: {
-			position: 'top' as const,
-			textColor: textColor,
-		},
-		title: {
-			display: true,
-			textColor: textColor,
-			text: "Températures de l'année",
-		},
-	},
-	xAxes: [
-		{
-			type: 'string',
-			ticks: {
-				autoSkip: true,
-				maxTicksLimit: 10,
-			},
-		},
-	],
-}
+ChartJS.register(annotationPlugin)
 
 const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHistoryProps) => {
 	const [selectedYear, setSelectedYear] = useState<number>(2022)
@@ -56,17 +33,17 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 		years.push(year)
 	}
 
+	console.log('[201] props.location: ' + props.location)
+
 	const {
 		isLoading,
 		isError,
 		data: temperatureHistoryData,
 		error,
 	} = useQuery({
-		queryKey: ['callTempHisto', selectedYear],
-		queryFn: () => getTemperatureHistory(selectedYear),
+		queryKey: ['callTempHisto', selectedYear, props.location],
+		queryFn: () => getTemperatureHistory(props.location, selectedYear),
 	})
-
-	console.log('Rendering...')
 
 	const handleChange = (event: SelectChangeEvent) => {
 		setSelectedYear(Number(event.target.value))
@@ -76,14 +53,20 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 	const data = temperatureHistoryData ? getChartData(temperatureHistoryData) : { labels: [], datasets: [] }
 	// <DatePicker />
 	return (
-		<>
-			<Container style={{ backgroundColor: backgroundColor, color: textColor }}>
+		<ThemeProvider theme={theme}>
+			<Container sx={{ bgcolor: 'background.paper', color: 'text.primary' }}>
 				<Select
 					labelId='demo-simple-select-label'
 					id='demo-simple-select'
 					value={selectedYear.toString()}
 					label='Année'
-					style={{ backgroundColor: backgroundColor, color: textColor }}
+					sx={{
+						bgcolor: 'background.paper',
+						color: 'text.primary',
+						'& .MuiOutlinedInput-notchedOutline': {
+							borderColor: 'text.primary',
+						},
+					}}
 					onChange={handleChange}>
 					{years.map((year) => (
 						<MenuItem
@@ -95,10 +78,10 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 				</Select>
 			</Container>
 			<Container
-				style={{
+				sx={{
 					minHeight: '600px',
 					display: 'flex',
-					backgroundColor: backgroundColor,
+					bgColor: 'background.paper',
 				}}>
 				{isLoading ? (
 					<CircularProgress />
@@ -111,7 +94,7 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 					/>
 				)}
 			</Container>
-		</>
+		</ThemeProvider>
 	)
 }
 

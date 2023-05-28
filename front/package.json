@@ -17,6 +17,7 @@
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "chart.js": "^4.3.0",
+    "chartjs-plugin-annotation": "^3.0.1",
     "dayjs": "^1.11.7",
     "faker": "^6.6.6",
     "isomorphic-fetch": "^3.0.0",

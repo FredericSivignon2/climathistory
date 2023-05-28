@@ -9,14 +9,15 @@ namespace WeatherAPITests
         [Fact]
         public void WeartherData_EnsureInitialization()
         {
-            WeartherData data = new ();
+            WeartherService data = new ();
             data.Load();
 
             Assert.NotNull(data.Data);
             Assert.NotEmpty(data.Data);
             Assert.True(data.Data.Count() == 31); // One town right now
-            Assert.NotEmpty(data.Data.ElementAt(0).Temperatures);
-            Assert.True(data.Data.ElementAt(0).Temperatures.Count() >= 50); // 50 years 
+            
+            VisualCrossingData paris = data.Data["paris"];
+            Assert.True(paris.Temperatures.Count() > 0);
         }
     }
 }

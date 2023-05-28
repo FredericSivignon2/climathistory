@@ -1,8 +1,8 @@
 import { ChartData } from 'chart.js'
-import { TemperatureModel, TownTemperaturesPerYearModel } from 'src/WeatherModules/types'
 import { hexToRGBA, isNil } from '../utils'
 import { copyFile } from 'fs'
-import { maxTempColor, mediumTempColor, minTempColor } from '..'
+import { maxTempColor, mediumTempColor, minTempColor } from '../theme'
+import { TownTemperaturesPerYearModel } from './types'
 
 export const getChartData = (source: TownTemperaturesPerYearModel): ChartData<'line'> => {
 	if (isNil(source) || isNil(source.days) || source.days.length === 0)

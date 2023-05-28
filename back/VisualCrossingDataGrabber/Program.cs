@@ -8,6 +8,7 @@ const string dataPath = "D:\\Development\\Web\\React\\climathistorydata";
 const string temperatureDirName = "Temperatures";
 string[] townNames = new string[] {
     "amiens",
+    "annecy",
     "avignon",
     "bayonne",
     "belfort",
@@ -16,10 +17,15 @@ string[] townNames = new string[] {
     "bordeau", // Sain-Martin-de-la-porte, Auvergne-Rhône-Alpes
     "bordeaux",
     "brest",
+    "caen",
     "cannes",
     "clermont-ferrand",
     "dijon",
+    "grenoble",
+    "le havre",
+    "Les Sables-d'Olonne",
     "lille",
+    "limoges",
     "lyon",
     "marseille",
     "montpellier",
@@ -27,6 +33,8 @@ string[] townNames = new string[] {
     "mulhouse",
     "nancy",
     "nantes",
+    "narbonne",
+    "nîmes",
     "orleans",
     "paris",
     "pau",

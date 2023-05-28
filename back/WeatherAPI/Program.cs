@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 app.Urls.Add("https://localhost:4000");
-WeartherData data = new WeartherData();
+WeartherService data = new WeartherService();
 data.Load();
 
 app.UseHttpsRedirection();
@@ -28,6 +28,11 @@ app.UseCors("MyCorsPolicy");
 app.MapGet("/{locationName}/temperatures/{year}", (string locationName, int year) =>
 {
     return data.GetTemperaturesDataFrom(locationName, year);
+});
+
+app.MapGet("/alllocations", () =>
+{
+    return data.GetAllLocations();
 });
 
 app.Run();

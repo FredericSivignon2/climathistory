@@ -20,7 +20,8 @@ namespace VisualCrossingDataGrabber
         {
             Console.WriteLine("Reading data for year: " + year);
             var url = string.Format(urlTemplate, townName, year);
-            HttpResponseMessage response = await client.GetAsync(url);
+            Uri uri = new Uri(url);
+            HttpResponseMessage response = await client.GetAsync(uri);
 
             if (response.IsSuccessStatusCode)
             {

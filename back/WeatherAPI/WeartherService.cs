@@ -1,40 +1,61 @@
 ﻿using System.Text.Json;
 using System;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
+using Microsoft.Extensions.Options;
 
 namespace WeatherAPI
 {
-    public class WeartherData
+    public class WeartherService
     {
         private const string sourceDirectory = "D:\\Development\\Web\\React\\climathistorydata";
-        private List<VisualCrossingData> data = new();
+        private Dictionary<string, VisualCrossingData> _data = new();
 
-        public WeartherData()
+        public WeartherService()
         {
         }
 
-        public IEnumerable<VisualCrossingData> Data
+        public IDictionary<string, VisualCrossingData> Data
         {
-            get { return data; }
+            get { return _data; }
+        }
+
+        public string GetAllLocations()
+        {
+            List<string> locations = new();
+            foreach (VisualCrossingData data in _data.Values)
+            {
+                locations.Add(data.Location);
+            }
+            JsonSerializerOptions options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+                WriteIndented = true
+            };
+            return JsonSerializer.Serialize<List<string>>(locations, options);
         }
 
         public string GetTemperaturesDataFrom(string locationName, int year)
         {
             Console.WriteLine($"Reading temperatures for {locationName} in {year}");
+            locationName = locationName.ToLower();
 
-            VisualCrossingData? vcd = data.Find(currentData =>
+            if (!_data.ContainsKey(locationName))
             {
-                return currentData.Location.ToLower() == locationName.ToLower();
-            });
-            if (vcd == null) { return string.Empty; }
+                return String.Empty; // Considere to return '204 No content'
+            }
+            VisualCrossingData vcd = _data[locationName];
 
-
-            //JsonSerializerOptions options = new JsonSerializerOptions();
             var temperatures = vcd.Temperatures.First<VisualCrossingTemperatureData>(tdata =>
             {
                 return tdata.Year == year;
             });
-            return JsonSerializer.Serialize<VisualCrossingTemperatureData>(temperatures);
+            JsonSerializerOptions options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+                WriteIndented = true
+            }; return JsonSerializer.Serialize<VisualCrossingTemperatureData>(temperatures, options);
         }
 
         public void Load()
@@ -59,7 +80,7 @@ namespace WeatherAPI
                             break;
                     }
                 }
-                data.Add(vcData);
+                _data.Add(location.ToLower(), vcData);
             }
         }
 

@@ -1,0 +1,8 @@
+export const backgroundColor = '#14213d'
+export const primaryColor = '#fca311'
+export const secondaryColor = '#e5e5e5'
+export const accentColor = '#5a189a'
+export const textColor = '#ffffff'
+export const maxTempColor = '#5a189a'
+export const minTempColor = '#fca311'
+export const mediumTempColor = '#e5e5e5'

@@ -1,0 +1,2202 @@
+{
+	"year": 1985,
+	"queryCost": 365,
+	"latitude": 48.8572,
+	"longitude": 2.34141,
+	"resolvedAddress": "Paris, Île-de-France, France",
+	"address": "paris",
+	"timezone": "Europe/Paris",
+	"tzoffset": 1.0,
+	"days": [
+		{
+			"datetime": "1985-01-01",
+			"tempmax": 5.0,
+			"tempmin": 1.1,
+			"temp": 3.1
+		},
+		{
+			"datetime": "1985-01-02",
+			"tempmax": 3.3,
+			"tempmin": -0.9,
+			"temp": 1.8
+		},
+		{
+			"datetime": "1985-01-03",
+			"tempmax": 1.6,
+			"tempmin": -1.9,
+			"temp": -0.2
+		},
+		{
+			"datetime": "1985-01-04",
+			"tempmax": 1.5,
+			"tempmin": -5.4,
+			"temp": -0.8
+		},
+		{
+			"datetime": "1985-01-05",
+			"tempmax": -5.5,
+			"tempmin": -9.4,
+			"temp": -7.4
+		},
+		{
+			"datetime": "1985-01-06",
+			"tempmax": -4.8,
+			"tempmin": -11.0,
+			"temp": -7.8
+		},
+		{
+			"datetime": "1985-01-07",
+			"tempmax": -2.9,
+			"tempmin": -10.4,
+			"temp": -8.0
+		},
+		{
+			"datetime": "1985-01-08",
+			"tempmax": -6.8,
+			"tempmin": -13.3,
+			"temp": -10.9
+		},
+		{
+			"datetime": "1985-01-09",
+			"tempmax": -2.0,
+			"tempmin": -11.0,
+			"temp": -5.9
+		},
+		{
+			"datetime": "1985-01-10",
+			"tempmax": -0.6,
+			"tempmin": -5.3,
+			"temp": -3.0
+		},
+		{
+			"datetime": "1985-01-11",
+			"tempmax": -0.8,
+			"tempmin": -3.9,
+			"temp": -2.6
+		},
+		{
+			"datetime": "1985-01-12",
+			"tempmax": -0.4,
+			"tempmin": -5.3,
+			"temp": -3.4
+		},
+		{
+			"datetime": "1985-01-13",
+			"tempmax": -0.9,
+			"tempmin": -9.9,
+			"temp": -5.7
+		},
+		{
+			"datetime": "1985-01-14",
+			"tempmax": -7.6,
+			"tempmin": -13.0,
+			"temp": -10.4
+		},
+		{
+			"datetime": "1985-01-15",
+			"tempmax": -6.7,
+			"tempmin": -10.2,
+			"temp": -8.2
+		},
+		{
+			"datetime": "1985-01-16",
+			"tempmax": -10.7,
+			"tempmin": -15.1,
+			"temp": -13.1
+		},
+		{
+			"datetime": "1985-01-17",
+			"tempmax": -4.8,
+			"tempmin": -16.9,
+			"temp": -10.7
+		},
+		{
+			"datetime": "1985-01-18",
+			"tempmax": 1.2,
+			"tempmin": -4.8,
+			"temp": -1.9
+		},
+		{
+			"datetime": "1985-01-19",
+			"tempmax": 0.6,
+			"tempmin": -4.8,
+			"temp": -1.4
+		},
+		{
+			"datetime": "1985-01-20",
+			"tempmax": 3.1,
+			"tempmin": -0.3,
+			"temp": 0.9
+		},
+		{
+			"datetime": "1985-01-21",
+			"tempmax": 8.6,
+			"tempmin": 3.2,
+			"temp": 5.3
+		},
+		{
+			"datetime": "1985-01-22",
+			"tempmax": 8.8,
+			"tempmin": 2.3,
+			"temp": 6.3
+		},
+		{
+			"datetime": "1985-01-23",
+			"tempmax": 4.7,
+			"tempmin": -1.0,
+			"temp": 1.5
+		},
+		{
+			"datetime": "1985-01-24",
+			"tempmax": 4.5,
+			"tempmin": -2.1,
+			"temp": 1.4
+		},
+		{
+			"datetime": "1985-01-25",
+			"tempmax": 6.8,
+			"tempmin": 1.4,
+			"temp": 3.7
+		},
+		{
+			"datetime": "1985-01-26",
+			"tempmax": 9.5,
+			"tempmin": 3.5,
+			"temp": 7.1
+		},
+		{
+			"datetime": "1985-01-27",
+			"tempmax": 4.9,
+			"tempmin": -1.1,
+			"temp": 2.3
+		},
+		{
+			"datetime": "1985-01-28",
+			"tempmax": 8.8,
+			"tempmin": 1.2,
+			"temp": 3.9
+		},
+		{
+			"datetime": "1985-01-29",
+			"tempmax": 9.5,
+			"tempmin": 4.2,
+			"temp": 6.8
+		},
+		{
+			"datetime": "1985-01-30",
+			"tempmax": 11.1,
+			"tempmin": 7.8,
+			"temp": 9.8
+		},
+		{
+			"datetime": "1985-01-31",
+			"tempmax": 12.2,
+			"tempmin": 7.2,
+			"temp": 9.3
+		},
+		{
+			"datetime": "1985-02-01",
+			"tempmax": 11.7,
+			"tempmin": 8.6,
+			"temp": 9.9
+		},
+		{
+			"datetime": "1985-02-02",
+			"tempmax": 11.7,
+			"tempmin": 7.5,
+			"temp": 10.1
+		},
+		{
+			"datetime": "1985-02-03",
+			"tempmax": 12.0,
+			"tempmin": 6.5,
+			"temp": 9.4
+		},
+		{
+			"datetime": "1985-02-04",
+			"tempmax": 8.8,
+			"tempmin": 0.5,
+			"temp": 4.4
+		},
+		{
+			"datetime": "1985-02-05",
+			"tempmax": 9.7,
+			"tempmin": 0.1,
+			"temp": 4.7
+		},
+		{
+			"datetime": "1985-02-06",
+			"tempmax": 10.6,
+			"tempmin": 3.7,
+			"temp": 7.1
+		},
+		{
+			"datetime": "1985-02-07",
+			"tempmax": 7.4,
+			"tempmin": 5.1,
+			"temp": 6.4
+		},
+		{
+			"datetime": "1985-02-08",
+			"tempmax": 11.8,
+			"tempmin": 3.1,
+			"temp": 6.2
+		},
+		{
+			"datetime": "1985-02-09",
+			"tempmax": 9.0,
+			"tempmin": -0.9,
+			"temp": 5.5
+		},
+		{
+			"datetime": "1985-02-10",
+			"tempmax": -0.8,
+			"tempmin": -3.9,
+			"temp": -1.9
+		},
+		{
+			"datetime": "1985-02-11",
+			"tempmax": -0.9,
+			"tempmin": -6.3,
+			"temp": -4.1
+		},
+		{
+			"datetime": "1985-02-12",
+			"tempmax": -0.3,
+			"tempmin": -8.2,
+			"temp": -4.4
+		},
+		{
+			"datetime": "1985-02-13",
+			"tempmax": 2.2,
+			"tempmin": -4.9,
+			"temp": -1.3
+		},
+		{
+			"datetime": "1985-02-14",
+			"tempmax": 4.1,
+			"tempmin": -1.4,
+			"temp": 1.4
+		},
+		{
+			"datetime": "1985-02-15",
+			"tempmax": -0.1,
+			"tempmin": -2.9,
+			"temp": -1.7
+		},
+		{
+			"datetime": "1985-02-16",
+			"tempmax": 5.5,
+			"tempmin": -5.9,
+			"temp": -0.9
+		},
+		{
+			"datetime": "1985-02-17",
+			"tempmax": 6.1,
+			"tempmin": -4.0,
+			"temp": 0.3
+		},
+		{
+			"datetime": "1985-02-18",
+			"tempmax": 1.8,
+			"tempmin": -4.6,
+			"temp": -1.7
+		},
+		{
+			"datetime": "1985-02-19",
+			"tempmax": 1.7,
+			"tempmin": -7.7,
+			"temp": -3.6
+		},
+		{
+			"datetime": "1985-02-20",
+			"tempmax": 2.9,
+			"tempmin": -6.6,
+			"temp": -2.6
+		},
+		{
+			"datetime": "1985-02-21",
+			"tempmax": 7.0,
+			"tempmin": -4.2,
+			"temp": 0.9
+		},
+		{
+			"datetime": "1985-02-22",
+			"tempmax": 7.1,
+			"tempmin": -2.1,
+			"temp": 1.8
+		},
+		{
+			"datetime": "1985-02-23",
+			"tempmax": 10.8,
+			"tempmin": -3.4,
+			"temp": 2.2
+		},
+		{
+			"datetime": "1985-02-24",
+			"tempmax": 13.9,
+			"tempmin": 0.0,
+			"temp": 6.3
+		},
+		{
+			"datetime": "1985-02-25",
+			"tempmax": 8.4,
+			"tempmin": 2.9,
+			"temp": 5.8
+		},
+		{
+			"datetime": "1985-02-26",
+			"tempmax": 9.9,
+			"tempmin": 3.1,
+			"temp": 5.6
+		},
+		{
+			"datetime": "1985-02-27",
+			"tempmax": 10.9,
+			"tempmin": 1.0,
+			"temp": 5.0
+		},
+		{
+			"datetime": "1985-02-28",
+			"tempmax": 9.5,
+			"tempmin": 0.9,
+			"temp": 4.4
+		},
+		{
+			"datetime": "1985-03-01",
+			"tempmax": 11.2,
+			"tempmin": 3.7,
+			"temp": 7.1
+		},
+		{
+			"datetime": "1985-03-02",
+			"tempmax": 10.1,
+			"tempmin": 4.1,
+			"temp": 6.7
+		},
+		{
+			"datetime": "1985-03-03",
+			"tempmax": 11.7,
+			"tempmin": 6.2,
+			"temp": 8.4
+		},
+		{
+			"datetime": "1985-03-04",
+			"tempmax": 8.8,
+			"tempmin": 3.8,
+			"temp": 6.8
+		},
+		{
+			"datetime": "1985-03-05",
+			"tempmax": 9.5,
+			"tempmin": 1.4,
+			"temp": 5.5
+		},
+		{
+			"datetime": "1985-03-06",
+			"tempmax": 7.9,
+			"tempmin": 1.6,
+			"temp": 3.8
+		},
+		{
+			"datetime": "1985-03-07",
+			"tempmax": 6.3,
+			"tempmin": 1.9,
+			"temp": 3.1
+		},
+		{
+			"datetime": "1985-03-08",
+			"tempmax": 9.5,
+			"tempmin": -0.6,
+			"temp": 3.6
+		},
+		{
+			"datetime": "1985-03-09",
+			"tempmax": 11.2,
+			"tempmin": 1.5,
+			"temp": 6.2
+		},
+		{
+			"datetime": "1985-03-10",
+			"tempmax": 12.3,
+			"tempmin": 0.9,
+			"temp": 6.3
+		},
+		{
+			"datetime": "1985-03-11",
+			"tempmax": 8.4,
+			"tempmin": 3.1,
+			"temp": 5.7
+		},
+		{
+			"datetime": "1985-03-12",
+			"tempmax": 7.5,
+			"tempmin": 2.0,
+			"temp": 4.4
+		},
+		{
+			"datetime": "1985-03-13",
+			"tempmax": 7.1,
+			"tempmin": -0.3,
+			"temp": 2.8
+		},
+		{
+			"datetime": "1985-03-14",
+			"tempmax": 8.0,
+			"tempmin": 1.2,
+			"temp": 4.4
+		},
+		{
+			"datetime": "1985-03-15",
+			"tempmax": 5.3,
+			"tempmin": -0.7,
+			"temp": 2.2
+		},
+		{
+			"datetime": "1985-03-16",
+			"tempmax": 4.5,
+			"tempmin": 0.2,
+			"temp": 2.4
+		},
+		{
+			"datetime": "1985-03-17",
+			"tempmax": 5.0,
+			"tempmin": 0.1,
+			"temp": 2.0
+		},
+		{
+			"datetime": "1985-03-18",
+			"tempmax": 6.7,
+			"tempmin": -1.6,
+			"temp": 1.8
+		},
+		{
+			"datetime": "1985-03-19",
+			"tempmax": 4.6,
+			"tempmin": -2.1,
+			"temp": 0.8
+		},
+		{
+			"datetime": "1985-03-20",
+			"tempmax": 5.5,
+			"tempmin": -1.8,
+			"temp": 1.2
+		},
+		{
+			"datetime": "1985-03-21",
+			"tempmax": 6.5,
+			"tempmin": -0.6,
+			"temp": 2.6
+		},
+		{
+			"datetime": "1985-03-22",
+			"tempmax": 11.0,
+			"tempmin": 4.6,
+			"temp": 6.8
+		},
+		{
+			"datetime": "1985-03-23",
+			"tempmax": 9.6,
+			"tempmin": 4.5,
+			"temp": 5.9
+		},
+		{
+			"datetime": "1985-03-24",
+			"tempmax": 9.7,
+			"tempmin": 3.5,
+			"temp": 5.8
+		},
+		{
+			"datetime": "1985-03-25",
+			"tempmax": 9.7,
+			"tempmin": 2.7,
+			"temp": 6.3
+		},
+		{
+			"datetime": "1985-03-26",
+			"tempmax": 10.2,
+			"tempmin": 7.6,
+			"temp": 8.8
+		},
+		{
+			"datetime": "1985-03-27",
+			"tempmax": 7.7,
+			"tempmin": 3.7,
+			"temp": 5.5
+		},
+		{
+			"datetime": "1985-03-28",
+			"tempmax": 6.9,
+			"tempmin": -0.9,
+			"temp": 3.6
+		},
+		{
+			"datetime": "1985-03-29",
+			"tempmax": 9.4,
+			"tempmin": 0.8,
+			"temp": 5.2
+		},
+		{
+			"datetime": "1985-03-30",
+			"tempmax": 14.5,
+			"tempmin": 7.1,
+			"temp": 10.3
+		},
+		{
+			"datetime": "1985-03-31",
+			"tempmax": 15.8,
+			"tempmin": 8.1,
+			"temp": 11.6
+		},
+		{
+			"datetime": "1985-04-01",
+			"tempmax": 20.7,
+			"tempmin": 10.8,
+			"temp": 15.1
+		},
+		{
+			"datetime": "1985-04-02",
+			"tempmax": 16.9,
+			"tempmin": 9.6,
+			"temp": 12.8
+		},
+		{
+			"datetime": "1985-04-03",
+			"tempmax": 21.9,
+			"tempmin": 8.2,
+			"temp": 14.7
+		},
+		{
+			"datetime": "1985-04-04",
+			"tempmax": 23.9,
+			"tempmin": 10.5,
+			"temp": 16.8
+		},
+		{
+			"datetime": "1985-04-05",
+			"tempmax": 14.8,
+			"tempmin": 8.3,
+			"temp": 11.8
+		},
+		{
+			"datetime": "1985-04-06",
+			"tempmax": 10.7,
+			"tempmin": 7.2,
+			"temp": 8.6
+		},
+		{
+			"datetime": "1985-04-07",
+			"tempmax": 12.0,
+			"tempmin": 6.1,
+			"temp": 8.7
+		},
+		{
+			"datetime": "1985-04-08",
+			"tempmax": 14.7,
+			"tempmin": 8.3,
+			"temp": 10.9
+		},
+		{
+			"datetime": "1985-04-09",
+			"tempmax": 14.0,
+			"tempmin": 5.6,
+			"temp": 9.4
+		},
+		{
+			"datetime": "1985-04-10",
+			"tempmax": 12.0,
+			"tempmin": 6.1,
+			"temp": 8.7
+		},
+		{
+			"datetime": "1985-04-11",
+			"tempmax": 8.1,
+			"tempmin": 4.0,
+			"temp": 6.1
+		},
+		{
+			"datetime": "1985-04-12",
+			"tempmax": 11.6,
+			"tempmin": 5.2,
+			"temp": 8.0
+		},
+		{
+			"datetime": "1985-04-13",
+			"tempmax": 12.3,
+			"tempmin": 6.2,
+			"temp": 8.8
+		},
+		{
+			"datetime": "1985-04-14",
+			"tempmax": 11.0,
+			"tempmin": 4.8,
+			"temp": 7.6
+		},
+		{
+			"datetime": "1985-04-15",
+			"tempmax": 13.8,
+			"tempmin": 5.3,
+			"temp": 9.2
+		},
+		{
+			"datetime": "1985-04-16",
+			"tempmax": 16.7,
+			"tempmin": 10.1,
+			"temp": 12.5
+		},
+		{
+			"datetime": "1985-04-17",
+			"tempmax": 18.1,
+			"tempmin": 8.0,
+			"temp": 12.1
+		},
+		{
+			"datetime": "1985-04-18",
+			"tempmax": 19.0,
+			"tempmin": 9.1,
+			"temp": 13.5
+		},
+		{
+			"datetime": "1985-04-19",
+			"tempmax": 21.4,
+			"tempmin": 6.3,
+			"temp": 14.1
+		},
+		{
+			"datetime": "1985-04-20",
+			"tempmax": 14.3,
+			"tempmin": 7.2,
+			"temp": 11.0
+		},
+		{
+			"datetime": "1985-04-21",
+			"tempmax": 17.9,
+			"tempmin": 6.0,
+			"temp": 10.8
+		},
+		{
+			"datetime": "1985-04-22",
+			"tempmax": 18.0,
+			"tempmin": 10.3,
+			"temp": 13.7
+		},
+		{
+			"datetime": "1985-04-23",
+			"tempmax": 13.1,
+			"tempmin": 6.7,
+			"temp": 9.4
+		},
+		{
+			"datetime": "1985-04-24",
+			"tempmax": 12.8,
+			"tempmin": 2.0,
+			"temp": 7.4
+		},
+		{
+			"datetime": "1985-04-25",
+			"tempmax": 14.1,
+			"tempmin": 1.1,
+			"temp": 8.0
+		},
+		{
+			"datetime": "1985-04-26",
+			"tempmax": 9.7,
+			"tempmin": 0.0,
+			"temp": 5.1
+		},
+		{
+			"datetime": "1985-04-27",
+			"tempmax": 11.6,
+			"tempmin": 0.1,
+			"temp": 6.2
+		},
+		{
+			"datetime": "1985-04-28",
+			"tempmax": 9.4,
+			"tempmin": -0.6,
+			"temp": 4.8
+		},
+		{
+			"datetime": "1985-04-29",
+			"tempmax": 11.3,
+			"tempmin": 3.7,
+			"temp": 6.9
+		},
+		{
+			"datetime": "1985-04-30",
+			"tempmax": 15.1,
+			"tempmin": 9.4,
+			"temp": 11.7
+		},
+		{
+			"datetime": "1985-05-01",
+			"tempmax": 15.5,
+			"tempmin": 8.6,
+			"temp": 11.8
+		},
+		{
+			"datetime": "1985-05-02",
+			"tempmax": 10.8,
+			"tempmin": 5.1,
+			"temp": 7.8
+		},
+		{
+			"datetime": "1985-05-03",
+			"tempmax": 10.8,
+			"tempmin": 2.4,
+			"temp": 7.1
+		},
+		{
+			"datetime": "1985-05-04",
+			"tempmax": 14.0,
+			"tempmin": 6.3,
+			"temp": 9.1
+		},
+		{
+			"datetime": "1985-05-05",
+			"tempmax": 13.8,
+			"tempmin": 8.1,
+			"temp": 10.0
+		},
+		{
+			"datetime": "1985-05-06",
+			"tempmax": 16.1,
+			"tempmin": 7.1,
+			"temp": 11.8
+		},
+		{
+			"datetime": "1985-05-07",
+			"tempmax": 18.0,
+			"tempmin": 9.2,
+			"temp": 13.1
+		},
+		{
+			"datetime": "1985-05-08",
+			"tempmax": 13.7,
+			"tempmin": 9.4,
+			"temp": 11.6
+		},
+		{
+			"datetime": "1985-05-09",
+			"tempmax": 14.8,
+			"tempmin": 8.7,
+			"temp": 11.5
+		},
+		{
+			"datetime": "1985-05-10",
+			"tempmax": 13.9,
+			"tempmin": 5.2,
+			"temp": 9.9
+		},
+		{
+			"datetime": "1985-05-11",
+			"tempmax": 14.7,
+			"tempmin": 8.7,
+			"temp": 11.6
+		},
+		{
+			"datetime": "1985-05-12",
+			"tempmax": 12.4,
+			"tempmin": 8.5,
+			"temp": 10.9
+		},
+		{
+			"datetime": "1985-05-13",
+			"tempmax": 19.2,
+			"tempmin": 7.6,
+			"temp": 12.7
+		},
+		{
+			"datetime": "1985-05-14",
+			"tempmax": 13.6,
+			"tempmin": 9.9,
+			"temp": 11.5
+		},
+		{
+			"datetime": "1985-05-15",
+			"tempmax": 16.3,
+			"tempmin": 9.7,
+			"temp": 12.9
+		},
+		{
+			"datetime": "1985-05-16",
+			"tempmax": 21.7,
+			"tempmin": 8.4,
+			"temp": 15.5
+		},
+		{
+			"datetime": "1985-05-17",
+			"tempmax": 21.8,
+			"tempmin": 13.0,
+			"temp": 16.8
+		},
+		{
+			"datetime": "1985-05-18",
+			"tempmax": 21.4,
+			"tempmin": 13.3,
+			"temp": 16.7
+		},
+		{
+			"datetime": "1985-05-19",
+			"tempmax": 21.7,
+			"tempmin": 13.3,
+			"temp": 16.3
+		},
+		{
+			"datetime": "1985-05-20",
+			"tempmax": 19.4,
+			"tempmin": 10.6,
+			"temp": 14.6
+		},
+		{
+			"datetime": "1985-05-21",
+			"tempmax": 17.8,
+			"tempmin": 10.9,
+			"temp": 13.5
+		},
+		{
+			"datetime": "1985-05-22",
+			"tempmax": 14.6,
+			"tempmin": 9.6,
+			"temp": 11.9
+		},
+		{
+			"datetime": "1985-05-23",
+			"tempmax": 17.3,
+			"tempmin": 9.4,
+			"temp": 12.8
+		},
+		{
+			"datetime": "1985-05-24",
+			"tempmax": 20.1,
+			"tempmin": 9.4,
+			"temp": 15.0
+		},
+		{
+			"datetime": "1985-05-25",
+			"tempmax": 24.6,
+			"tempmin": 10.4,
+			"temp": 17.5
+		},
+		{
+			"datetime": "1985-05-26",
+			"tempmax": 28.0,
+			"tempmin": 14.9,
+			"temp": 21.5
+		},
+		{
+			"datetime": "1985-05-27",
+			"tempmax": 21.7,
+			"tempmin": 15.4,
+			"temp": 19.1
+		},
+		{
+			"datetime": "1985-05-28",
+			"tempmax": 21.0,
+			"tempmin": 12.0,
+			"temp": 16.9
+		},
+		{
+			"datetime": "1985-05-29",
+			"tempmax": 21.4,
+			"tempmin": 10.8,
+			"temp": 16.0
+		},
+		{
+			"datetime": "1985-05-30",
+			"tempmax": 19.1,
+			"tempmin": 10.0,
+			"temp": 15.2
+		},
+		{
+			"datetime": "1985-05-31",
+			"tempmax": 24.4,
+			"tempmin": 13.5,
+			"temp": 18.9
+		},
+		{
+			"datetime": "1985-06-01",
+			"tempmax": 26.6,
+			"tempmin": 13.8,
+			"temp": 20.4
+		},
+		{
+			"datetime": "1985-06-02",
+			"tempmax": 25.0,
+			"tempmin": 14.3,
+			"temp": 20.3
+		},
+		{
+			"datetime": "1985-06-03",
+			"tempmax": 27.3,
+			"tempmin": 14.6,
+			"temp": 20.9
+		},
+		{
+			"datetime": "1985-06-04",
+			"tempmax": 27.7,
+			"tempmin": 17.2,
+			"temp": 22.5
+		},
+		{
+			"datetime": "1985-06-05",
+			"tempmax": 25.5,
+			"tempmin": 15.3,
+			"temp": 19.6
+		},
+		{
+			"datetime": "1985-06-06",
+			"tempmax": 23.6,
+			"tempmin": 14.8,
+			"temp": 18.4
+		},
+		{
+			"datetime": "1985-06-07",
+			"tempmax": 17.3,
+			"tempmin": 9.9,
+			"temp": 13.7
+		},
+		{
+			"datetime": "1985-06-08",
+			"tempmax": 15.3,
+			"tempmin": 7.7,
+			"temp": 11.2
+		},
+		{
+			"datetime": "1985-06-09",
+			"tempmax": 16.5,
+			"tempmin": 8.8,
+			"temp": 12.4
+		},
+		{
+			"datetime": "1985-06-10",
+			"tempmax": 16.2,
+			"tempmin": 10.8,
+			"temp": 13.2
+		},
+		{
+			"datetime": "1985-06-11",
+			"tempmax": 17.0,
+			"tempmin": 8.0,
+			"temp": 12.9
+		},
+		{
+			"datetime": "1985-06-12",
+			"tempmax": 17.3,
+			"tempmin": 11.5,
+			"temp": 13.8
+		},
+		{
+			"datetime": "1985-06-13",
+			"tempmax": 17.7,
+			"tempmin": 6.5,
+			"temp": 13.0
+		},
+		{
+			"datetime": "1985-06-14",
+			"tempmax": 19.7,
+			"tempmin": 9.6,
+			"temp": 14.6
+		},
+		{
+			"datetime": "1985-06-15",
+			"tempmax": 17.7,
+			"tempmin": 8.1,
+			"temp": 13.6
+		},
+		{
+			"datetime": "1985-06-16",
+			"tempmax": 17.7,
+			"tempmin": 9.1,
+			"temp": 14.3
+		},
+		{
+			"datetime": "1985-06-17",
+			"tempmax": 19.6,
+			"tempmin": 7.6,
+			"temp": 14.8
+		},
+		{
+			"datetime": "1985-06-18",
+			"tempmax": 22.8,
+			"tempmin": 13.4,
+			"temp": 18.1
+		},
+		{
+			"datetime": "1985-06-19",
+			"tempmax": 17.1,
+			"tempmin": 11.4,
+			"temp": 14.5
+		},
+		{
+			"datetime": "1985-06-20",
+			"tempmax": 20.3,
+			"tempmin": 9.2,
+			"temp": 14.5
+		},
+		{
+			"datetime": "1985-06-21",
+			"tempmax": 18.5,
+			"tempmin": 11.6,
+			"temp": 14.7
+		},
+		{
+			"datetime": "1985-06-22",
+			"tempmax": 17.7,
+			"tempmin": 11.8,
+			"temp": 14.5
+		},
+		{
+			"datetime": "1985-06-23",
+			"tempmax": 15.5,
+			"tempmin": 9.1,
+			"temp": 12.7
+		},
+		{
+			"datetime": "1985-06-24",
+			"tempmax": 17.5,
+			"tempmin": 12.7,
+			"temp": 14.8
+		},
+		{
+			"datetime": "1985-06-25",
+			"tempmax": 17.8,
+			"tempmin": 10.0,
+			"temp": 13.7
+		},
+		{
+			"datetime": "1985-06-26",
+			"tempmax": 18.4,
+			"tempmin": 12.9,
+			"temp": 15.4
+		},
+		{
+			"datetime": "1985-06-27",
+			"tempmax": 17.2,
+			"tempmin": 9.1,
+			"temp": 13.4
+		},
+		{
+			"datetime": "1985-06-28",
+			"tempmax": 15.7,
+			"tempmin": 10.6,
+			"temp": 13.2
+		},
+		{
+			"datetime": "1985-06-29",
+			"tempmax": 19.5,
+			"tempmin": 10.4,
+			"temp": 15.4
+		},
+		{
+			"datetime": "1985-06-30",
+			"tempmax": 25.2,
+			"tempmin": 11.8,
+			"temp": 18.7
+		},
+		{
+			"datetime": "1985-07-01",
+			"tempmax": 25.8,
+			"tempmin": 14.5,
+			"temp": 20.3
+		},
+		{
+			"datetime": "1985-07-02",
+			"tempmax": 24.4,
+			"tempmin": 12.0,
+			"temp": 18.8
+		},
+		{
+			"datetime": "1985-07-03",
+			"tempmax": 27.8,
+			"tempmin": 14.8,
+			"temp": 21.3
+		},
+		{
+			"datetime": "1985-07-04",
+			"tempmax": 25.1,
+			"tempmin": 17.4,
+			"temp": 21.0
+		},
+		{
+			"datetime": "1985-07-05",
+			"tempmax": 26.7,
+			"tempmin": 17.3,
+			"temp": 20.8
+		},
+		{
+			"datetime": "1985-07-06",
+			"tempmax": 22.9,
+			"tempmin": 13.9,
+			"temp": 18.3
+		},
+		{
+			"datetime": "1985-07-07",
+			"tempmax": 23.3,
+			"tempmin": 9.8,
+			"temp": 17.3
+		},
+		{
+			"datetime": "1985-07-08",
+			"tempmax": 23.8,
+			"tempmin": 12.2,
+			"temp": 18.7
+		},
+		{
+			"datetime": "1985-07-09",
+			"tempmax": 26.1,
+			"tempmin": 13.3,
+			"temp": 19.9
+		},
+		{
+			"datetime": "1985-07-10",
+			"tempmax": 20.2,
+			"tempmin": 13.4,
+			"temp": 17.4
+		},
+		{
+			"datetime": "1985-07-11",
+			"tempmax": 22.1,
+			"tempmin": 11.1,
+			"temp": 18.0
+		},
+		{
+			"datetime": "1985-07-12",
+			"tempmax": 27.0,
+			"tempmin": 12.2,
+			"temp": 20.4
+		},
+		{
+			"datetime": "1985-07-13",
+			"tempmax": 29.7,
+			"tempmin": 15.9,
+			"temp": 23.4
+		},
+		{
+			"datetime": "1985-07-14",
+			"tempmax": 27.6,
+			"tempmin": 18.5,
+			"temp": 22.2
+		},
+		{
+			"datetime": "1985-07-15",
+			"tempmax": 24.2,
+			"tempmin": 13.1,
+			"temp": 18.7
+		},
+		{
+			"datetime": "1985-07-16",
+			"tempmax": 23.4,
+			"tempmin": 11.6,
+			"temp": 18.4
+		},
+		{
+			"datetime": "1985-07-17",
+			"tempmax": 26.4,
+			"tempmin": 10.3,
+			"temp": 19.2
+		},
+		{
+			"datetime": "1985-07-18",
+			"tempmax": 24.4,
+			"tempmin": 15.2,
+			"temp": 19.6
+		},
+		{
+			"datetime": "1985-07-19",
+			"tempmax": 24.0,
+			"tempmin": 12.3,
+			"temp": 18.0
+		},
+		{
+			"datetime": "1985-07-20",
+			"tempmax": 19.5,
+			"tempmin": 12.7,
+			"temp": 16.1
+		},
+		{
+			"datetime": "1985-07-21",
+			"tempmax": 20.3,
+			"tempmin": 10.2,
+			"temp": 15.8
+		},
+		{
+			"datetime": "1985-07-22",
+			"tempmax": 26.1,
+			"tempmin": 14.3,
+			"temp": 19.9
+		},
+		{
+			"datetime": "1985-07-23",
+			"tempmax": 22.4,
+			"tempmin": 16.4,
+			"temp": 19.1
+		},
+		{
+			"datetime": "1985-07-24",
+			"tempmax": 28.3,
+			"tempmin": 12.6,
+			"temp": 20.7
+		},
+		{
+			"datetime": "1985-07-25",
+			"tempmax": 31.7,
+			"tempmin": 15.8,
+			"temp": 24.5
+		},
+		{
+			"datetime": "1985-07-26",
+			"tempmax": 25.7,
+			"tempmin": 17.6,
+			"temp": 21.9
+		},
+		{
+			"datetime": "1985-07-27",
+			"tempmax": 24.0,
+			"tempmin": 13.8,
+			"temp": 18.9
+		},
+		{
+			"datetime": "1985-07-28",
+			"tempmax": 21.6,
+			"tempmin": 14.3,
+			"temp": 18.1
+		},
+		{
+			"datetime": "1985-07-29",
+			"tempmax": 19.8,
+			"tempmin": 14.5,
+			"temp": 16.8
+		},
+		{
+			"datetime": "1985-07-30",
+			"tempmax": 22.2,
+			"tempmin": 12.3,
+			"temp": 16.8
+		},
+		{
+			"datetime": "1985-07-31",
+			"tempmax": 22.8,
+			"tempmin": 14.7,
+			"temp": 17.9
+		},
+		{
+			"datetime": "1985-08-01",
+			"tempmax": 20.0,
+			"tempmin": 14.5,
+			"temp": 17.2
+		},
+		{
+			"datetime": "1985-08-02",
+			"tempmax": 24.4,
+			"tempmin": 10.5,
+			"temp": 17.6
+		},
+		{
+			"datetime": "1985-08-03",
+			"tempmax": 21.3,
+			"tempmin": 12.6,
+			"temp": 17.0
+		},
+		{
+			"datetime": "1985-08-04",
+			"tempmax": 20.7,
+			"tempmin": 12.4,
+			"temp": 16.6
+		},
+		{
+			"datetime": "1985-08-05",
+			"tempmax": 20.3,
+			"tempmin": 13.6,
+			"temp": 17.1
+		},
+		{
+			"datetime": "1985-08-06",
+			"tempmax": 18.0,
+			"tempmin": 11.3,
+			"temp": 14.3
+		},
+		{
+			"datetime": "1985-08-07",
+			"tempmax": 18.7,
+			"tempmin": 9.2,
+			"temp": 14.1
+		},
+		{
+			"datetime": "1985-08-08",
+			"tempmax": 23.0,
+			"tempmin": 13.1,
+			"temp": 17.3
+		},
+		{
+			"datetime": "1985-08-09",
+			"tempmax": 23.7,
+			"tempmin": 13.8,
+			"temp": 19.1
+		},
+		{
+			"datetime": "1985-08-10",
+			"tempmax": 21.6,
+			"tempmin": 13.0,
+			"temp": 16.9
+		},
+		{
+			"datetime": "1985-08-11",
+			"tempmax": 22.3,
+			"tempmin": 10.8,
+			"temp": 16.5
+		},
+		{
+			"datetime": "1985-08-12",
+			"tempmax": 20.4,
+			"tempmin": 11.8,
+			"temp": 15.9
+		},
+		{
+			"datetime": "1985-08-13",
+			"tempmax": 23.3,
+			"tempmin": 11.6,
+			"temp": 17.6
+		},
+		{
+			"datetime": "1985-08-14",
+			"tempmax": 24.2,
+			"tempmin": 14.7,
+			"temp": 19.7
+		},
+		{
+			"datetime": "1985-08-15",
+			"tempmax": 22.7,
+			"tempmin": 10.9,
+			"temp": 17.1
+		},
+		{
+			"datetime": "1985-08-16",
+			"tempmax": 20.7,
+			"tempmin": 11.3,
+			"temp": 16.9
+		},
+		{
+			"datetime": "1985-08-17",
+			"tempmax": 20.4,
+			"tempmin": 13.4,
+			"temp": 16.6
+		},
+		{
+			"datetime": "1985-08-18",
+			"tempmax": 23.8,
+			"tempmin": 12.4,
+			"temp": 18.0
+		},
+		{
+			"datetime": "1985-08-19",
+			"tempmax": 20.7,
+			"tempmin": 15.0,
+			"temp": 18.2
+		},
+		{
+			"datetime": "1985-08-20",
+			"tempmax": 21.0,
+			"tempmin": 11.0,
+			"temp": 16.1
+		},
+		{
+			"datetime": "1985-08-21",
+			"tempmax": 26.9,
+			"tempmin": 13.9,
+			"temp": 19.8
+		},
+		{
+			"datetime": "1985-08-22",
+			"tempmax": 24.3,
+			"tempmin": 16.1,
+			"temp": 19.9
+		},
+		{
+			"datetime": "1985-08-23",
+			"tempmax": 23.9,
+			"tempmin": 10.8,
+			"temp": 17.3
+		},
+		{
+			"datetime": "1985-08-24",
+			"tempmax": 16.0,
+			"tempmin": 12.8,
+			"temp": 14.6
+		},
+		{
+			"datetime": "1985-08-25",
+			"tempmax": 19.5,
+			"tempmin": 11.0,
+			"temp": 14.1
+		},
+		{
+			"datetime": "1985-08-26",
+			"tempmax": 19.0,
+			"tempmin": 9.6,
+			"temp": 13.8
+		},
+		{
+			"datetime": "1985-08-27",
+			"tempmax": 21.3,
+			"tempmin": 6.8,
+			"temp": 14.8
+		},
+		{
+			"datetime": "1985-08-28",
+			"tempmax": 24.8,
+			"tempmin": 10.2,
+			"temp": 17.6
+		},
+		{
+			"datetime": "1985-08-29",
+			"tempmax": 26.7,
+			"tempmin": 12.2,
+			"temp": 19.9
+		},
+		{
+			"datetime": "1985-08-30",
+			"tempmax": 28.6,
+			"tempmin": 12.2,
+			"temp": 20.4
+		},
+		{
+			"datetime": "1985-08-31",
+			"tempmax": 22.1,
+			"tempmin": 15.1,
+			"temp": 18.1
+		},
+		{
+			"datetime": "1985-09-01",
+			"tempmax": 19.7,
+			"tempmin": 10.1,
+			"temp": 15.8
+		},
+		{
+			"datetime": "1985-09-02",
+			"tempmax": 22.0,
+			"tempmin": 9.4,
+			"temp": 16.1
+		},
+		{
+			"datetime": "1985-09-03",
+			"tempmax": 19.7,
+			"tempmin": 13.7,
+			"temp": 16.3
+		},
+		{
+			"datetime": "1985-09-04",
+			"tempmax": 18.6,
+			"tempmin": 11.2,
+			"temp": 15.2
+		},
+		{
+			"datetime": "1985-09-05",
+			"tempmax": 19.8,
+			"tempmin": 13.0,
+			"temp": 16.3
+		},
+		{
+			"datetime": "1985-09-06",
+			"tempmax": 17.7,
+			"tempmin": 7.7,
+			"temp": 13.1
+		},
+		{
+			"datetime": "1985-09-07",
+			"tempmax": 18.7,
+			"tempmin": 6.1,
+			"temp": 12.8
+		},
+		{
+			"datetime": "1985-09-08",
+			"tempmax": 21.0,
+			"tempmin": 9.0,
+			"temp": 15.1
+		},
+		{
+			"datetime": "1985-09-09",
+			"tempmax": 19.8,
+			"tempmin": 13.3,
+			"temp": 15.9
+		},
+		{
+			"datetime": "1985-09-10",
+			"tempmax": 21.5,
+			"tempmin": 9.0,
+			"temp": 15.0
+		},
+		{
+			"datetime": "1985-09-11",
+			"tempmax": 25.8,
+			"tempmin": 10.3,
+			"temp": 17.5
+		},
+		{
+			"datetime": "1985-09-12",
+			"tempmax": 28.5,
+			"tempmin": 12.4,
+			"temp": 20.6
+		},
+		{
+			"datetime": "1985-09-13",
+			"tempmax": 20.8,
+			"tempmin": 13.3,
+			"temp": 16.9
+		},
+		{
+			"datetime": "1985-09-14",
+			"tempmax": 19.0,
+			"tempmin": 7.3,
+			"temp": 13.7
+		},
+		{
+			"datetime": "1985-09-15",
+			"tempmax": 17.4,
+			"tempmin": 11.0,
+			"temp": 14.0
+		},
+		{
+			"datetime": "1985-09-16",
+			"tempmax": 17.7,
+			"tempmin": 6.5,
+			"temp": 12.6
+		},
+		{
+			"datetime": "1985-09-17",
+			"tempmax": 23.0,
+			"tempmin": 14.4,
+			"temp": 17.5
+		},
+		{
+			"datetime": "1985-09-18",
+			"tempmax": 25.9,
+			"tempmin": 14.6,
+			"temp": 19.5
+		},
+		{
+			"datetime": "1985-09-19",
+			"tempmax": 24.8,
+			"tempmin": 15.6,
+			"temp": 19.9
+		},
+		{
+			"datetime": "1985-09-20",
+			"tempmax": 26.0,
+			"tempmin": 13.7,
+			"temp": 19.4
+		},
+		{
+			"datetime": "1985-09-21",
+			"tempmax": 27.0,
+			"tempmin": 14.8,
+			"temp": 20.8
+		},
+		{
+			"datetime": "1985-09-22",
+			"tempmax": 27.2,
+			"tempmin": 14.9,
+			"temp": 20.6
+		},
+		{
+			"datetime": "1985-09-23",
+			"tempmax": 23.3,
+			"tempmin": 16.5,
+			"temp": 19.4
+		},
+		{
+			"datetime": "1985-09-24",
+			"tempmax": 23.2,
+			"tempmin": 13.6,
+			"temp": 18.4
+		},
+		{
+			"datetime": "1985-09-25",
+			"tempmax": 23.5,
+			"tempmin": 13.3,
+			"temp": 18.0
+		},
+		{
+			"datetime": "1985-09-26",
+			"tempmax": 24.0,
+			"tempmin": 13.1,
+			"temp": 18.1
+		},
+		{
+			"datetime": "1985-09-27",
+			"tempmax": 24.6,
+			"tempmin": 12.2,
+			"temp": 17.9
+		},
+		{
+			"datetime": "1985-09-28",
+			"tempmax": 24.5,
+			"tempmin": 12.1,
+			"temp": 18.0
+		},
+		{
+			"datetime": "1985-09-29",
+			"tempmax": 25.0,
+			"tempmin": 12.1,
+			"temp": 18.1
+		},
+		{
+			"datetime": "1985-09-30",
+			"tempmax": 26.4,
+			"tempmin": 12.7,
+			"temp": 19.0
+		},
+		{
+			"datetime": "1985-10-01",
+			"tempmax": 28.2,
+			"tempmin": 12.7,
+			"temp": 20.2
+		},
+		{
+			"datetime": "1985-10-02",
+			"tempmax": 25.7,
+			"tempmin": 15.1,
+			"temp": 20.1
+		},
+		{
+			"datetime": "1985-10-03",
+			"tempmax": 27.0,
+			"tempmin": 18.4,
+			"temp": 22.1
+		},
+		{
+			"datetime": "1985-10-04",
+			"tempmax": 22.6,
+			"tempmin": 14.9,
+			"temp": 18.4
+		},
+		{
+			"datetime": "1985-10-05",
+			"tempmax": 20.0,
+			"tempmin": 12.2,
+			"temp": 15.5
+		},
+		{
+			"datetime": "1985-10-06",
+			"tempmax": 21.3,
+			"tempmin": 9.5,
+			"temp": 15.4
+		},
+		{
+			"datetime": "1985-10-07",
+			"tempmax": 24.3,
+			"tempmin": 12.4,
+			"temp": 17.8
+		},
+		{
+			"datetime": "1985-10-08",
+			"tempmax": 14.7,
+			"tempmin": 10.1,
+			"temp": 12.4
+		},
+		{
+			"datetime": "1985-10-09",
+			"tempmax": 15.9,
+			"tempmin": 10.5,
+			"temp": 12.7
+		},
+		{
+			"datetime": "1985-10-10",
+			"tempmax": 18.6,
+			"tempmin": 9.4,
+			"temp": 13.4
+		},
+		{
+			"datetime": "1985-10-11",
+			"tempmax": 20.7,
+			"tempmin": 8.5,
+			"temp": 13.8
+		},
+		{
+			"datetime": "1985-10-12",
+			"tempmax": 18.0,
+			"tempmin": 9.5,
+			"temp": 13.5
+		},
+		{
+			"datetime": "1985-10-13",
+			"tempmax": 15.6,
+			"tempmin": 7.5,
+			"temp": 11.4
+		},
+		{
+			"datetime": "1985-10-14",
+			"tempmax": 17.6,
+			"tempmin": 5.3,
+			"temp": 11.0
+		},
+		{
+			"datetime": "1985-10-15",
+			"tempmax": 14.8,
+			"tempmin": 8.5,
+			"temp": 11.9
+		},
+		{
+			"datetime": "1985-10-16",
+			"tempmax": 16.2,
+			"tempmin": 10.0,
+			"temp": 12.7
+		},
+		{
+			"datetime": "1985-10-17",
+			"tempmax": 13.6,
+			"tempmin": 8.9,
+			"temp": 11.1
+		},
+		{
+			"datetime": "1985-10-18",
+			"tempmax": 14.0,
+			"tempmin": 5.7,
+			"temp": 9.9
+		},
+		{
+			"datetime": "1985-10-19",
+			"tempmax": 14.8,
+			"tempmin": 9.2,
+			"temp": 11.6
+		},
+		{
+			"datetime": "1985-10-20",
+			"tempmax": 14.7,
+			"tempmin": 4.4,
+			"temp": 9.5
+		},
+		{
+			"datetime": "1985-10-21",
+			"tempmax": 15.0,
+			"tempmin": 2.4,
+			"temp": 8.8
+		},
+		{
+			"datetime": "1985-10-22",
+			"tempmax": 14.1,
+			"tempmin": 3.5,
+			"temp": 8.3
+		},
+		{
+			"datetime": "1985-10-23",
+			"tempmax": 13.7,
+			"tempmin": 3.6,
+			"temp": 8.5
+		},
+		{
+			"datetime": "1985-10-24",
+			"tempmax": 13.0,
+			"tempmin": 3.5,
+			"temp": 8.2
+		},
+		{
+			"datetime": "1985-10-25",
+			"tempmax": 15.3,
+			"tempmin": 1.5,
+			"temp": 8.0
+		},
+		{
+			"datetime": "1985-10-26",
+			"tempmax": 15.4,
+			"tempmin": 2.7,
+			"temp": 8.8
+		},
+		{
+			"datetime": "1985-10-27",
+			"tempmax": 10.6,
+			"tempmin": 2.4,
+			"temp": 6.4
+		},
+		{
+			"datetime": "1985-10-28",
+			"tempmax": 6.9,
+			"tempmin": 1.4,
+			"temp": 4.0
+		},
+		{
+			"datetime": "1985-10-29",
+			"tempmax": 4.3,
+			"tempmin": -0.2,
+			"temp": 2.8
+		},
+		{
+			"datetime": "1985-10-30",
+			"tempmax": 2.9,
+			"tempmin": -1.1,
+			"temp": 1.2
+		},
+		{
+			"datetime": "1985-10-31",
+			"tempmax": 6.3,
+			"tempmin": 1.4,
+			"temp": 3.7
+		},
+		{
+			"datetime": "1985-11-01",
+			"tempmax": 7.7,
+			"tempmin": 3.1,
+			"temp": 5.5
+		},
+		{
+			"datetime": "1985-11-02",
+			"tempmax": 8.3,
+			"tempmin": 4.6,
+			"temp": 6.2
+		},
+		{
+			"datetime": "1985-11-03",
+			"tempmax": 9.0,
+			"tempmin": -0.5,
+			"temp": 4.2
+		},
+		{
+			"datetime": "1985-11-04",
+			"tempmax": 11.4,
+			"tempmin": -0.6,
+			"temp": 5.1
+		},
+		{
+			"datetime": "1985-11-05",
+			"tempmax": 15.5,
+			"tempmin": 7.6,
+			"temp": 12.7
+		},
+		{
+			"datetime": "1985-11-06",
+			"tempmax": 9.9,
+			"tempmin": 5.2,
+			"temp": 7.2
+		},
+		{
+			"datetime": "1985-11-07",
+			"tempmax": 12.7,
+			"tempmin": 4.5,
+			"temp": 9.0
+		},
+		{
+			"datetime": "1985-11-08",
+			"tempmax": 16.3,
+			"tempmin": 9.4,
+			"temp": 13.3
+		},
+		{
+			"datetime": "1985-11-09",
+			"tempmax": 15.6,
+			"tempmin": 11.8,
+			"temp": 14.1
+		},
+		{
+			"datetime": "1985-11-10",
+			"tempmax": 12.2,
+			"tempmin": 0.5,
+			"temp": 7.6
+		},
+		{
+			"datetime": "1985-11-11",
+			"tempmax": 6.7,
+			"tempmin": -1.6,
+			"temp": 2.7
+		},
+		{
+			"datetime": "1985-11-12",
+			"tempmax": 5.0,
+			"tempmin": -0.2,
+			"temp": 2.3
+		},
+		{
+			"datetime": "1985-11-13",
+			"tempmax": 6.5,
+			"tempmin": -0.3,
+			"temp": 2.7
+		},
+		{
+			"datetime": "1985-11-14",
+			"tempmax": 7.6,
+			"tempmin": -2.6,
+			"temp": 2.2
+		},
+		{
+			"datetime": "1985-11-15",
+			"tempmax": 9.2,
+			"tempmin": 1.0,
+			"temp": 4.4
+		},
+		{
+			"datetime": "1985-11-16",
+			"tempmax": 9.0,
+			"tempmin": 1.4,
+			"temp": 4.8
+		},
+		{
+			"datetime": "1985-11-17",
+			"tempmax": 3.9,
+			"tempmin": -1.2,
+			"temp": 1.4
+		},
+		{
+			"datetime": "1985-11-18",
+			"tempmax": 1.9,
+			"tempmin": -2.5,
+			"temp": -0.7
+		},
+		{
+			"datetime": "1985-11-19",
+			"tempmax": -0.9,
+			"tempmin": -3.1,
+			"temp": -2.3
+		},
+		{
+			"datetime": "1985-11-20",
+			"tempmax": -1.4,
+			"tempmin": -2.7,
+			"temp": -2.1
+		},
+		{
+			"datetime": "1985-11-21",
+			"tempmax": -0.4,
+			"tempmin": -2.3,
+			"temp": -1.6
+		},
+		{
+			"datetime": "1985-11-22",
+			"tempmax": 1.9,
+			"tempmin": -1.4,
+			"temp": 0.3
+		},
+		{
+			"datetime": "1985-11-23",
+			"tempmax": 4.3,
+			"tempmin": 1.8,
+			"temp": 2.7
+		},
+		{
+			"datetime": "1985-11-24",
+			"tempmax": 2.4,
+			"tempmin": -1.3,
+			"temp": 0.4
+		},
+		{
+			"datetime": "1985-11-25",
+			"tempmax": 1.6,
+			"tempmin": -1.6,
+			"temp": -0.2
+		},
+		{
+			"datetime": "1985-11-26",
+			"tempmax": 1.4,
+			"tempmin": -1.6,
+			"temp": 0.0
+		},
+		{
+			"datetime": "1985-11-27",
+			"tempmax": 3.2,
+			"tempmin": -1.3,
+			"temp": 1.1
+		},
+		{
+			"datetime": "1985-11-28",
+			"tempmax": 5.6,
+			"tempmin": 0.6,
+			"temp": 2.3
+		},
+		{
+			"datetime": "1985-11-29",
+			"tempmax": 7.5,
+			"tempmin": 0.8,
+			"temp": 4.0
+		},
+		{
+			"datetime": "1985-11-30",
+			"tempmax": 10.5,
+			"tempmin": 6.0,
+			"temp": 8.2
+		},
+		{
+			"datetime": "1985-12-01",
+			"tempmax": 14.0,
+			"tempmin": 7.5,
+			"temp": 10.2
+		},
+		{
+			"datetime": "1985-12-02",
+			"tempmax": 14.9,
+			"tempmin": 8.8,
+			"temp": 11.9
+		},
+		{
+			"datetime": "1985-12-03",
+			"tempmax": 12.8,
+			"tempmin": 10.3,
+			"temp": 11.6
+		},
+		{
+			"datetime": "1985-12-04",
+			"tempmax": 14.1,
+			"tempmin": 10.2,
+			"temp": 11.9
+		},
+		{
+			"datetime": "1985-12-05",
+			"tempmax": 14.7,
+			"tempmin": 9.6,
+			"temp": 11.5
+		},
+		{
+			"datetime": "1985-12-06",
+			"tempmax": 11.0,
+			"tempmin": 7.6,
+			"temp": 9.2
+		},
+		{
+			"datetime": "1985-12-07",
+			"tempmax": 10.8,
+			"tempmin": 8.4,
+			"temp": 10.0
+		},
+		{
+			"datetime": "1985-12-08",
+			"tempmax": 9.6,
+			"tempmin": 7.1,
+			"temp": 8.4
+		},
+		{
+			"datetime": "1985-12-09",
+			"tempmax": 8.9,
+			"tempmin": 3.2,
+			"temp": 7.1
+		},
+		{
+			"datetime": "1985-12-10",
+			"tempmax": 3.5,
+			"tempmin": 0.9,
+			"temp": 2.3
+		},
+		{
+			"datetime": "1985-12-11",
+			"tempmax": 4.1,
+			"tempmin": 1.1,
+			"temp": 2.8
+		},
+		{
+			"datetime": "1985-12-12",
+			"tempmax": 1.6,
+			"tempmin": -1.4,
+			"temp": 0.2
+		},
+		{
+			"datetime": "1985-12-13",
+			"tempmax": 4.2,
+			"tempmin": -1.4,
+			"temp": 1.1
+		},
+		{
+			"datetime": "1985-12-14",
+			"tempmax": 10.4,
+			"tempmin": 4.2,
+			"temp": 7.5
+		},
+		{
+			"datetime": "1985-12-15",
+			"tempmax": 10.6,
+			"tempmin": 5.8,
+			"temp": 8.7
+		},
+		{
+			"datetime": "1985-12-16",
+			"tempmax": 8.1,
+			"tempmin": 5.8,
+			"temp": 7.2
+		},
+		{
+			"datetime": "1985-12-17",
+			"tempmax": 7.4,
+			"tempmin": 3.1,
+			"temp": 5.9
+		},
+		{
+			"datetime": "1985-12-18",
+			"tempmax": 9.4,
+			"tempmin": 4.2,
+			"temp": 6.7
+		},
+		{
+			"datetime": "1985-12-19",
+			"tempmax": 9.3,
+			"tempmin": 1.9,
+			"temp": 5.3
+		},
+		{
+			"datetime": "1985-12-20",
+			"tempmax": 7.6,
+			"tempmin": 3.8,
+			"temp": 6.0
+		},
+		{
+			"datetime": "1985-12-21",
+			"tempmax": 4.6,
+			"tempmin": 0.5,
+			"temp": 2.5
+		},
+		{
+			"datetime": "1985-12-22",
+			"tempmax": 9.8,
+			"tempmin": 0.5,
+			"temp": 5.2
+		},
+		{
+			"datetime": "1985-12-23",
+			"tempmax": 8.0,
+			"tempmin": 5.4,
+			"temp": 6.7
+		},
+		{
+			"datetime": "1985-12-24",
+			"tempmax": 9.1,
+			"tempmin": 5.2,
+			"temp": 6.4
+		},
+		{
+			"datetime": "1985-12-25",
+			"tempmax": 11.1,
+			"tempmin": 7.3,
+			"temp": 9.1
+		},
+		{
+			"datetime": "1985-12-26",
+			"tempmax": 10.1,
+			"tempmin": 6.8,
+			"temp": 8.5
+		},
+		{
+			"datetime": "1985-12-27",
+			"tempmax": 6.8,
+			"tempmin": 1.4,
+			"temp": 3.8
+		},
+		{
+			"datetime": "1985-12-28",
+			"tempmax": 1.8,
+			"tempmin": -0.6,
+			"temp": 0.7
+		},
+		{
+			"datetime": "1985-12-29",
+			"tempmax": 1.6,
+			"tempmin": -4.2,
+			"temp": -1.1
+		},
+		{
+			"datetime": "1985-12-30",
+			"tempmax": 2.6,
+			"tempmin": -7.0,
+			"temp": -2.8
+		},
+		{
+			"datetime": "1985-12-31",
+			"tempmax": -3.9,
+			"tempmin": -8.8,
+			"temp": -6.4
+		}
+	]
+}

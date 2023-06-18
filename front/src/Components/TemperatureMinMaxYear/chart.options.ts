@@ -12,7 +12,7 @@ export const options = {
 		title: {
 			display: true,
 			textColor: textColor,
-			text: "Températures de l'année",
+			text: 'Températures minimum et maxium par année',
 		},
 		annotation: {
 			annotations: {

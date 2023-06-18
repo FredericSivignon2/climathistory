@@ -11,10 +11,18 @@ import {
 } from 'chart.js'
 
 import { QueryClient, useQuery, useQueryClient } from '@tanstack/react-query'
-import { TemperatureHistoryDto, TemperatureHistoryProps } from './types'
+import { TemperatureHistoryProps } from './types'
 import { DatePicker } from '@mui/x-date-pickers'
 import { getTemperatureHistory } from '../Api/api'
-import { CircularProgress, Container, MenuItem, Select, SelectChangeEvent, ThemeProvider } from '@mui/material'
+import {
+	CircularProgress,
+	Container,
+	FormControl,
+	MenuItem,
+	Select,
+	SelectChangeEvent,
+	ThemeProvider,
+} from '@mui/material'
 import { getRandomInt, isNil } from '../utils'
 import { Chart } from 'chart.js'
 import { Line } from 'react-chartjs-2'
@@ -27,13 +35,11 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 ChartJS.register(annotationPlugin)
 
 const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHistoryProps) => {
-	const [selectedYear, setSelectedYear] = useState<number>(2022)
+	const [selectedYear, setSelectedYear] = useState<number>(props.defaultYear)
 	let years = []
-	for (let year = 1973; year <= 2022; year++) {
+	for (let year = 1973; year <= 2023; year++) {
 		years.push(year)
 	}
-
-	console.log('[201] props.location: ' + props.location)
 
 	const {
 		isLoading,
@@ -41,8 +47,8 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 		data: temperatureHistoryData,
 		error,
 	} = useQuery({
-		queryKey: ['callTempHisto', selectedYear, props.location],
-		queryFn: () => getTemperatureHistory(props.location, selectedYear),
+		queryKey: ['callTempHisto', selectedYear, props.town],
+		queryFn: () => getTemperatureHistory(props.country, props.town, selectedYear),
 	})
 
 	const handleChange = (event: SelectChangeEvent) => {
@@ -54,34 +60,38 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 	// <DatePicker />
 	return (
 		<ThemeProvider theme={theme}>
-			<Container sx={{ bgcolor: 'background.paper', color: 'text.primary' }}>
-				<Select
-					labelId='demo-simple-select-label'
-					id='demo-simple-select'
-					value={selectedYear.toString()}
-					label='Année'
-					sx={{
-						bgcolor: 'background.paper',
-						color: 'text.primary',
-						'& .MuiOutlinedInput-notchedOutline': {
-							borderColor: 'text.primary',
-						},
-					}}
-					onChange={handleChange}>
-					{years.map((year) => (
-						<MenuItem
-							key={year}
-							value={year}>
-							{year}
-						</MenuItem>
-					))}
-				</Select>
+			<Container sx={{ bgcolor: 'background.default', color: 'text.primary' }}>
+				<FormControl
+					sx={{ m: 1, minWidth: 120 }}
+					size='small'>
+					<Select
+						labelId='demo-simple-select-label'
+						id='demo-simple-select'
+						value={selectedYear.toString()}
+						label='Année'
+						sx={{
+							bgcolor: 'background.default',
+							color: 'text.primary',
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'text.primary',
+							},
+						}}
+						onChange={handleChange}>
+						{years.map((year) => (
+							<MenuItem
+								key={year}
+								value={year}>
+								{year}
+							</MenuItem>
+						))}
+					</Select>
+				</FormControl>
 			</Container>
 			<Container
 				sx={{
-					minHeight: '600px',
+					minHeight: '800px',
 					display: 'flex',
-					bgColor: 'background.paper',
+					bgColor: 'background.default',
 				}}>
 				{isLoading ? (
 					<CircularProgress />

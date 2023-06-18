@@ -1,58 +1,51 @@
-import { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import { FilterPanelProps } from './types'
 import { ThemeProvider } from '@emotion/react'
-import { theme } from '../theme'
-import { CircularProgress, Container, MenuItem, Select, SelectChangeEvent } from '@mui/material'
-import { useQuery } from '@tanstack/react-query'
-import { getAllLocations } from '../Api/api'
+import { sxFilterPanel, theme } from '../theme'
+import { Box, CircularProgress, Container, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import { useMutation, useQuery } from '@tanstack/react-query'
+import { getAllCountries, getAllTownsByCountry as getAllTownsByCountry } from '../Api/api'
 import { isNil } from '../utils'
+import CountrySelector from './CountrySelector'
+import { GlobalData } from '../types'
+import { GlobalContext } from '../../App'
+import TownSelector from './TownSelector'
+// const [selectedCountry, setSelectedCountry] = useState<string>(props.defaultCountry)
+// const [selectedLocation, setSelectedLocation] = useState<string>(props.defaultTown)
 
 const FilterPanel: FC<FilterPanelProps> = (props: FilterPanelProps) => {
-	const [selectedLocation, setSelectedLocation] = useState<string>(props.defaultTown)
+	const { country, setCountry, town, setTown } = useContext<GlobalData>(GlobalContext)
 
-	const {
-		isLoading,
-		isError,
-		data: allLocations,
-		error,
-	} = useQuery({
-		queryKey: ['allTowns'],
-		queryFn: () => getAllLocations(),
-	})
+	const handleCountryChange = (newCountry: string) => {
+		setCountry(newCountry)
+		setTown('')
+	}
 
-	const handleChange = (event: SelectChangeEvent) => {
-		setSelectedLocation(event.target.value)
-		console.log('[301] New location: ' + event.target.value)
-		props.onLocationChange(event.target.value)
+	const handleTownChange = (newTown: string) => {
+		setTown(newTown)
 	}
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Container sx={{ bgcolor: 'background.paper', color: 'text.primary' }}>
-				{isNil(allLocations) ? null : (
-					<Select
-						labelId='demo-simple-select-label'
-						id='demo-simple-select'
-						value={selectedLocation}
-						label='Ville'
-						sx={{
-							bgcolor: 'background.paper',
-							color: 'text.primary',
-							'& .MuiOutlinedInput-notchedOutline': {
-								borderColor: 'text.primary',
-							},
-						}}
-						onChange={handleChange}>
-						{allLocations.map((town: string) => (
-							<MenuItem
-								key={town}
-								value={town}>
-								{town}
-							</MenuItem>
-						))}
-					</Select>
-				)}
-			</Container>
+			<Box sx={sxFilterPanel}>
+				<FormControl
+					sx={{ m: 1, minWidth: 120 }}
+					size='small'>
+					<CountrySelector
+						defaultCountry={country}
+						onSelectedCountryChange={handleCountryChange}
+					/>
+				</FormControl>
+				<FormControl
+					sx={{ m: 1, minWidth: 120 }}
+					size='small'>
+					<TownSelector
+						country={country}
+						defaultTown={town}
+						onSelectedTownChange={handleTownChange}
+					/>
+				</FormControl>
+			</Box>
 		</ThemeProvider>
 	)
 }

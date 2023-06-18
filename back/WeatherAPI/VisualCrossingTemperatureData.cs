@@ -7,11 +7,11 @@ namespace WeatherAPI
     {
         public VisualCrossingData(string location)
         {
-            Location = location;
+            Town = location;
             Temperatures = new List<VisualCrossingTemperatureData>();
         }
 
-        public string Location { get; private set; }
+        public string Town { get; private set; }
         public IList<VisualCrossingTemperatureData> Temperatures { get; private set; }
     }
 

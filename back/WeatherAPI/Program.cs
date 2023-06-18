@@ -25,14 +25,29 @@ app.UseCors("MyCorsPolicy");
 //{
 //    endpoints.MapControllers();
 //});
-app.MapGet("/{locationName}/temperatures/{year}", (string locationName, int year) =>
+app.MapGet("/{countryName}/{townName}/temperatures/{year}", (string countryName, string townName, int year) =>
 {
-    return data.GetTemperaturesDataFrom(locationName, year);
+    return data.GetTemperaturesDataFrom(countryName, townName, year);
 });
 
-app.MapGet("/alllocations", () =>
+app.MapGet("/{countryName}/{townName}/average-temperatures-per-year", (string countryName, string townName) =>
 {
-    return data.GetAllLocations();
+    return data.GetAverageTemperaturesDataFrom(countryName, townName);
+});
+
+app.MapGet("/{countryName}/{townName}/minmax-temperatures-per-year", (string countryName, string townName) =>
+{
+    return data.GetMinMaxTemperaturesDataFrom(countryName, townName);
+});
+
+app.MapGet("/{countryName}/alltowns", (string countryName) =>
+{
+    return data.GetAllLocationsByCountry(countryName);
+});
+
+app.MapGet("/allcountries", () =>
+{
+    return data.GetAllCountries();
 });
 
 app.Run();

@@ -12,7 +12,7 @@ export const options = {
 		title: {
 			display: true,
 			textColor: textColor,
-			text: "Températures de l'année",
+			text: 'Moyenne des températures par année',
 		},
 		annotation: {
 			annotations: {
@@ -62,10 +62,10 @@ export const options = {
 			},
 		},
 	],
-	scales: {
-		y: {
-			min: -20,
-			max: 50,
-		},
-	},
+	// scales: {
+	// 	y: {
+	// 		min: -5,
+	// 		max: 35,
+	// 	},
+	// },
 }

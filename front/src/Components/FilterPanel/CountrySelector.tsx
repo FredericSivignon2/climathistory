@@ -1,13 +1,23 @@
 import { FC, ReactElement, useContext, useState } from 'react'
 import { CountrySelectorProps, FilterPanelProps } from './types'
 import { ThemeProvider } from '@emotion/react'
-import { theme } from '../theme'
-import { CircularProgress, Container, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material'
+import { sxSelect, sxSelectContainer, theme } from '../theme'
+import {
+	CircularProgress,
+	Container,
+	FormControl,
+	InputLabel,
+	MenuItem,
+	Select,
+	SelectChangeEvent,
+	Typography,
+} from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
 import { getAllCountries, getAllTownsByCountry } from '../Api/api'
 import { isNil } from '../utils'
 import { GlobalData } from '../types'
 import { GlobalContext } from '../../App'
+import { defaultFormControlVariant } from '../constants'
 
 const CountrySelector: FC<CountrySelectorProps> = (props: CountrySelectorProps): ReactElement | null => {
 	const [selectedCountry, setSelectedCountry] = useState<string>(props.defaultCountry)
@@ -29,29 +39,26 @@ const CountrySelector: FC<CountrySelectorProps> = (props: CountrySelectorProps):
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Container sx={{ bgcolor: 'background.default', color: 'text.primary' }}>
+			<Container sx={sxSelectContainer}>
 				{isNil(allCountries) ? null : (
-					<Select
-						labelId='demo-simple-select-label'
-						id='demo-simple-select'
-						value={selectedCountry}
-						label='Pays'
-						sx={{
-							backgroundColor: 'background.default',
-							color: 'text.primary',
-							'& .MuiOutlinedInput-notchedOutline': {
-								borderColor: 'text.primary',
-							},
-						}}
-						onChange={handleChange}>
-						{allCountries.map((country: string) => (
-							<MenuItem
-								key={country}
-								value={country}>
-								{country}
-							</MenuItem>
-						))}
-					</Select>
+					<FormControl variant={defaultFormControlVariant}>
+						<InputLabel id='labelCountry'>Pays</InputLabel>
+						<Select
+							labelId='labelCountry'
+							id='selectCountry'
+							value={selectedCountry}
+							label='Pays'
+							sx={sxSelect}
+							onChange={handleChange}>
+							{allCountries.map((country: string) => (
+								<MenuItem
+									key={country}
+									value={country}>
+									{country}
+								</MenuItem>
+							))}
+						</Select>
+					</FormControl>
 				)}
 			</Container>
 		</ThemeProvider>

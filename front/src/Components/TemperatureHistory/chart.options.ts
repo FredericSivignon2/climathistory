@@ -1,4 +1,4 @@
-import { maxTempColor, minTempColor, textColor } from '../theme'
+import { maxTempColor, minTempColor, textPrimaryColor } from '../theme'
 
 export const options = {
 	responsive: true,
@@ -7,11 +7,11 @@ export const options = {
 	plugins: {
 		legend: {
 			position: 'top' as const,
-			textColor: textColor,
+			textColor: textPrimaryColor,
 		},
 		title: {
 			display: true,
-			textColor: textColor,
+			textColor: textPrimaryColor,
 			text: "Températures de l'année",
 		},
 		annotation: {

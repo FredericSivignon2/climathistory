@@ -18,6 +18,7 @@ import {
 	CircularProgress,
 	Container,
 	FormControl,
+	InputLabel,
 	MenuItem,
 	Select,
 	SelectChangeEvent,
@@ -29,13 +30,15 @@ import { Line } from 'react-chartjs-2'
 import { getChartData } from './data.mapper'
 import annotationPlugin from 'chartjs-plugin-annotation'
 import { options } from './chart.options'
-import { theme } from '../theme'
+import { sxSelect, sxSelectContainer, theme } from '../theme'
+import { defaultFormControlVariant } from '../constants'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 ChartJS.register(annotationPlugin)
 
 const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHistoryProps) => {
 	const [selectedYear, setSelectedYear] = useState<number>(props.defaultYear)
+	const [selectedYear2, setSelectedYear2] = useState<number>(1973)
 	let years = []
 	for (let year = 1973; year <= 2023; year++) {
 		years.push(year)
@@ -54,28 +57,24 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 	const handleChange = (event: SelectChangeEvent) => {
 		setSelectedYear(Number(event.target.value))
 	}
+	const handleChange2 = (event: SelectChangeEvent) => {
+		setSelectedYear2(Number(event.target.value))
+	}
 
 	const errorMessage = error instanceof Error ? error.message : 'Unknown error'
 	const data = temperatureHistoryData ? getChartData(temperatureHistoryData) : { labels: [], datasets: [] }
 	// <DatePicker />
 	return (
 		<ThemeProvider theme={theme}>
-			<Container sx={{ bgcolor: 'background.default', color: 'text.primary' }}>
-				<FormControl
-					sx={{ m: 1, minWidth: 120 }}
-					size='small'>
+			<FormControl variant={defaultFormControlVariant}>
+				<Container sx={sxSelectContainer}>
+					<InputLabel id='labelYearOne'>Année 1</InputLabel>
 					<Select
-						labelId='demo-simple-select-label'
-						id='demo-simple-select'
+						labelId='labelYearOne'
+						id='selectYearOne'
 						value={selectedYear.toString()}
-						label='Année'
-						sx={{
-							bgcolor: 'background.default',
-							color: 'text.primary',
-							'& .MuiOutlinedInput-notchedOutline': {
-								borderColor: 'text.primary',
-							},
-						}}
+						label='Année 1'
+						sx={sxSelect}
 						onChange={handleChange}>
 						{years.map((year) => (
 							<MenuItem
@@ -85,8 +84,24 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 							</MenuItem>
 						))}
 					</Select>
-				</FormControl>
-			</Container>
+					<InputLabel id='labelYearTwo'>Année 2</InputLabel>
+					<Select
+						labelId='labelYearTwo'
+						id='selectYearTwo'
+						value={selectedYear2.toString()}
+						label='Année 2'
+						sx={sxSelect}
+						onChange={handleChange2}>
+						{years.map((year) => (
+							<MenuItem
+								key={year}
+								value={year}>
+								{year}
+							</MenuItem>
+						))}
+					</Select>
+				</Container>
+			</FormControl>
 			<Container
 				sx={{
 					minHeight: '800px',

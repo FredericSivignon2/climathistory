@@ -28,16 +28,6 @@ const TabPanelHistory: FC<TabPanelHistoryProps> = (props: TabPanelHistoryProps) 
 							town={town}
 							defaultYear={firstYear}></TemperatureHistory>
 					</Grid>
-					<Grid
-						item
-						sm={12}
-						lg={12}
-						xl={6}>
-						<TemperatureHistory
-							country={country}
-							town={town}
-							defaultYear={lastYear}></TemperatureHistory>
-					</Grid>
 				</Grid>
 			)}
 		</Box>

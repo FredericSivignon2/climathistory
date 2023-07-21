@@ -114,6 +114,7 @@ namespace WeatherAPI
             foreach (var countryDirectory in countryDirectories)
             {
                 string country = countryDirectory.Substring(countryDirectory.LastIndexOf('\\') + 1);
+                Console.Write($"    -> Loading data for {country}");
                 var countryData = new Dictionary<string, VisualCrossingData>();
                 _data.Add(country, countryData);
 
@@ -123,7 +124,7 @@ namespace WeatherAPI
                 {
                     string location = locationDirectory.Substring(locationDirectory.LastIndexOf('\\') + 1);
                     VisualCrossingData vcData = new VisualCrossingData(location);
-
+                    Console.Write(".");
                     var dataTypeDirectories = Directory.EnumerateDirectories(locationDirectory, "*", SearchOption.TopDirectoryOnly);
                     foreach (var dataTypeDirectory in dataTypeDirectories)
                     {
@@ -139,6 +140,8 @@ namespace WeatherAPI
                     }
                     countryData.Add(location, vcData);
                 }
+
+                Console.WriteLine();
             }
             Console.WriteLine($"  -> {locationCount} locations found and {fileCount} json files read.");
         }

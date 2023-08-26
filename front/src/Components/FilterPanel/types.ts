@@ -1,6 +1,8 @@
 import { SelectChangeEvent } from '@mui/material'
+import { ReactNode } from 'react'
 
 export interface FilterPanelProps {
+	children: any
 	defaultCountry: string
 	defaultTown: string | null
 }

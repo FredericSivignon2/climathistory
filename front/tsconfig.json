@@ -15,10 +15,9 @@
 		"isolatedModules": true,
 		"noEmit": true,
 		"jsx": "react-jsx",
-		"baseUrl": "./",
-		"rootDirs": ["src"],
+		"baseUrl": ".",
 		"paths": {
-			"@WeatherModules/*": ["src/WeatherModules/index.ts"]
+			"@Assets/*": ["./src/Assets/*"]
 		}
 	},
 	"include": ["src"]

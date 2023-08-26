@@ -1,7 +1,7 @@
 import { FC, ReactElement, useContext, useState } from 'react'
 import { TownSelectorProps } from './types'
 import { ThemeProvider } from '@emotion/react'
-import { sxSelect, sxSelectContainer, theme } from '../theme'
+import { sxLocationSelectContainer, sxSelect, sxSelectContainer, theme } from '../theme'
 import {
 	CircularProgress,
 	Container,
@@ -39,7 +39,7 @@ const TownSelector: FC<TownSelectorProps> = (props: TownSelectorProps): ReactEle
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Container sx={sxSelectContainer}>
+			<Container sx={sxLocationSelectContainer}>
 				<FormControl variant={defaultFormControlVariant}>
 					<InputLabel id='labelTown'>Ville</InputLabel>
 					<Select
@@ -49,6 +49,7 @@ const TownSelector: FC<TownSelectorProps> = (props: TownSelectorProps): ReactEle
 						labelId='labelTown'
 						sx={sxSelect}
 						color='error'
+						size='small'
 						onChange={handleChange}>
 						{isNil(allTowns) ? (
 							<MenuItem

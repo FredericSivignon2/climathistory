@@ -7,12 +7,13 @@ import { GlobalData } from '../types'
 import { isNil } from '../utils'
 import { TemperatureAverageYear } from '../TemperatureAverageYear'
 import { TemperatureMinMaxYear } from '../TemperatureMinMaxYear'
+import { sxTabPanelBox } from '../theme'
 
 const TabPanelStatistics: FC<TabPanelStatisticsProps> = (props: TabPanelStatisticsProps) => {
 	const { country, town } = useContext<GlobalData>(GlobalContext)
 
 	return (
-		<Box>
+		<Box sx={sxTabPanelBox}>
 			{isNil(town) ? null : (
 				<Grid
 					container

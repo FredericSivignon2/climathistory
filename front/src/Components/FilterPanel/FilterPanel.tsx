@@ -1,7 +1,7 @@
 import { FC, useContext, useState } from 'react'
 import { FilterPanelProps } from './types'
 import { ThemeProvider } from '@emotion/react'
-import { sxFilterPanel, theme } from '../theme'
+import { sxFilterAndChartContainer, sxFilterPanel, theme } from '../theme'
 import { Box, CircularProgress, Container, FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { getAllCountries, getAllTownsByCountry as getAllTownsByCountry } from '../Api/api'
@@ -27,25 +27,28 @@ const FilterPanel: FC<FilterPanelProps> = (props: FilterPanelProps) => {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Box sx={sxFilterPanel}>
-				<FormControl
-					sx={{ m: 1, minWidth: 120 }}
-					size='small'>
-					<CountrySelector
-						defaultCountry={country}
-						onSelectedCountryChange={handleCountryChange}
-					/>
-				</FormControl>
-				<FormControl
-					sx={{ m: 1, minWidth: 120 }}
-					size='small'>
-					<TownSelector
-						country={country}
-						defaultTown={town}
-						onSelectedTownChange={handleTownChange}
-					/>
-				</FormControl>
-			</Box>
+			<Container sx={sxFilterAndChartContainer}>
+				<Box sx={sxFilterPanel}>
+					<FormControl
+						sx={{ m: 1, minWidth: 120 }}
+						size='small'>
+						<CountrySelector
+							defaultCountry={country}
+							onSelectedCountryChange={handleCountryChange}
+						/>
+					</FormControl>
+					<FormControl
+						sx={{ m: 1, minWidth: 120 }}
+						size='small'>
+						<TownSelector
+							country={country}
+							defaultTown={town}
+							onSelectedTownChange={handleTownChange}
+						/>
+					</FormControl>
+				</Box>
+				{props.children}
+			</Container>
 		</ThemeProvider>
 	)
 }

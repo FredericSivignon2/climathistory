@@ -5,14 +5,16 @@ import { TemperatureHistory } from '../TemperatureHistory'
 import { GlobalContext } from 'src/App'
 import { GlobalData } from '../types'
 import { isNil } from '../utils'
+import { maxYear, minYear } from '../constants'
+import { sxTabPanelBox } from '../theme'
 
 const TabPanelHistory: FC<TabPanelHistoryProps> = (props: TabPanelHistoryProps) => {
 	const { country, town } = useContext<GlobalData>(GlobalContext)
-	const firstYear = 1973
-	const lastYear = 2022
+	const firstYear = minYear
+	const lastYear = maxYear
 
 	return (
-		<Box>
+		<Box sx={sxTabPanelBox}>
 			{isNil(town) ? null : (
 				<Grid
 					container

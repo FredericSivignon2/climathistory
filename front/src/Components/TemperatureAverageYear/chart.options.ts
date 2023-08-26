@@ -1,4 +1,5 @@
-import { maxTempColor, minTempColor, textPrimaryColor } from '../theme'
+import { Theme } from '@mui/material'
+import { maxTempColor, minTempColor } from '../theme'
 
 export const options = {
 	responsive: true,
@@ -7,11 +8,11 @@ export const options = {
 	plugins: {
 		legend: {
 			position: 'top' as const,
-			textColor: textPrimaryColor,
+			textColor: (theme: Theme) => theme.palette.text.primary,
 		},
 		title: {
 			display: true,
-			textColor: textPrimaryColor,
+			textColor: (theme: Theme) => theme.palette.text.primary,
 			text: 'Moyenne des températures par année',
 		},
 		annotation: {

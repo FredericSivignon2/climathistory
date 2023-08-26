@@ -10,72 +10,107 @@ import {
 	Legend,
 } from 'chart.js'
 
-import { QueryClient, useQuery, useQueryClient } from '@tanstack/react-query'
+import { QueryClient, useQueries, useQuery, useQueryClient } from '@tanstack/react-query'
 import { TemperatureHistoryProps } from './types'
 import { DatePicker } from '@mui/x-date-pickers'
 import { getTemperatureHistory } from '../Api/api'
 import {
+	Checkbox,
 	CircularProgress,
 	Container,
 	FormControl,
+	FormControlLabel,
 	InputLabel,
 	MenuItem,
 	Select,
 	SelectChangeEvent,
+	TextField,
 	ThemeProvider,
 } from '@mui/material'
-import { getRandomInt, isNil } from '../utils'
+import { getDefaultYearToCompare, getRandomInt, isNil } from '../utils'
 import { Chart } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import { getChartData } from './data.mapper'
 import annotationPlugin from 'chartjs-plugin-annotation'
 import { options } from './chart.options'
-import { sxSelect, sxSelectContainer, theme } from '../theme'
-import { defaultFormControlVariant } from '../constants'
+import { sxChartContainer, sxCompareCheckBox, sxSelect, sxSelectContainer, sxTextField, theme } from '../theme'
+import { defaultFormControlVariant, maxYear, minYear } from '../constants'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 ChartJS.register(annotationPlugin)
 
 const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHistoryProps) => {
 	const [selectedYear, setSelectedYear] = useState<number>(props.defaultYear)
-	const [selectedYear2, setSelectedYear2] = useState<number>(1973)
+	const [selectedYearToCompare, setSelectedYearToCompare] = useState<number>(getDefaultYearToCompare(props.defaultYear))
+	const [compareChecked, setCompareChecked] = useState<boolean>(false)
 	let years = []
-	for (let year = 1973; year <= 2023; year++) {
+	for (let year = minYear; year <= maxYear; year++) {
 		years.push(year)
 	}
 
-	const {
-		isLoading,
-		isError,
-		data: temperatureHistoryData,
-		error,
-	} = useQuery({
-		queryKey: ['callTempHisto', selectedYear, props.town],
-		queryFn: () => getTemperatureHistory(props.country, props.town, selectedYear),
+	const selectedYears = [selectedYear]
+	if (compareChecked) {
+		selectedYears.push(selectedYearToCompare)
+	}
+
+	// const {
+	// 	isLoading,
+	// 	isError,
+	// 	data: temperatureHistoryData,
+	// 	error,
+	// } = useQuery({
+	// 	queryKey: ['callTempHisto', props.country, props.town, selectedYear],
+	// 	queryFn: () => getTemperatureHistory(props.country, props.town, selectedYear),
+	// })
+
+	const results = useQueries({
+		queries: selectedYears.map((year) => ({
+			queryKey: ['callTempHisto', props.country, props.town, year],
+			queryFn: () => getTemperatureHistory(props.country, props.town, year),
+		})),
 	})
 
-	const handleChange = (event: SelectChangeEvent) => {
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setSelectedYear(Number(event.target.value))
 	}
-	const handleChange2 = (event: SelectChangeEvent) => {
-		setSelectedYear2(Number(event.target.value))
+	const handleChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setSelectedYearToCompare(Number(event.target.value))
 	}
 
+	const handleCompareChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setCompareChecked(event.target.checked)
+	}
+
+	let isLoading = false,
+		isError = false,
+		error: unknown
+	results.forEach((result) => {
+		isLoading = isLoading || result.isLoading
+		isError = isError || result.isError
+		if (isNil(error)) {
+			error = result.error
+		}
+	})
 	const errorMessage = error instanceof Error ? error.message : 'Unknown error'
-	const data = temperatureHistoryData ? getChartData(temperatureHistoryData) : { labels: [], datasets: [] }
+	const data = results[0].data
+		? getChartData(results[0].data, results.length > 1 ? results[1].data : undefined)
+		: { labels: [], datasets: [] }
 	// <DatePicker />
 	return (
 		<ThemeProvider theme={theme}>
 			<FormControl variant={defaultFormControlVariant}>
 				<Container sx={sxSelectContainer}>
-					<InputLabel id='labelYearOne'>Année 1</InputLabel>
-					<Select
-						labelId='labelYearOne'
-						id='selectYearOne'
-						value={selectedYear.toString()}
-						label='Année 1'
-						sx={sxSelect}
-						onChange={handleChange}>
+					<TextField
+						id='standard-select-currency'
+						select
+						label='Année'
+						size='small'
+						defaultValue={selectedYear.toString()}
+						onChange={handleChange}
+						variant={defaultFormControlVariant}
+						sx={sxTextField}
+						// helperText="Sélectionnez l'année "
+					>
 						{years.map((year) => (
 							<MenuItem
 								key={year}
@@ -83,15 +118,32 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 								{year}
 							</MenuItem>
 						))}
-					</Select>
-					<InputLabel id='labelYearTwo'>Année 2</InputLabel>
-					<Select
-						labelId='labelYearTwo'
-						id='selectYearTwo'
-						value={selectedYear2.toString()}
-						label='Année 2'
-						sx={sxSelect}
-						onChange={handleChange2}>
+					</TextField>
+					<FormControlLabel
+						control={
+							<Checkbox
+								defaultChecked
+								color='secondary'
+								size='small'
+								checked={compareChecked}
+								sx={sxCompareCheckBox}
+								onChange={handleCompareChange}
+							/>
+						}
+						label="comparer avec l'année "
+					/>
+					<TextField
+						id='standard-select-currency'
+						select
+						label='Année comparée'
+						size='small'
+						defaultValue={selectedYearToCompare.toString()}
+						onChange={handleChange2}
+						variant={defaultFormControlVariant}
+						disabled={!compareChecked}
+						sx={sxTextField}
+						// helperText="Sélectionnez l'année "
+					>
 						{years.map((year) => (
 							<MenuItem
 								key={year}
@@ -99,15 +151,10 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 								{year}
 							</MenuItem>
 						))}
-					</Select>
+					</TextField>
 				</Container>
 			</FormControl>
-			<Container
-				sx={{
-					minHeight: '800px',
-					display: 'flex',
-					bgColor: 'background.default',
-				}}>
+			<Container sx={sxChartContainer}>
 				{isLoading ? (
 					<CircularProgress />
 				) : isError ? (

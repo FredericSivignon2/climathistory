@@ -1,8 +1,10 @@
 import { FC, ReactElement, useContext, useState } from 'react'
 import { CountrySelectorProps, FilterPanelProps } from './types'
 import { ThemeProvider } from '@emotion/react'
-import { sxSelect, sxSelectContainer, theme } from '../theme'
+import { AccessAlarm, ThreeDRotation } from '@mui/icons-material'
+import { sxLocationSelectContainer, sxSelect, sxSelectContainer, theme } from '../theme'
 import {
+	Box,
 	CircularProgress,
 	Container,
 	FormControl,
@@ -10,14 +12,18 @@ import {
 	MenuItem,
 	Select,
 	SelectChangeEvent,
+	SvgIcon,
+	SvgIconProps,
 	Typography,
 } from '@mui/material'
+import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone'
 import { useQuery } from '@tanstack/react-query'
 import { getAllCountries, getAllTownsByCountry } from '../Api/api'
 import { isNil } from '../utils'
 import { GlobalData } from '../types'
 import { GlobalContext } from '../../App'
 import { defaultFormControlVariant } from '../constants'
+import flagFrance from '@Assets/flag_france.png'
 
 const CountrySelector: FC<CountrySelectorProps> = (props: CountrySelectorProps): ReactElement | null => {
 	const [selectedCountry, setSelectedCountry] = useState<string>(props.defaultCountry)
@@ -39,7 +45,8 @@ const CountrySelector: FC<CountrySelectorProps> = (props: CountrySelectorProps):
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Container sx={sxSelectContainer}>
+			<img src={flagFrance} />
+			<Container sx={sxLocationSelectContainer}>
 				{isNil(allCountries) ? null : (
 					<FormControl variant={defaultFormControlVariant}>
 						<InputLabel id='labelCountry'>Pays</InputLabel>
@@ -49,6 +56,7 @@ const CountrySelector: FC<CountrySelectorProps> = (props: CountrySelectorProps):
 							value={selectedCountry}
 							label='Pays'
 							sx={sxSelect}
+							size='small'
 							onChange={handleChange}>
 							{allCountries.map((country: string) => (
 								<MenuItem

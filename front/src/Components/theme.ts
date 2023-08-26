@@ -2,35 +2,33 @@
 
 import { Theme, createTheme } from '@mui/material'
 
-export const backgroundColor = '#1f253d'
-export const primaryMain = '#394264'
-export const primaryLight = '#50597b'
-export const chartBackgroundColor = '#ffffff'
-export const primaryColor = '#fca311'
 export const secondaryColor = '#e5e5e5'
-export const accentColor = '#5a189a'
-export const textPrimaryColor = '#ffffff'
-export const textSecondayColor = '#828ba6'
-export const maxTempColor = '#5a189a'
-export const minTempColor = '#fca311'
-export const mediumTempColor = '#e5e5e5'
+export const maxTempColor = '#b2474a'
+export const maxTempColorSecondary = '#fe6569'
+export const minTempColor = '#649ac2'
+export const minTempColorSecondary = '#83caff'
+export const mediumTempColor = '#e8af57'
+export const mediumTempColorSecondary = '#ffd55f'
 
 export const theme = createTheme({
 	palette: {
 		primary: {
-			main: primaryMain,
-			light: primaryLight,
+			main: '#394264', // Default background for all controls
+			light: '#50597b',
+		},
+		secondary: {
+			main: '#ffffff',
 		},
 		background: {
-			paper: chartBackgroundColor,
-			default: backgroundColor,
+			paper: '#1f253d', // Page default background
+			default: '#1f253d',
 		},
 		text: {
-			primary: textPrimaryColor,
-			secondary: textSecondayColor,
+			primary: '#ffffff',
+			secondary: '#828ba6',
 		},
 		action: {
-			active: accentColor,
+			active: '#ffffff',
 		},
 	},
 	components: {
@@ -44,13 +42,50 @@ export const theme = createTheme({
 		MuiMenu: {
 			styleOverrides: {
 				paper: {
-					backgroundColor: backgroundColor, // Changer la couleur de fond ici
+					backgroundColor: '#1f253d', // Changer la couleur de fond ici
 				},
 			},
 		},
 	},
 })
 
+export const sxFilterPanel = {
+	display: 'flex',
+	width: '100%',
+	backgroundColor: (theme: Theme) => theme.palette.primary.light,
+	color: (theme: Theme) => theme.palette.text.primary,
+}
+
+export const sxBoxDisplayArea = {
+	width: '100%',
+	margin: '4px',
+}
+
+export const sxDisplayTabs = {
+	width: '100%',
+	backgroundColor: (theme: Theme) => theme.palette.primary.light,
+	'& .MuiTab-textColorPrimary': {
+		color: (theme: Theme) => theme.palette.text.primary,
+		backgroundColor: (theme: Theme) => theme.palette.primary.main,
+		// backgroundColor: '#ff0000',
+	},
+	'& .Mui-selected': {
+		color: (theme: Theme) => theme.palette.text.primary,
+	},
+	'& .MuiTab-textSecondaryColor': {
+		color: (theme: Theme) => theme.palette.text.primary,
+	},
+}
+
+export const sxTabPanelBox = {
+	backgroundColor: (theme: Theme) => theme.palette.primary.main,
+}
+
+export const sxHeaderBox = {
+	backgroundColor: (theme: Theme) => theme.palette.primary.main,
+}
+
+/* ------------------ HEADER & BODY ------------------ */
 export const sxBody = {
 	backgroundColor: (theme: Theme) => theme.palette.background.paper,
 	maxWidth: '2560px',
@@ -60,7 +95,7 @@ export const sxBody = {
 	display: 'flex',
 	flexDirection: 'column',
 	alignItems: 'center',
-	justifyContent: 'center',
+	justifyContent: 'top',
 	fontSize: '12px',
 }
 
@@ -69,11 +104,47 @@ export const sxHeader = {
 	backgroundColor: (theme: Theme) => theme.palette.primary.main,
 }
 
-export const sxSelectContainer = {
-	bgcolor: (theme: Theme) => theme.palette.primary.main,
+/* ------------------ CONTAINERS ------------------ */
+export const sxFilterAndChartContainer = {
+	border: 2,
+	borderColor: (theme: Theme) => theme.palette.text.secondary,
+	backgroundColor: (theme: Theme) => theme.palette.primary.main,
+	borderRadius: 1,
+}
+
+export const sxChartContainer = {
+	minHeight: '400px',
+	display: 'flex',
+	backgroundColor: '#ffffff',
+}
+
+/* --------------------- TEXT --------------------- */
+
+export const sxTextField = {
+	width: '120px',
+}
+
+/* ------------------- CONTROLS ------------------- */
+
+export const sxCompareCheckBox = {
+	marginLeft: '24px',
+}
+
+export const sxLocationSelectContainer = {
+	backgroundColor: (theme: Theme) => theme.palette.primary.light,
 	color: (theme: Theme) => theme.palette.text.primary,
 	display: 'flex',
 	flexDirection: 'row',
+	padding: '4px',
+	justifyContent: 'center',
+}
+
+export const sxSelectContainer = {
+	backgroundColor: (theme: Theme) => theme.palette.primary.light,
+	color: (theme: Theme) => theme.palette.text.primary,
+	display: 'flex',
+	flexDirection: 'row',
+	padding: '12px',
 }
 
 export const sxSelect = {
@@ -82,30 +153,5 @@ export const sxSelect = {
 	'& .MuiOutlinedInput-notchedOutline': {
 		borderColor: (theme: Theme) => theme.palette.text.primary,
 	},
-}
-
-export const sxFilterPanel = {
-	display: 'flex',
-	width: '100%',
-	bgcolor: (theme: Theme) => theme.palette.primary.main,
-	color: 'text.primary',
-}
-
-export const sxDisplayArea = {
-	width: '100%',
-}
-
-export const sxDisplayTabs = {
-	width: '100%',
-	bgcolor: (theme: Theme) => theme.palette.primary.light,
-	'& .MuiTab-textColorPrimary': {
-		color: (theme: Theme) => theme.palette.text.primary,
-		bgcolor: (theme: Theme) => theme.palette.primary.light,
-	},
-	'& .Mui-selected': {
-		color: (theme: Theme) => theme.palette.text.primary,
-	},
-	'& .MuiTab-textSecondaryColor': {
-		color: (theme: Theme) => theme.palette.text.primary,
-	},
+	minWidth: '280px',
 }

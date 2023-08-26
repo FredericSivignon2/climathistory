@@ -12,6 +12,10 @@ namespace WeatherAPI
     {
         private const string sourceDirectory = "D:\\Development\\Web\\React\\climathistorydata";
         private Dictionary<string, Dictionary<string, VisualCrossingData>> _data = new();
+        private static JsonSerializerOptions _jsonOptions = new JsonSerializerOptions()
+        {
+            AllowTrailingCommas = true
+        };
 
         public WeartherService()
         {
@@ -169,26 +173,34 @@ namespace WeatherAPI
             };
         }
 
-        private int LoadTemperatures(string dataTypeDirectory, VisualCrossingData vcData)
+        private static int LoadTemperatures(string dataTypeDirectory, VisualCrossingData vcData)
         {
             int readCount = 0;
-            JsonSerializerOptions options = new JsonSerializerOptions();
-            options.AllowTrailingCommas = true;
+            byte progressIndex = 0;
+            char[] progressChars = new char[] { '|', '/', '-', '\\' };
+            Console.Write(" ");
+           
             var jsonFiles = Directory.EnumerateFiles(dataTypeDirectory, "*.json", SearchOption.TopDirectoryOnly);
             foreach (var jsonFile in jsonFiles)
             {
                 using (StreamReader r = new StreamReader(jsonFile, Encoding.UTF8))
                 {
                     string json = r.ReadToEnd();
-                    var source = JsonSerializer.Deserialize<VisualCrossingTemperatureData>(json, options);
+                    var source = JsonSerializer.Deserialize<VisualCrossingTemperatureData>(json, _jsonOptions);
                     if (source != null)
                     {
                         vcData.Temperatures.Add(source);
                         readCount++;
+                        Console.Write($"\b{progressChars[progressIndex++]}");
+                        if (progressIndex >= progressChars.Length)
+                        {
+                            progressIndex = 0;
+                        }
                     }
                 }
 
             }
+            Console.Write("\b");
             return readCount;
         }
     }

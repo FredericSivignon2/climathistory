@@ -42,15 +42,14 @@ function App() {
 					<LocalizationProvider dateAdapter={AdapterDayjs}>
 						<Header />
 						<Box sx={sxBody}>
-							<p>toto</p>
 							<FilterPanel
 								defaultTown={selectedTown}
-								defaultCountry={selectedCountry}
-							/>
-							<DisplayArea
-								country={selectedCountry}
-								town={selectedTown}
-							/>
+								defaultCountry={selectedCountry}>
+								<DisplayArea
+									country={selectedCountry}
+									town={selectedTown}
+								/>
+							</FilterPanel>
 						</Box>
 					</LocalizationProvider>
 				</QueryClientProvider>

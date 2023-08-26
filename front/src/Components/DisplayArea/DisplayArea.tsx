@@ -5,7 +5,7 @@ import { TemperatureHistory } from '../TemperatureHistory'
 import { isNil } from '../utils'
 import TabPanelHistory from './TabPanelHistory'
 import TabPanelStatistics from './TabPanelStatistics'
-import { sxBody, sxDisplayArea, sxDisplayTabs } from '../theme'
+import { sxBody, sxBoxDisplayArea, sxDisplayTabs } from '../theme'
 
 const tabHistorique = 'Historique'
 const tabStatistics = 'Statistiques'
@@ -25,9 +25,10 @@ const DisplayArea: FC<DisplayAreaProps> = (props: DisplayAreaProps) => {
 	}
 
 	return (
-		<Box sx={sxDisplayArea}>
+		<Box sx={sxBoxDisplayArea}>
 			<Tabs
 				sx={sxDisplayTabs}
+				textColor='secondary'
 				value={selectedTab}
 				onChange={handleTabChange}
 				aria-label='chart type tabs'>

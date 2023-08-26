@@ -30,7 +30,7 @@ import { Bar, Line } from 'react-chartjs-2'
 import { getChartData } from './data.mapper'
 import annotationPlugin from 'chartjs-plugin-annotation'
 import { options } from './chart.options'
-import { theme } from '../theme'
+import { sxChartContainer, theme } from '../theme'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 ChartJS.register(annotationPlugin)
@@ -51,12 +51,7 @@ const TemperatureAverageYear: FC<TemperatureAverageYearProps> = (props: Temperat
 	// <DatePicker />
 	return (
 		<ThemeProvider theme={theme}>
-			<Container
-				sx={{
-					minHeight: '800px',
-					display: 'flex',
-					bgColor: 'background.default',
-				}}>
+			<Container sx={sxChartContainer}>
 				{isLoading ? (
 					<CircularProgress />
 				) : isError ? (

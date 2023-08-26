@@ -1,10 +1,10 @@
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import { sxHeader } from '../theme'
+import { sxHeader, sxHeaderBox } from '../theme'
 
 const Header = () => {
 	return (
-		<Box>
+		<Box sx={sxHeaderBox}>
 			<AppBar
 				sx={{ ...sxHeader }}
 				position='static'>

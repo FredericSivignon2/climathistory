@@ -1,45 +1,49 @@
-import { TemperatureAveragePerYearModel } from '../TemperatureAverageYear/types'
-import { TownTemperaturesPerYearModel } from '../TemperatureHistory'
-import { TemperatureMinMaxPerYearModel } from '../TemperatureMinMaxYear'
+import {
+	CountryModel,
+	LocationModel,
+	TemperatureAveragePerYearModel,
+	TemperatureMinMaxPerYearModel,
+	YearInfoModel,
+} from '../types'
 
 export const getTemperatureHistory = async (
 	country: string,
 	location: string,
 	year: number
-): Promise<TownTemperaturesPerYearModel> => {
+): Promise<YearInfoModel> => {
 	const url = `https://localhost:4000/${country}/${location}/temperatures/${year}`
 	const response = await fetch(url, {
 		method: 'GET',
 	})
 
 	if (response.ok) {
-		return (await response.json()) as TownTemperaturesPerYearModel
+		return (await response.json()) as YearInfoModel
 	} else {
 		throw new Error(response.statusText)
 	}
 }
 
-export const getAllTownsByCountry = async (country: string): Promise<string[]> => {
-	const url = `https://localhost:4000/${country}/alltowns`
+export const getAllTownsByCountry = async (countryName: string): Promise<LocationModel[]> => {
+	const url = `https://localhost:4000/${countryName}/alltowns`
 	const response = await fetch(url, {
 		method: 'GET',
 	})
 
 	if (response.ok) {
-		return (await response.json()) as string[]
+		return (await response.json()) as LocationModel[]
 	} else {
 		throw new Error(response.statusText)
 	}
 }
 
-export const getAllCountries = async (): Promise<string[]> => {
+export const getAllCountries = async (): Promise<CountryModel[]> => {
 	const url = 'https://localhost:4000/allcountries'
 	const response = await fetch(url, {
 		method: 'GET',
 	})
 
 	if (response.ok) {
-		return (await response.json()) as string[]
+		return (await response.json()) as CountryModel[]
 	} else {
 		throw new Error(response.statusText)
 	}

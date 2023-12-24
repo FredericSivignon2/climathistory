@@ -14,7 +14,7 @@ import {
 import { useQuery } from '@tanstack/react-query'
 import { getAllCountries, getAllTownsByCountry } from '../Api/api'
 import { isNil } from '../utils'
-import { GlobalData } from '../types'
+import { GlobalData, LocationModel } from '../types'
 import { GlobalContext } from '../../App'
 import { needSelection } from '../labels'
 import { defaultFormControlVariant } from '../constants'
@@ -58,11 +58,11 @@ const TownSelector: FC<TownSelectorProps> = (props: TownSelectorProps): ReactEle
 								{needSelection}
 							</MenuItem>
 						) : (
-							allTowns.map((town: string) => (
+							allTowns.map((town: LocationModel) => (
 								<MenuItem
-									key={town}
-									value={town}>
-									{town}
+									key={town.name}
+									value={town.name}>
+									{town.name}
 								</MenuItem>
 							))
 						)}

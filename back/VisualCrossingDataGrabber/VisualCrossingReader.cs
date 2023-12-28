@@ -16,7 +16,7 @@ namespace VisualCrossingDataGrabber
 
     internal class VisualCrossingReader
     {
-        private static ILog log = LogManager.GetLogger(typeof(VisualCrossingReader));
+        private static readonly ILog log = LogManager.GetLogger(typeof(VisualCrossingReader));
         private const string urlTemplate = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{0}/{1}-01-01/{1}-12-31?unitGroup=metric&elements=datetime%2Ctempmax%2Ctempmin%2Ctemp&include=days%2Cobs&key=3BXU58SLQQXU4CTK9YEEVCVFN&options=nonulls&contentType=json";
         private static readonly HttpClient client = new();
 

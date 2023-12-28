@@ -20,10 +20,10 @@ import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone'
 import { useQuery } from '@tanstack/react-query'
 import { getAllCountries, getAllTownsByCountry } from '../Api/api'
 import { isNil } from '../utils'
-import { GlobalData } from '../types'
+import { CountryModel, GlobalData } from '../types'
 import { GlobalContext } from '../../App'
 import { defaultFormControlVariant } from '../constants'
-import flagFrance from '@Assets/flag_france.png'
+// import flagFrance from '@Assets/flag_france.png'
 
 const CountrySelector: FC<CountrySelectorProps> = (props: CountrySelectorProps): ReactElement | null => {
 	const [selectedCountry, setSelectedCountry] = useState<string>(props.defaultCountry)
@@ -45,7 +45,7 @@ const CountrySelector: FC<CountrySelectorProps> = (props: CountrySelectorProps):
 
 	return (
 		<ThemeProvider theme={theme}>
-			<img src={flagFrance} />
+			{/* <img src={flagFrance} /> */}
 			<Container sx={sxLocationSelectContainer}>
 				{isNil(allCountries) ? null : (
 					<FormControl variant={defaultFormControlVariant}>
@@ -58,11 +58,11 @@ const CountrySelector: FC<CountrySelectorProps> = (props: CountrySelectorProps):
 							sx={sxSelect}
 							size='small'
 							onChange={handleChange}>
-							{allCountries.map((country: string) => (
+							{allCountries.map((country: CountryModel) => (
 								<MenuItem
-									key={country}
-									value={country}>
-									{country}
+									key={country.name}
+									value={country.name}>
+									{country.name}
 								</MenuItem>
 							))}
 						</Select>

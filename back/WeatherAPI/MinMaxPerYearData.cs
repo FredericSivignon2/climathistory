@@ -5,12 +5,12 @@ namespace WeatherAPI
     public class MinMaxPerYearData
     {
         [JsonPropertyName("year")]
-        public int Year { get; set; }
+        public required int Year { get; init; }
 
         [JsonPropertyName("min")]
-        public double Min { get; set; }
+        public required double Min { get; init; }
 
         [JsonPropertyName("max")]
-        public double Max { get; set; }
+        public required double Max { get; init; }
     }
 }

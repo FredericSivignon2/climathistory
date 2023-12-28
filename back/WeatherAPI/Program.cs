@@ -1,21 +1,16 @@
 using WeatherAPI;
+using Weather.IoC;
+using Microsoft.AspNetCore.Mvc;
+using WeatherAPI.Routes;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: "MyCorsPolicy",
-                      builder =>
-                      {
-                          builder.AllowAnyOrigin()
-                          .AllowAnyMethod()
-                          .AllowAnyHeader();
-                      });
-});
+builder.Services.ConfigureBaseServices();
+builder.Services.AddWeatherServices();
 
 var app = builder.Build();
 app.Urls.Add("https://localhost:4000");
-WeartherService data = new WeartherService();
-data.Load();
+//WeartherService data = new WeartherService();
+//data.Load();
 
 app.UseHttpsRedirection();
 app.UseRouting();
@@ -25,29 +20,9 @@ app.UseCors("MyCorsPolicy");
 //{
 //    endpoints.MapControllers();
 //});
-app.MapGet("/{countryName}/{townName}/temperatures/{year}", (string countryName, string townName, int year) =>
-{
-    return data.GetTemperaturesDataFrom(countryName, townName, year);
-});
 
-app.MapGet("/{countryName}/{townName}/average-temperatures-per-year", (string countryName, string townName) =>
-{
-    return data.GetAverageTemperaturesDataFrom(countryName, townName);
-});
 
-app.MapGet("/{countryName}/{townName}/minmax-temperatures-per-year", (string countryName, string townName) =>
-{
-    return data.GetMinMaxTemperaturesDataFrom(countryName, townName);
-});
-
-app.MapGet("/{countryName}/alltowns", (string countryName) =>
-{
-    return data.GetAllLocationsByCountry(countryName);
-});
-
-app.MapGet("/allcountries", () =>
-{
-    return data.GetAllCountries();
-});
+app.MapTemperatureRoutes();
+app.MapLocationRoutes();
 
 app.Run();

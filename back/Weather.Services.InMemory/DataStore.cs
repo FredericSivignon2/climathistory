@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using System.Text.Json;
 
 namespace Weather.Services.InMemory
 {
     internal class DataStore: IDataStore
     {
-        private const bool allCountriesAvailable = false;
-        private string[] availableCountries = { "France" };
         private const string sourceDirectory = "D:\\Development\\Web\\React\\climathistorydata";
         private Dictionary<string, Dictionary<string, VisualCrossingData>> _data = new();
         private static JsonSerializerOptions _jsonOptions = new()
@@ -18,10 +13,51 @@ namespace Weather.Services.InMemory
         };
         
         public DataStore() {
-            Load();
+        }
+
+        public IEnumerable<string> GetAllCountriesNames()
+        {
+            return Directory.EnumerateDirectories(sourceDirectory, "*", SearchOption.TopDirectoryOnly).Select(countryDirectory =>
+                countryDirectory.Substring(countryDirectory.LastIndexOf('\\') + 1));
+        }
+
+        public Dictionary<string, VisualCrossingData> GetDataPerCountry(string country)
+        {
+            int fileCount = 0;
+            Dictionary<string, VisualCrossingData> result = new();
+            string countryDirectory = GetCountryDirectory(country);
+            var locationDirectories = Directory.EnumerateDirectories(countryDirectory, "*", SearchOption.TopDirectoryOnly);
+            var locationCount = locationDirectories.Count();
+            foreach (var locationDirectory in locationDirectories)
+            {
+                string location = locationDirectory.Substring(locationDirectory.LastIndexOf('\\') + 1);
+                VisualCrossingData vcData = new(location);
+                Console.Write(".");
+                var dataTypeDirectories = Directory.EnumerateDirectories(locationDirectory, "*", SearchOption.TopDirectoryOnly);
+                foreach (var dataTypeDirectory in dataTypeDirectories)
+                {
+                    string dataType = dataTypeDirectory.Substring(dataTypeDirectory.LastIndexOf('\\') + 1);
+                    switch (dataType)
+                    {
+                        case "Temperatures":
+                            fileCount += LoadTemperatures(dataTypeDirectory, vcData);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                result.Add(location, vcData);
+            }
+            Console.WriteLine($"  -> {locationCount} locations found and {fileCount} json files read.");
+            return result;
         }
 
         public Dictionary<string, Dictionary<string, VisualCrossingData>> Data { get { return _data; } }
+
+        private string GetCountryDirectory(string country)
+        {
+            return Path.Combine(sourceDirectory);
+        }
 
         public void Load()
         {
@@ -31,7 +67,6 @@ namespace Weather.Services.InMemory
             foreach (var countryDirectory in countryDirectories)
             {
                 string country = countryDirectory.Substring(countryDirectory.LastIndexOf('\\') + 1);
-                if (!allCountriesAvailable && !availableCountries.Contains(country)) continue;
                 Console.Write($"    -> Loading data for {country}");
                 var countryData = new Dictionary<string, VisualCrossingData>();
                 _data.Add(country, countryData);

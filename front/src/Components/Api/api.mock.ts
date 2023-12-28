@@ -1,3 +1,8 @@
+export const getEmptyTemperatureHistoryMock = {
+	year: 0,
+	days: [],
+}
+
 export const getTemperatureHistoryMock = {
 	year: 1973,
 	days: [
@@ -2193,3 +2198,158 @@ export const getTemperatureHistoryMock = {
 		},
 	],
 }
+
+export const getEmptyAllTownMock = []
+
+export const getAllTownMock = [
+	{
+		name: 'Aix-la-chapelle',
+	},
+	{
+		name: 'Augsbourg',
+	},
+	{
+		name: 'Berlin',
+	},
+	{
+		name: 'Bielefeld',
+	},
+	{
+		name: 'Bochum',
+	},
+	{
+		name: 'Bonn',
+	},
+	{
+		name: 'Brunswick',
+	},
+	{
+		name: 'Brême',
+	},
+	{
+		name: 'Cassel',
+	},
+	{
+		name: 'Chemnitz',
+	},
+	{
+		name: 'Cologne',
+	},
+	{
+		name: 'Dortmund',
+	},
+	{
+		name: 'Dresde',
+	},
+	{
+		name: 'Duisbourg',
+	},
+	{
+		name: 'Düsseldorf',
+	},
+	{
+		name: 'Erfurt',
+	},
+	{
+		name: 'Essen',
+	},
+	{
+		name: 'Francfort',
+	},
+	{
+		name: 'Fribourg-en-brisgau',
+	},
+	{
+		name: 'Gelsenkirchen',
+	},
+	{
+		name: 'Hagen',
+	},
+	{
+		name: 'Halle',
+	},
+	{
+		name: 'Hambourg',
+	},
+	{
+		name: 'Hamm',
+	},
+	{
+		name: 'Hanovre',
+	},
+	{
+		name: 'Karlsruhe',
+	},
+	{
+		name: 'Kiel',
+	},
+	{
+		name: 'Krefeld',
+	},
+	{
+		name: 'Leipzig',
+	},
+	{
+		name: 'Leverkusen',
+	},
+	{
+		name: 'Ludwigshafen',
+	},
+	{
+		name: 'Lübeck',
+	},
+	{
+		name: 'Magdebourg',
+	},
+	{
+		name: 'Mannheim',
+	},
+	{
+		name: 'Mayence',
+	},
+	{
+		name: 'Munich',
+	},
+	{
+		name: 'Mönchengladbach',
+	},
+	{
+		name: 'Mülheim',
+	},
+	{
+		name: 'Münster',
+	},
+	{
+		name: 'Nuremberg',
+	},
+	{
+		name: 'Oberhausen',
+	},
+	{
+		name: 'Oldenbourg',
+	},
+	{
+		name: 'Potsdam',
+	},
+	{
+		name: 'Rostock',
+	},
+	{
+		name: 'Sarrebruck',
+	},
+	{
+		name: 'Stuttgart',
+	},
+	{
+		name: 'Wiesbaden',
+	},
+	{
+		name: 'Wuppertal',
+	},
+]
+
+export const getAllCountriesMock = [
+	{
+		name: 'Allemagne',
+	},
+]

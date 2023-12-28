@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Weather.Application.Model;
 
-namespace Weather.Services.InMemory
+namespace Weather.Services.VisualCrossing
 {
     internal static class VisualCrossingTemperatureDataExtension
     {
@@ -13,6 +13,14 @@ namespace Weather.Services.InMemory
                     dayInfo.Tempmax, 
                     dayInfo.Tempmin, 
                     dayInfo.Temp)).ToArray());
+        }
+    }
+
+    internal static class VisualCrossingDataExtension
+    {
+        public static LocationInfoModel MapToLocationInfoModel(this VisualCrossingData data)
+        {
+            return new LocationInfoModel(data.Town, data.Temperatures.Select(vctd => vctd.MapToYearInfoModel()).ToArray());
         }
     }
 }

@@ -18,9 +18,9 @@ namespace Weather.Services.InMemory
         }
 
 
-        public IEnumerable<CountryModel> GetAllCountries()
+        public async Task<IEnumerable<CountryModel>> GetAllCountries()
         {
-            return _store.Data.Keys.Select(country => new CountryModel(country));
+            return await Task.FromResult(_store.Data.Keys.Select(country => new CountryModel(0, country)));
         }
 
         public IEnumerable<LocationModel> GetAllLocationsByCountry(string countryName)
@@ -34,25 +34,35 @@ namespace Weather.Services.InMemory
             var countryData = _store.Data[countryName];
             foreach (VisualCrossingData data in countryData.Values)
             {
-                towns.Add(new LocationModel(data.Town));
+                towns.Add(new LocationModel(0, data.Town, 0));
             }
             return towns;
         }
 
-        public YearInfoModel GetTemperaturesDataFrom(string countryName, string townName, int year)
+        public LocationInfoModel GetLocationInfoFrom(string countryName, string locationName)
         {
-            Console.WriteLine($"Reading temperatures for {townName} in {year}");
-
-            var vcd = GetVisualCrossingDataFrom(countryName, townName);
+            var vcd = GetVisualCrossingDataFrom(countryName, locationName);
             if (vcd == null)
             {
-                return new YearInfoModel(0, []);
+                return LocationInfoModel.Empty();
             }
-            var temperatures = vcd.Temperatures.First<VisualCrossingTemperatureData>(tdata =>
+            return vcd?.MapToLocationInfoModel() ?? LocationInfoModel.Empty();
+        }
+
+        public YearInfoModel GetTemperaturesInfoFrom(string countryName, string locationName, int year)
+        {
+            Console.WriteLine($"Reading temperatures for {locationName} in {year}");
+
+            var vcd = GetVisualCrossingDataFrom(countryName, locationName);
+            if (vcd == null)
+            {
+                return YearInfoModel.Empty();
+            }
+            var temperatures = vcd.Temperatures.FirstOrDefault<VisualCrossingTemperatureData>(tdata =>
             {
                 return tdata.Year == year;
             });
-            return temperatures.MapToYearInfoModel();
+            return temperatures?.MapToYearInfoModel() ?? YearInfoModel.Empty();
         }
 
         public IEnumerable<MeanPerYearModel> GetAverageTemperaturesDataFrom(string countryName, string locationName)

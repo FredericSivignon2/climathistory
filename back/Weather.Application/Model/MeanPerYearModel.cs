@@ -2,5 +2,5 @@
 
 namespace Weather.Application.Models
 {
-    public record MeanPerYearModel(int Year, double Mean, double MeanMax, double MeanMin);
+    public record MeanPerYearModel(int Year, decimal Mean, decimal MeanMax, decimal MeanMin);
 }

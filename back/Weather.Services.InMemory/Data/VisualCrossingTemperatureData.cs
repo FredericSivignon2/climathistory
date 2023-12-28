@@ -42,10 +42,10 @@ namespace Weather.Services.InMemory
         [JsonPropertyName("datetime")]
         public DateTime Datetime { get; set; }
         [JsonPropertyName("tempmax")]
-        public double Tempmax { get; set; }
+        public decimal Tempmax { get; set; }
         [JsonPropertyName("tempmin")]
-        public double Tempmin { get; set; }
+        public decimal Tempmin { get; set; }
         [JsonPropertyName("temp")]
-        public double Temp { get; set; }
+        public decimal Temp { get; set; }
     }
 }

@@ -1,4 +1,4 @@
 ﻿namespace Weather.Application.Model
 {
-    public record CountryModel(string Name);
+    public record CountryModel(long CountryId, string Name);
 }

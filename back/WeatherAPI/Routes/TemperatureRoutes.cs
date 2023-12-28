@@ -11,7 +11,7 @@ public static class TemperatureRoutes
     {
         app.MapGet("/{countryName}/{townName}/temperatures/{year}", ([FromServices] ITemperatureInfo tempInfo, string countryName, string townName, int year) =>
         {
-            return tempInfo.GetTemperaturesDataFrom(countryName, townName, year);
+            return tempInfo.GetTemperaturesInfoFrom(countryName, townName, year);
         });
 
         app.MapGet("/{countryName}/{townName}/average-temperatures-per-year", ([FromServices] ITemperatureInfo tempInfo, string countryName, string townName) =>

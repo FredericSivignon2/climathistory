@@ -1,13 +1,13 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Weather.Application.Query;
+using Weather.Application.VisualCrossing;
 
-namespace Weather.Services.InMemory
+namespace Weather.Services.VisualCrossing
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddDataServices(this IServiceCollection services)
+        public static IServiceCollection AddFileDataServices(this IServiceCollection services)
         {
-            services.AddSingleton<IDataStore, DataStore>();
+            services.AddSingleton<IFileDataStore, FileDataStore>();
 
             return services;
         }

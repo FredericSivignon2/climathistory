@@ -1,4 +1,4 @@
-import { getAllCountries, getAllTownsByCountry, getTemperatureHistory } from './api'
+import { getAllCountries, getAllLocationsByCountry, getTemperatureHistory } from './api'
 import fetchMock from 'jest-fetch-mock'
 import {
 	getAllCountriesMock,
@@ -40,14 +40,15 @@ describe('getTemperatureHistory should return', () => {
 	})
 })
 
-describe('getAllTownsByCountry should return', () => {
+describe('getAllLocationsByCountry should return', () => {
 	it('valid data if parameters are corresponding to existing information.', async () => {
 		fetchMock.mockResponseOnce(JSON.stringify(getAllTownMock))
 
-		const response = await getAllTownsByCountry('Allemagne')
+		const response = await getAllLocationsByCountry('Allemagne')
 
 		expect(response).not.toBeNull()
 		expect(response.length).toBe(getAllTownMock.length)
+		expect(response[O].)
 		expect(fetchMock.mock.calls.length).toEqual(1)
 		expect(fetchMock.mock.calls[0][0]).toEqual('https://localhost:4000/Allemagne/alltowns')
 	})
@@ -55,7 +56,7 @@ describe('getAllTownsByCountry should return', () => {
 	it('empty data if parameters are not corresponding to existing information.', async () => {
 		fetchMock.mockResponseOnce(JSON.stringify(getEmptyAllTownMock))
 
-		const response = await getAllTownsByCountry('Allemagne')
+		const response = await getAllLocationsByCountry('Allemagne')
 
 		expect(response).not.toBeNull()
 		expect(response.length).toBe(0)
@@ -66,6 +67,21 @@ describe('getAllTownsByCountry should return', () => {
 
 describe('getAllCountries should return', () => {
 	it('valid data.', async () => {
+		fetchMock.mockResponseOnce(JSON.stringify(getAllCountriesMock))
+
+		const response = await getAllCountries()
+
+		expect(response).not.toBeNull()
+		expect(response.length).toBe(getAllCountriesMock.length)
+		expect(response[0].name).toBeDefined()
+		expect(response[0].countryId).toBeGreaterThan(0)
+		expect(fetchMock.mock.calls.length).toEqual(1)
+		expect(fetchMock.mock.calls[0][0]).toEqual('https://localhost:4000/api/all-countries')
+	})
+})
+
+describe('getAverageTemperaturesPerYear should return', () => {
+	it('valid data if parameters are corresponding to existing information.', async () => {
 		fetchMock.mockResponseOnce(JSON.stringify(getAllCountriesMock))
 
 		const response = await getAllCountries()

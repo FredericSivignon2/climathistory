@@ -1,21 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Weather.Services.InMemory
+namespace Weather.Services.VisualCrossing
 {
-    public class VisualCrossingData
+    public class VisualCrossingLocationFileData
     {
-        public VisualCrossingData(string location)
+        public VisualCrossingLocationFileData(string location)
         {
-            Town = location;
-            Temperatures = new List<VisualCrossingTemperatureData>();
+            Location = location;
+            Temperatures = new List<VisualCrossingTemperatureFileData>();
         }
 
-        public string Town { get; private set; }
-        public IList<VisualCrossingTemperatureData> Temperatures { get; private set; }
+        public string Location { get; private set; }
+        public IList<VisualCrossingTemperatureFileData> Temperatures { get; private set; }
     }
 
-    public class VisualCrossingTemperatureData
+    public class VisualCrossingTemperatureFileData
     {
         [JsonPropertyName("year")]
         public int Year { get; set; }
@@ -34,10 +34,10 @@ namespace Weather.Services.InMemory
         [JsonPropertyName("tzoffset")]
         public float Tzoffset { get; set; }
         [JsonPropertyName("days")]
-        public List<VisualCrossingDays>? Days { get; set; }
+        public List<VisualCrossingDaysFileData>? Days { get; set; }
     }
 
-    public class VisualCrossingDays
+    public class VisualCrossingDaysFileData
     {
         [JsonPropertyName("datetime")]
         public DateTime Datetime { get; set; }

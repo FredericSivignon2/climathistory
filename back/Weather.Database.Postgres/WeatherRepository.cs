@@ -1,11 +1,8 @@
 ﻿using System.Data;
-using Npgsql;
+using System.Text.RegularExpressions;
 using Dapper;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Weather.Database.Model;
-using System.Data.Common;
-using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Weather.Database.Postgres
 {
@@ -27,6 +24,11 @@ namespace Weather.Database.Postgres
             {
                 _connection.Open();
             }
+        }
+
+        private void CloseConnection()
+        {
+            _connection.Close();
         }
 
         // Méthodes pour Country
@@ -100,12 +102,20 @@ namespace Weather.Database.Postgres
             return await _connection.QueryAsync<LocationData>(sql, parameters);
         }
 
-        public async Task AddLocationAsync(LocationData location)
+        public async Task<long> AddLocationAsync(LocationData location)
         {
             EnsureConnectionOpen();
             var parameters = new { CountryId = location.CountryId, Name = location.Name };
-            var sql = "INSERT INTO Location (Name, CountryId) VALUES (@Name, @CountryId)";
-            await _connection.ExecuteAsync(sql, parameters);
+            var sql = "INSERT INTO Location (Name, CountryId) VALUES (@Name, @CountryId) RETURNING LocationId;";
+            return await _connection.ExecuteScalarAsync<long>(sql, parameters);
+        }
+
+        public async Task<LocationData?> GetLocation(long countryId, string name)
+        {
+            EnsureConnectionOpen();
+            var parameters = new { CountryId = countryId, Name = name };
+            var sql = "SELECT * FROM Location WHERE CountryId = @CountryId AND Name = @Name";
+            return await _connection.QuerySingleOrDefaultAsync<LocationData>(sql, parameters);
         }
 
         public async Task UpdateLocationAsync(LocationData location)
@@ -127,7 +137,17 @@ namespace Weather.Database.Postgres
 
             var parameters = new { LocationId = locationId, Date = date };
             var sql = "SELECT * FROM Temperatures WHERE LocationId = @LocationId AND Date = @Date";
-            return await _connection.QueryFirstOrDefaultAsync<TemperaturesData>(sql, parameters);
+            return await _connection.QuerySingleOrDefaultAsync<TemperaturesData>(sql, parameters);
+        }
+
+        public async Task<IEnumerable<TemperaturesData>> GetTemperaturesAsync(long locationId, int year)
+        {
+            EnsureConnectionOpen();
+
+            var parameters = new { LocationId = locationId, DateFrom = new DateTime(year, 1, 1), DateTo = new DateTime(year, 12, 31) };
+            var sql = "SELECT * FROM Temperatures WHERE LocationId = @LocationId AND Date >= @DateFrom AND Date <= @DateTo";
+
+            return await _connection.QueryAsync<TemperaturesData>(sql, parameters);
         }
 
         public async Task AddTemperatureAsync(TemperaturesData temperature)
@@ -148,6 +168,41 @@ namespace Weather.Database.Postgres
         {
             EnsureConnectionOpen();
             await _connection.ExecuteAsync("UPDATE Temperatures SET MinTemperature = @MinTemperature, MaxTemperature = @MaxTemperature, AvgTemperature = @AvgTemperature WHERE LocationId = @LocationId AND Date = @Date", temperature);
+        }
+
+        public async Task<IEnumerable<AverageTemperaturesByYearData>> GetAvgTemperaturesForAllYearsDataAsync(long locationId)
+        {
+            EnsureConnectionOpen();
+
+            var parameters = new { LocationId = locationId };
+            var sql = @"SELECT EXTRACT(YEAR FROM Date) As Year,
+                               AVG(AvgTemperature) AS AverageOfAvg, 
+                               AVG(MaxTemperature) AS AverageOfMax,
+                               AVG(MinTemperature) AS AverageOfMin
+                        FROM Temperatures
+                        WHERE LocationId = @LocationId
+                        GROUP BY EXTRACT(YEAR FROM Date)
+                        ORDER BY Year ASC";
+
+
+            return await _connection.QueryAsync<AverageTemperaturesByYearData>(sql, parameters);
+        }
+
+        public async Task<IEnumerable<MinMaxTemperaturesByYearData>> GetMinMaxTemperaturesForAllYearsDataAsync(long locationId)
+        {
+            EnsureConnectionOpen();
+
+            var parameters = new { LocationId = locationId };
+            var sql = @"SELECT EXTRACT(YEAR FROM Date) As Year,
+                               MIN(MaxTemperature) AS AverageOfMax,
+                               MAX(MinTemperature) AS AverageOfMin
+                        FROM Temperatures
+                        WHERE LocationId = @LocationId
+                        GROUP BY EXTRACT(YEAR FROM Date)
+                        ORDER BY Year ASC";
+
+
+            return await _connection.QueryAsync<MinMaxTemperaturesByYearData>(sql, parameters);
         }
 
         public void Dispose()

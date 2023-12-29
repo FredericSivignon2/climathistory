@@ -6,11 +6,14 @@ export interface GlobalData {
 }
 
 export interface CountryModel {
+	countryId: number
 	name: string
 }
 
 export interface LocationModel {
+	locationId: number
 	name: string
+	countryId: number
 }
 
 export interface MeanPerYearModel {

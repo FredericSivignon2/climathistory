@@ -4,18 +4,20 @@ using DatabaseFeeder.Services;
 using Weather.Database;
 using Weather.Database.Postgres;
 using Weather.Application.Query;
-using Weather.Services.InMemory;
+using Weather.Application.VisualCrossing.Queries;
+using Weather.Services.VisualCrossing;
 using Npgsql;
 using System.Data;
 using Microsoft.Extensions.Configuration;
 
+Console.WriteLine("Starting...");
+
 var app = Host.CreateDefaultBuilder(args)
     .ConfigureServices((hostContext, services) =>
     {
-        services.AddDataServices();
+        services.AddFileDataServices();
         services.AddTransient<IDbConnection>(sp => new NpgsqlConnection("Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=weaTHERapp_2024"));
-        services.AddTransient<ITemperatureInfo, WeatherServiceInMemory>();
-        services.AddTransient<ILocationInfo, WeatherServiceInMemory>();
+        services.AddTransient<IVisualCrossingReader, WeatherServiceVisualCrossing>();
         services.AddTransient<IWeatherRepository, WeatherRepository>();
         services.AddTransient<IFeederService, FeederService>();
     }).Build();

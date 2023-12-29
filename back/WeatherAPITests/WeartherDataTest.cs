@@ -1,5 +1,4 @@
 using System.Xml.Serialization;
-using VisualCrossingDataGrabber;
 using WeatherAPI;
 
 namespace WeatherAPITests

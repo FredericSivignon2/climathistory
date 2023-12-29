@@ -7,21 +7,33 @@ using WeatherAPI;
 
 public static class TemperatureRoutes
 {
+    private const string BaseRoute = "/api";
+
     public static void MapTemperatureRoutes(this IEndpointRouteBuilder app)
     {
-        app.MapGet("/{countryName}/{townName}/temperatures/{year}", ([FromServices] ITemperatureInfo tempInfo, string countryName, string townName, int year) =>
+        app.MapGet("{BaseRoute}/all-countries", ([FromServices] IWeatherReader locInfo) =>
         {
-            return tempInfo.GetTemperaturesInfoFrom(countryName, townName, year);
+            return locInfo.GetAllCountries();
+        });
+      
+        app.MapGet("{BaseRoute}/{countryId}/all-locations", ([FromServices] IWeatherReader locInfo, long countryId) =>
+        {
+            return locInfo.GetAllLocationsByCountry(countryId);
         });
 
-        app.MapGet("/{countryName}/{townName}/average-temperatures-per-year", ([FromServices] ITemperatureInfo tempInfo, string countryName, string townName) =>
+        app.MapGet("{BaseRoute}/location/{locationId}/temperatures/{year}", ([FromServices] IWeatherReader tempInfo, long locationId, int year) =>
         {
-            return tempInfo.GetAverageTemperaturesDataFrom(countryName, townName);
+            return tempInfo.GetTemperaturesInfoFrom(locationId, year);
         });
 
-        app.MapGet("/{countryName}/{townName}/minmax-temperatures-per-year", ([FromServices] ITemperatureInfo tempInfo, string countryName, string townName) =>
+        app.MapGet("{BaseRoute}/location/{locationId}/temperatures/average-per-year", ([FromServices] IWeatherReader tempInfo, long locationId) =>
         {
-            return tempInfo.GetMinMaxTemperaturesDataFrom(countryName, townName);
+            return tempInfo.GetAvgTemperaturesForAllYears(locationId);
+        });
+
+        app.MapGet("{BaseRoute}/location/{locationId}/temperatures/minmax-per-year", ([FromServices] IWeatherReader tempInfo, long locationId) =>
+        {
+            return tempInfo.GetMinMaxTemperaturesDataFrom(locationId);
         });
     }
 }

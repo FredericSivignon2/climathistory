@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Weather.Application.VisualCrossing.Model
+﻿namespace Weather.Application.VisualCrossing.Model
 {
-    public class VisualCrossingCountryModel
+    public record VisualCrossingCountryModel(string Name)
     {
-        public required string Name { get; set; }
+        public override string ToString() 
+        {
+            return $"{Name}";
+        }
     }
 }

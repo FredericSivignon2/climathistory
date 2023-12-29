@@ -1,6 +1,5 @@
-﻿using System.Diagnostics.Metrics;
-using Weather.Application.Model;
-using Weather.Application.Query;
+﻿using Weather.Application.VisualCrossing.Model;
+using Weather.Application.VisualCrossing.Queries;
 using Weather.Database;
 using Weather.Database.Model;
 
@@ -8,13 +7,11 @@ namespace DatabaseFeeder.Services
 {
     internal class FeederService : IFeederService
     {
-        private ITemperatureInfo _temperatureInfo;
-        private ILocationInfo _locationInfo;
+        private IVisualCrossingReader _locationInfo;
         private IWeatherRepository _weatherRepository;
 
-        public FeederService(ITemperatureInfo temperatureInfo, ILocationInfo locationInfo, IWeatherRepository weatherRepository)
+        public FeederService(IVisualCrossingReader locationInfo, IWeatherRepository weatherRepository)
         {
-            _temperatureInfo = temperatureInfo;
             _locationInfo = locationInfo;
             _weatherRepository = weatherRepository;
         }
@@ -24,8 +21,7 @@ namespace DatabaseFeeder.Services
             try
             {
                 var countries = await AddCountries();
-                var locations = await AddLocations(countries);
-                await AddTemperaturesInfo(countries, locations);
+                await AddLocations(countries);
             }
             catch (Exception ex)
             {
@@ -52,76 +48,72 @@ namespace DatabaseFeeder.Services
             return await _weatherRepository.GetAllCountriesAsync();
         }
 
-        private async Task<IEnumerable<LocationData>> AddLocations(IEnumerable<CountryData> countries)
+        private async Task AddLocations(IEnumerable<CountryData> countries)
         {
             foreach (var country in countries)
             {
                 var locations = _locationInfo.GetAllLocationsByCountry(country.Name);
                 foreach (var location in locations)
                 {
-                    var isExistingLocation = await _weatherRepository.IsExistingLocation(country.CountryId, location.Name);
-                    if (!isExistingLocation)
+                    long locationId = 0;
+                    var locationData = await _weatherRepository.GetLocation(country.CountryId, location.Name);
+                    if (locationData == null)
                     {
                         Console.WriteLine($"Adding new location {location.Name} for country {country.Name}...");
-                        await _weatherRepository.AddLocationAsync(new LocationData() { Name = location.Name, CountryId = country.CountryId });
+                        locationId = await _weatherRepository.AddLocationAsync(new LocationData() { Name = location.Name, CountryId = country.CountryId });
                     }
+                    else
+                    {
+                        locationId = locationData.LocationId;
+                    }
+
+                    await AddTemperaturesForLocation(location, locationId);
                 }
             }
-            return await _weatherRepository.GetAllLocationsAsync();
         }
 
-        private async Task AddTemperaturesInfo(IEnumerable<CountryData> countries, IEnumerable<LocationData> locations)
+        private async Task AddTemperaturesForLocation(VisualCrossingLocationModel location, long locationId)
         {
-            int addedCount = 0, updatedCount = 0, intermediateUpdateCount = 0;
-
-            foreach (var location in locations)
+            int intermediateUpdateCount = 0;
+            var temperaturesToAdd = new List<TemperaturesData>(20000);
+            intermediateUpdateCount = 0;
+            foreach (VisualCrossingYearTemperatureModel yim in location.TemperaturesPerYear)
             {
-                var currentCountry = countries.First(country => country.CountryId == location.CountryId);
-                var locationInfo = _temperatureInfo.GetLocationInfoFrom(currentCountry.Name, location.Name);
-
-                var temperaturesToAdd = new List<TemperaturesData>(20000);
-                intermediateUpdateCount = 0;
-                foreach (YearInfoModel yim in locationInfo.YearsInfo)
+                foreach (VisualCrossingDayTemperatureModel dim in yim.TemperaturesPerDay)
                 {
-                    foreach (DayInfoModel dim in yim.Days)
+                    var temperatureData = await _weatherRepository.GetTemperaturesAsync(locationId, dim.Date);
+                    if (temperatureData == null)
                     {
-                        var temperatureData = await _weatherRepository.GetTemperaturesAsync(location.LocationId, dim.Date);
-                        if (temperatureData == null)
+                        temperaturesToAdd.Add(new TemperaturesData()
                         {
-                            temperaturesToAdd.Add(new TemperaturesData()
-                            {
-                                LocationId = location.LocationId,
-                                Date = dim.Date,
-                                AvgTemperature = Convert.ToDecimal(dim.TempMean),
-                                MinTemperature = Convert.ToDecimal(dim.TempMax),
-                                MaxTemperature = Convert.ToDecimal(dim.TempMin)
-                            });
-                        }
-                        else
+                            LocationId = locationId,
+                            Date = dim.Date,
+                            AvgTemperature = Convert.ToDecimal(dim.TemperatureAverage),
+                            MinTemperature = Convert.ToDecimal(dim.TemperatureMax),
+                            MaxTemperature = Convert.ToDecimal(dim.TemperatureMin)
+                        });
+                    }
+                    else
+                    {
+                        // If there is something to update
+                        if (temperatureData.AvgTemperature != dim.TemperatureAverage ||
+                            temperatureData.MinTemperature != dim.TemperatureMax ||
+                            temperatureData.MaxTemperature != dim.TemperatureMin)
                         {
-                            // If there is something to update
-                            if (temperatureData.AvgTemperature != dim.TempMean ||
-                                temperatureData.MinTemperature != dim.TempMax ||
-                                temperatureData.MaxTemperature != dim.TempMin)
-                            {
-                                temperatureData.AvgTemperature = dim.TempMean;
-                                temperatureData.MinTemperature = dim.TempMax;
-                                temperatureData.MaxTemperature = dim.TempMin;
-                                await _weatherRepository.UpdateTemperatureAsync(temperatureData);
-                                intermediateUpdateCount++;
-                            }
+                            temperatureData.AvgTemperature = dim.TemperatureAverage;
+                            temperatureData.MinTemperature = dim.TemperatureMax;
+                            temperatureData.MaxTemperature = dim.TemperatureMin;
+                            await _weatherRepository.UpdateTemperatureAsync(temperatureData);
+                            intermediateUpdateCount++;
                         }
                     }
                 }
-                if (temperaturesToAdd.Any())
-                {
-                    await _weatherRepository.AddTemperaturesBulkAsync(temperaturesToAdd);
-                    addedCount += temperaturesToAdd.Count;
-                    updatedCount += intermediateUpdateCount;
-                    Console.WriteLine($"{temperaturesToAdd.Count} temperatures info added and {intermediateUpdateCount} updated for location {location.Name}.");
-                }
             }
-            Console.WriteLine($"TOTAL: {addedCount} temperatures info added and {updatedCount} updated.");
+            if (temperaturesToAdd.Any())
+            {
+                await _weatherRepository.AddTemperaturesBulkAsync(temperaturesToAdd);
+                Console.WriteLine($"{temperaturesToAdd.Count} temperatures info added and {intermediateUpdateCount} updated for location {location.Name}.");
+            }
         }
     }
 }

@@ -2349,7 +2349,210 @@ export const getAllTownMock = [
 ]
 
 export const getAllCountriesMock = [
-	{
-		name: 'Allemagne',
-	},
+	[
+		{
+			countryId: 1,
+			name: 'Allemagne',
+		},
+		{
+			countryId: 2,
+			name: 'France',
+		},
+		{
+			countryId: 3,
+			name: 'Afrique du sud',
+		},
+		{
+			countryId: 4,
+			name: 'Algérie',
+		},
+		{
+			countryId: 5,
+			name: 'Arabie saoudite',
+		},
+		{
+			countryId: 6,
+			name: 'Argentine',
+		},
+		{
+			countryId: 7,
+			name: 'Australie',
+		},
+		{
+			countryId: 8,
+			name: 'Belgique',
+		},
+		{
+			countryId: 9,
+			name: 'Brésil',
+		},
+		{
+			countryId: 10,
+			name: 'Canada',
+		},
+		{
+			countryId: 11,
+			name: 'Chine',
+		},
+		{
+			countryId: 12,
+			name: 'Colombie',
+		},
+		{
+			countryId: 13,
+			name: 'Corée du sud',
+		},
+		{
+			countryId: 14,
+			name: 'Costa rica',
+		},
+		{
+			countryId: 15,
+			name: 'Danemark',
+		},
+		{
+			countryId: 16,
+			name: 'Espagne',
+		},
+		{
+			countryId: 17,
+			name: 'Finlande',
+		},
+		{
+			countryId: 18,
+			name: 'Groenland',
+		},
+		{
+			countryId: 19,
+			name: 'Grèce',
+		},
+		{
+			countryId: 20,
+			name: 'Hawaï',
+		},
+		{
+			countryId: 21,
+			name: 'Hongrie',
+		},
+		{
+			countryId: 22,
+			name: 'Inde',
+		},
+		{
+			countryId: 23,
+			name: 'Irlande',
+		},
+		{
+			countryId: 24,
+			name: 'Island',
+		},
+		{
+			countryId: 25,
+			name: 'Israël',
+		},
+		{
+			countryId: 26,
+			name: 'Italie',
+		},
+		{
+			countryId: 27,
+			name: 'Japon',
+		},
+		{
+			countryId: 28,
+			name: 'Madagascar',
+		},
+		{
+			countryId: 29,
+			name: 'Malte',
+		},
+		{
+			countryId: 30,
+			name: 'Maroc',
+		},
+		{
+			countryId: 31,
+			name: 'Mexique',
+		},
+		{
+			countryId: 32,
+			name: 'Moldavie',
+		},
+		{
+			countryId: 33,
+			name: 'Nigeria',
+		},
+		{
+			countryId: 34,
+			name: 'Norvège',
+		},
+		{
+			countryId: 35,
+			name: 'Nouvelle-zélande',
+		},
+		{
+			countryId: 36,
+			name: 'Népal',
+		},
+		{
+			countryId: 37,
+			name: 'Pays-bas',
+		},
+		{
+			countryId: 38,
+			name: 'Philippines',
+		},
+		{
+			countryId: 39,
+			name: 'Pologne',
+		},
+		{
+			countryId: 40,
+			name: 'Portugal',
+		},
+		{
+			countryId: 41,
+			name: 'Roumanie',
+		},
+		{
+			countryId: 42,
+			name: 'Royaume-uni',
+		},
+		{
+			countryId: 43,
+			name: 'Russie',
+		},
+		{
+			countryId: 44,
+			name: 'Singapour',
+		},
+		{
+			countryId: 45,
+			name: 'Slovaquie',
+		},
+		{
+			countryId: 46,
+			name: 'Suede',
+		},
+		{
+			countryId: 47,
+			name: 'Suisse',
+		},
+		{
+			countryId: 48,
+			name: 'Tchéquie',
+		},
+		{
+			countryId: 49,
+			name: 'Tunisie',
+		},
+		{
+			countryId: 50,
+			name: 'Ukraine',
+		},
+		{
+			countryId: 51,
+			name: 'États-Unis',
+		},
+	],
 ]

@@ -7,5 +7,10 @@
         public decimal MinTemperature { get; set; }
         public decimal MaxTemperature { get; set; }
         public decimal AvgTemperature { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Date} - min {MinTemperature}, max {MaxTemperature}, average {AvgTemperature} (location id {LocationId})";
+        }
     }
 }

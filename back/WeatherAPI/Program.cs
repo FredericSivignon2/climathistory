@@ -1,7 +1,5 @@
 using WeatherAPI;
 using Weather.IoC;
-using Microsoft.AspNetCore.Mvc;
-using WeatherAPI.Routes;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.ConfigureBaseServices();
@@ -23,6 +21,5 @@ app.UseCors("MyCorsPolicy");
 
 
 app.MapTemperatureRoutes();
-app.MapLocationRoutes();
 
 app.Run();

@@ -23,8 +23,8 @@ export const getTemperatureHistory = async (
 	}
 }
 
-export const getAllTownsByCountry = async (countryName: string): Promise<LocationModel[]> => {
-	const url = `https://localhost:4000/${countryName}/alltowns`
+export const getAllLocationsByCountry = async (countryId: number): Promise<LocationModel[]> => {
+	const url = `https://localhost:4000/api§${countryId}/all-locations`
 	const response = await fetch(url, {
 		method: 'GET',
 	})
@@ -37,7 +37,7 @@ export const getAllTownsByCountry = async (countryName: string): Promise<Locatio
 }
 
 export const getAllCountries = async (): Promise<CountryModel[]> => {
-	const url = 'https://localhost:4000/allcountries'
+	const url = 'https://localhost:4000/api/all-countries'
 	const response = await fetch(url, {
 		method: 'GET',
 	})

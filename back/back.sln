@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherAPI", "WeatherAPI\We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherAPITests", "WeatherAPITests\WeatherAPITests.csproj", "{F7FE0ACD-327A-466F-8068-CC4A4959FCEE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherAPITests", "WeatherAPITests\WeatherAPITests.csproj", "{F7FE0ACD-327A-466F-8068-CC4A4959FCEE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.IOC", "Weather.IOC\Weather.IOC.csproj", "{BFA1D8F3-81BE-4950-9570-859C314B894F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Application", "Weather.Application\Weather.Application.csproj", "{2D87BB55-658F-4262-B58C-F431DB098F4B}"
@@ -29,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Database", "Weather
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Database.Postgres", "Weather.Database.Postgres\Weather.Database.Postgres.csproj", "{A7F216D2-2DB1-4CA3-85E6-3D3DCBDD2ED3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Application.VisualCrossing", "Weather.Application.VisualCrossing\Weather.Application.VisualCrossing.csproj", "{0CCDAE37-6A3B-494D-8469-9352B4BA3336}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Application.VisualCrossing", "Weather.Application.VisualCrossing\Weather.Application.VisualCrossing.csproj", "{0CCDAE37-6A3B-494D-8469-9352B4BA3336}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,7 +80,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2AF71F5D-87A4-48E1-A0BC-51FF516B8EA0} = {9369C316-9CA0-4B38-90CF-AFAB9F02FB47}
 		{703463C1-3CF1-4C0D-9505-EA4791385904} = {7434F576-6DF2-47B2-A001-141038DC68AE}
 		{A037DBBD-6E19-44C5-8509-FB130A4A83FA} = {7434F576-6DF2-47B2-A001-141038DC68AE}
 		{AC6C4A64-7145-43E0-B49A-CC966B3BB278} = {9369C316-9CA0-4B38-90CF-AFAB9F02FB47}

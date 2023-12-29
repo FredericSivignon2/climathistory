@@ -9,9 +9,9 @@ using Npgsql;
 using Weather.Database;
 using Weather.Database.Extensions;
 
-namespace Weather.Services.InMemory
+namespace Weather.Services.VisualCrossing
 {
-    public class WeatherServiceDatabase : ITemperatureInfo, ILocationInfo
+    public class WeatherServiceDatabase : IWeatherReader
     {
         private IWeatherRepository _repository;
 
@@ -30,22 +30,27 @@ namespace Weather.Services.InMemory
             return (await _repository.GetAllLocationsAsync(countryId)).MapToLocationModels();
         }
 
-        public YearInfoModel GetTemperaturesInfoFrom(string countryName, string townName, int year)
+        public async Task<TemperaturesYearInfoModel> GetTemperaturesInfoFrom(long locationId, int year)
+        {
+            return (await _repository.GetTemperaturesAsync(locationId, year)).MapToYearInfoModel(year);
+        }
+
+        public async Task<TemperaturesLocationInfoModel> GetTemperaturesLocationInfoFrom(long locationId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<MeanPerYearModel> GetAverageTemperaturesDataFrom(string countryName, string locationName)
+        public async Task<IEnumerable<AveragePerYearModel>> GetAvgTemperaturesForAllYears(long locationId)
         {
-            throw new NotImplementedException();
+            return (await _repository.GetAvgTemperaturesForAllYearsDataAsync(locationId)).MapToAveragePerYearModels();
         }
 
-        public IEnumerable<MinMaxPerYearModel> GetMinMaxTemperaturesDataFrom(string countryName, string locationName)
+        public async Task<IEnumerable<MinMaxPerYearModel>> GetMinMaxTemperaturesDataFrom(long locationId)
         {
-            throw new NotImplementedException();
+            return (await _repository.GetMinMaxTemperaturesForAllYearsDataAsync(locationId)).MapToMinMaxPerYearModels();
         }
 
-        public LocationInfoModel GetLocationInfoFrom(string countryName, string locationName)
+        public async Task<TemperaturesLocationInfoModel> GetLocationInfoFrom(long locationId)
         {
             throw new NotImplementedException();
         }

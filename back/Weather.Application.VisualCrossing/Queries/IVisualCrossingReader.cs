@@ -2,9 +2,9 @@
 
 namespace Weather.Application.VisualCrossing.Queries
 {
-    public interface IVisualCrossingLocationInfo
+    public interface IVisualCrossingReader
     {
         Task<IEnumerable<VisualCrossingCountryModel>> GetAllCountries();
-        IEnumerable<VisualCrossingLocationModel> GetAllLocationsByCountry(long countryId);
+        IEnumerable<VisualCrossingLocationModel> GetAllLocationsByCountry(string countryName);
     }
 }

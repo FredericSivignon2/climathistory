@@ -1,6 +1,5 @@
 export interface TemperatureHistoryProps {
-	country: string
-	town: string
+	locationId: number
 	defaultYear: number
 }
 

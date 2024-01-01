@@ -3,7 +3,7 @@
     public class MinMaxTemperaturesByYearData
     {
         public int Year {  get; set; }
-        public decimal Min { get; set; }
-        public decimal Max { get; set; }
+        public decimal MinTemperature { get; set; }
+        public decimal MaxTemperature { get; set; }
     }
 }

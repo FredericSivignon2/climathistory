@@ -1,8 +1,9 @@
 import { ChartData } from 'chart.js'
-import { hexToRGBA, isNil } from '../utils'
+import { hexToRGBA } from '../utils'
 import { copyFile } from 'fs'
 import { maxTempColor, mediumTempColor, minTempColor } from '../theme'
-import { TemperatureMinMaxPerYearModel } from './types'
+import { TemperatureMinMaxPerYearModel } from '../types'
+import { isNil } from 'lodash'
 
 export const getChartData = (source: TemperatureMinMaxPerYearModel[]): ChartData<'line'> => {
 	if (isNil(source) || source.length === 0)

@@ -1,10 +1,6 @@
 import { maxYear } from './constants'
 
 // To make this function a type guard, we add this special return type
-export const isNil = (value: any): value is null | undefined => {
-	return value == null || value === null || value === undefined || typeof value === 'undefined'
-}
-
 export const getRandomInt = (min: number, max: number): number => {
 	return Math.floor(Math.random() * (max - min + 1)) + min
 }

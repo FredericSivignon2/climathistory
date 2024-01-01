@@ -15,7 +15,7 @@ namespace Weather.IoC
         {
             services.AddTransient<IDbConnection>(sp => new NpgsqlConnection("Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=weaTHERapp_2024"));
             services.AddTransient<IWeatherReader, WeatherServiceDatabase>();
-            services.AddSingleton<IWeatherRepository, WeatherRepository>();
+            services.AddTransient<IWeatherRepository, WeatherRepository>();
 
             return services;
         }

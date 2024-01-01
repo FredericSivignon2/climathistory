@@ -89,8 +89,8 @@ namespace DatabaseFeeder.Services
                             LocationId = locationId,
                             Date = dim.Date,
                             AvgTemperature = Convert.ToDecimal(dim.TemperatureAverage),
-                            MinTemperature = Convert.ToDecimal(dim.TemperatureMax),
-                            MaxTemperature = Convert.ToDecimal(dim.TemperatureMin)
+                            MinTemperature = Convert.ToDecimal(dim.TemperatureMin),
+                            MaxTemperature = Convert.ToDecimal(dim.TemperatureMax)
                         });
                     }
                     else
@@ -101,8 +101,8 @@ namespace DatabaseFeeder.Services
                             temperatureData.MaxTemperature != dim.TemperatureMin)
                         {
                             temperatureData.AvgTemperature = dim.TemperatureAverage;
-                            temperatureData.MinTemperature = dim.TemperatureMax;
-                            temperatureData.MaxTemperature = dim.TemperatureMin;
+                            temperatureData.MinTemperature = dim.TemperatureMin;
+                            temperatureData.MaxTemperature = dim.TemperatureMax;
                             await _weatherRepository.UpdateTemperatureAsync(temperatureData);
                             intermediateUpdateCount++;
                         }

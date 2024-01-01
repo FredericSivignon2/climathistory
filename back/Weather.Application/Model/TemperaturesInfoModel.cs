@@ -17,5 +17,5 @@ namespace Weather.Application.Model
         }
     }
     
-    public record TemperaturesInfoModel(DateTime Date, decimal TempMax, decimal TempMin, decimal TempMean);
+    public record TemperaturesInfoModel(DateTime Date, decimal TempMax, decimal TempMin, decimal TempAvg);
 }

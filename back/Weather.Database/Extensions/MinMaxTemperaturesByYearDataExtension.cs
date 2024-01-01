@@ -9,8 +9,8 @@ namespace Weather.Database.Extensions
         {
             return data.Select(mmtbyd => new MinMaxPerYearModel(
                 mmtbyd.Year,
-                mmtbyd.Min,
-                mmtbyd.Max));
+                mmtbyd.MinTemperature,
+                mmtbyd.MaxTemperature));
         }
     }
 }

@@ -1,6 +1,6 @@
 export interface DisplayAreaProps {
-	country: string
-	town: string | null
+	countryId: number
+	locationId: number | null
 }
 
 export interface TabPanelHistoryProps {}

@@ -1,8 +1,8 @@
 import { Theme } from '@mui/material'
 import { maxTempColor, maxTempColorSecondary, minTempColor, minTempColorSecondary } from '../theme'
 import { ChartData, ChartEvent, LegendElement, LegendItem } from 'chart.js'
-import { isNil } from '../utils'
 import { getChartData } from '../TemperatureAverageYear/data.mapper'
+import { isNil } from 'lodash'
 
 const newLegendClickHandler = function (e: ChartEvent, legendItem: LegendItem, legend: LegendElement<'line'>) {
 	const index = legendItem.datasetIndex

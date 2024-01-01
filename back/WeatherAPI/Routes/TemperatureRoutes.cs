@@ -1,39 +1,38 @@
-﻿// TemperatureRoutes.cs
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Weather.Application.Query;
-using WeatherAPI;
 
-public static class TemperatureRoutes
+namespace WeatherAPI
 {
-    private const string BaseRoute = "/api";
-
-    public static void MapTemperatureRoutes(this IEndpointRouteBuilder app)
+    public static class TemperatureRoutes
     {
-        app.MapGet("{BaseRoute}/all-countries", ([FromServices] IWeatherReader locInfo) =>
-        {
-            return locInfo.GetAllCountries();
-        });
-      
-        app.MapGet("{BaseRoute}/{countryId}/all-locations", ([FromServices] IWeatherReader locInfo, long countryId) =>
-        {
-            return locInfo.GetAllLocationsByCountry(countryId);
-        });
+        private const string BaseRoute = "/api/v1.0";
 
-        app.MapGet("{BaseRoute}/location/{locationId}/temperatures/{year}", ([FromServices] IWeatherReader tempInfo, long locationId, int year) =>
+        public static void MapTemperatureRoutes(this IEndpointRouteBuilder app)
         {
-            return tempInfo.GetTemperaturesInfoFrom(locationId, year);
-        });
+            app.MapGet($"{BaseRoute}/country/all", async ([FromServices] IWeatherReader locInfo) =>
+            {
+                return await locInfo.GetAllCountries();
+            });
 
-        app.MapGet("{BaseRoute}/location/{locationId}/temperatures/average-per-year", ([FromServices] IWeatherReader tempInfo, long locationId) =>
-        {
-            return tempInfo.GetAvgTemperaturesForAllYears(locationId);
-        });
+            app.MapGet($"{BaseRoute}/country/{{countryId:long}}/all-locations", async ([FromServices] IWeatherReader locInfo, long countryId) =>
+            {
+                return await locInfo.GetAllLocationsByCountry(countryId);
+            });
 
-        app.MapGet("{BaseRoute}/location/{locationId}/temperatures/minmax-per-year", ([FromServices] IWeatherReader tempInfo, long locationId) =>
-        {
-            return tempInfo.GetMinMaxTemperaturesDataFrom(locationId);
-        });
+            app.MapGet($"{BaseRoute}/location/{{locationId:long}}/temperatures/{{year:int}}", async ([FromServices] IWeatherReader tempInfo, long locationId, int year) =>
+            {
+                return await tempInfo.GetTemperaturesInfoFrom(locationId, year);
+            });
+
+            app.MapGet($"{BaseRoute}/location/{{locationId:long}}/temperatures/average-per-year", async ([FromServices] IWeatherReader tempInfo, long locationId) =>
+            {
+                return await tempInfo.GetAvgTemperaturesForAllYears(locationId);
+            });
+
+            app.MapGet($"{BaseRoute}/location/{{locationId:long}}/temperatures/minmax-per-year", async ([FromServices] IWeatherReader tempInfo, long locationId) =>
+            {
+                return await tempInfo.GetMinMaxTemperaturesDataFrom(locationId);
+            });
+        }
     }
 }

@@ -9,8 +9,8 @@ import FilterPanel from './Components/FilterPanel/FilterPanel'
 import { sxBody, theme } from './Components/theme'
 import Header from './Components/Header/Header'
 import { GlobalData } from './Components/types'
-import { isNil } from './Components'
 import DisplayArea from './Components/DisplayArea/DisplayArea'
+import { defaultCountryId, defaultLocationId } from './constants'
 
 const queryClient = new QueryClient()
 /*
@@ -21,20 +21,25 @@ lg, large: 1200px
 xl, extra-large: 1536px
 */
 
-const defaultValue = { country: 'France', setCountry: () => {}, town: 'Paris', setTown: () => {} }
+const defaultValue = {
+	countryId: defaultCountryId,
+	setCountryId: () => {},
+	locationId: defaultLocationId,
+	setLocationId: () => {},
+}
 export const GlobalContext = createContext<GlobalData>(defaultValue)
 
 function App() {
-	const [selectedCountry, setSelectedCountry] = useState<string>(defaultValue.country)
-	const [selectedTown, setSelectedTown] = useState<string | null>(defaultValue.town)
+	const [selectedCountryId, setSelectedCountryId] = useState<number>(defaultValue.countryId)
+	const [selectedLocationId, setSelectedLocationId] = useState<number | null>(defaultValue.locationId)
 
 	return (
 		<GlobalContext.Provider
 			value={{
-				country: selectedCountry,
-				setCountry: setSelectedCountry,
-				town: selectedTown,
-				setTown: setSelectedTown,
+				countryId: selectedCountryId,
+				setCountryId: setSelectedCountryId,
+				locationId: selectedLocationId,
+				setLocationId: setSelectedLocationId,
 			}}>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
@@ -43,11 +48,11 @@ function App() {
 						<Header />
 						<Box sx={sxBody}>
 							<FilterPanel
-								defaultTown={selectedTown}
-								defaultCountry={selectedCountry}>
+								defaultLocationId={selectedLocationId}
+								defaultCountryId={selectedCountryId}>
 								<DisplayArea
-									country={selectedCountry}
-									town={selectedTown}
+									countryId={selectedCountryId}
+									locationId={selectedLocationId}
 								/>
 							</FilterPanel>
 						</Box>

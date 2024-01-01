@@ -1,11 +1,9 @@
 import { Box, Grid, Tab, Tabs } from '@mui/material'
 import { DisplayAreaProps } from './types'
 import { FC, useState } from 'react'
-import { TemperatureHistory } from '../TemperatureHistory'
-import { isNil } from '../utils'
 import TabPanelHistory from './TabPanelHistory'
 import TabPanelStatistics from './TabPanelStatistics'
-import { sxBody, sxBoxDisplayArea, sxDisplayTabs } from '../theme'
+import { sxBoxDisplayArea, sxDisplayTabs } from '../theme'
 
 const tabHistorique = 'Historique'
 const tabStatistics = 'Statistiques'

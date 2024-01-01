@@ -24,7 +24,6 @@ import {
 	SelectChangeEvent,
 	ThemeProvider,
 } from '@mui/material'
-import { getRandomInt, isNil } from '../utils'
 import { Chart } from 'chart.js'
 import { Bar, Line } from 'react-chartjs-2'
 import { getChartData } from './data.mapper'
@@ -42,8 +41,8 @@ const TemperatureAverageYear: FC<TemperatureAverageYearProps> = (props: Temperat
 		data: temperatureAverageYearData,
 		error,
 	} = useQuery({
-		queryKey: ['callTempAverateYear', props.town],
-		queryFn: () => getAverageTemperaturesPerYear(props.country, props.town),
+		queryKey: ['callTempAverateYear', props.locationId],
+		queryFn: () => getAverageTemperaturesPerYear(props.locationId),
 	})
 
 	const errorMessage = error instanceof Error ? error.message : 'Unknown error'

@@ -7,7 +7,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace Weather.Database.Postgres
 {
     // docker run --name mypostgresdb -e POSTGRES_PASSWORD=weaTHERapp_2024 -d -p 5432:5432 -v postgres_data:/var/lib/postgresql/data postgres
-
+    /*
     public class WeatherRepository : IWeatherRepository
     {
         private bool _disposed = false;
@@ -228,6 +228,6 @@ namespace Weather.Database.Postgres
                 _disposed = true;
             }
         }
-    }
+    }*/
 
 }

@@ -1,8 +1,8 @@
 export interface GlobalData {
-	country: string
-	setCountry: (arg: string) => void
-	town: string | null
-	setTown: (arg: string) => void
+	countryId: number
+	setCountryId: (arg: number) => void
+	locationId: number | null
+	setLocationId: (arg: number | null) => void
 }
 
 export interface CountryModel {
@@ -27,7 +27,7 @@ export interface DayInfoModel {
 	date: Date
 	tempMax: number
 	tempMin: number
-	tempMean: number
+	tempAvg: number
 }
 
 export interface YearInfoModel {
@@ -48,7 +48,7 @@ export interface TemperatureMinMaxPerYearModel {
 
 export interface TemperatureAveragePerYearModel {
 	year: number
-	mean: number
-	meanMax: number
-	meanMin: number
+	averageOfAverage: number
+	averageOfMax: number
+	averageOfMin: number
 }

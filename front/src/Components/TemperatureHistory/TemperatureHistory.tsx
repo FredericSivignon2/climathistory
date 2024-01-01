@@ -27,7 +27,7 @@ import {
 	TextField,
 	ThemeProvider,
 } from '@mui/material'
-import { getDefaultYearToCompare, getRandomInt, isNil } from '../utils'
+import { getDefaultYearToCompare, getRandomInt } from '../utils'
 import { Chart } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import { getChartData } from './data.mapper'
@@ -35,6 +35,7 @@ import annotationPlugin from 'chartjs-plugin-annotation'
 import { options } from './chart.options'
 import { sxChartContainer, sxCompareCheckBox, sxSelect, sxSelectContainer, sxTextField, theme } from '../theme'
 import { defaultFormControlVariant, maxYear, minYear } from '../constants'
+import { isNil } from 'lodash'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 ChartJS.register(annotationPlugin)
@@ -59,14 +60,14 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 	// 	data: temperatureHistoryData,
 	// 	error,
 	// } = useQuery({
-	// 	queryKey: ['callTempHisto', props.country, props.town, selectedYear],
-	// 	queryFn: () => getTemperatureHistory(props.country, props.town, selectedYear),
+	// 	queryKey: ['callTempHisto', props.locationId, selectedYear],
+	// 	queryFn: () => getTemperatureHistory(props.locationId, selectedYear),
 	// })
 
 	const results = useQueries({
 		queries: selectedYears.map((year) => ({
-			queryKey: ['callTempHisto', props.country, props.town, year],
-			queryFn: () => getTemperatureHistory(props.country, props.town, year),
+			queryKey: ['callTempHisto', props.locationId, year],
+			queryFn: () => getTemperatureHistory(props.locationId, year),
 		})),
 	})
 
@@ -91,6 +92,7 @@ const TemperatureHistory: FC<TemperatureHistoryProps> = (props: TemperatureHisto
 			error = result.error
 		}
 	})
+
 	const errorMessage = error instanceof Error ? error.message : 'Unknown error'
 	const data = results[0].data
 		? getChartData(results[0].data, results.length > 1 ? results[1].data : undefined)

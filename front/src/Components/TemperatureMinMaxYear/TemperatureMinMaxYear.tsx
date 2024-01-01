@@ -24,7 +24,6 @@ import {
 	SelectChangeEvent,
 	ThemeProvider,
 } from '@mui/material'
-import { getRandomInt, isNil } from '../utils'
 import { Chart } from 'chart.js'
 import { Bar, Line } from 'react-chartjs-2'
 import { getChartData } from './data.mapper'
@@ -42,8 +41,8 @@ const TemperatureMinMaxYear: FC<TemperatureMinMaxYearProps> = (props: Temperatur
 		data: temperatureMinMaxYearData,
 		error,
 	} = useQuery({
-		queryKey: ['callTempMinMaxYear', props.town],
-		queryFn: () => getMinMaxTemperaturesPerYear(props.country, props.town),
+		queryKey: ['callTempMinMaxYear', props.locationId],
+		queryFn: () => getMinMaxTemperaturesPerYear(props.locationId),
 	})
 
 	const errorMessage = error instanceof Error ? error.message : 'Unknown error'

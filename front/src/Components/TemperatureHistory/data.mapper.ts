@@ -1,5 +1,5 @@
 import { ChartData } from 'chart.js'
-import { hexToRGBA, isNil, zeroPad } from '../utils'
+import { hexToRGBA, zeroPad } from '../utils'
 import { copyFile } from 'fs'
 import {
 	maxTempColor,
@@ -9,12 +9,11 @@ import {
 	minTempColor,
 	minTempColorSecondary,
 } from '../theme'
-import { TownTemperaturesPerYearModel } from './types'
+import { YearInfoModel } from '../types'
+import { isNil } from 'lodash'
+import { format } from 'date-fns'
 
-export const getChartData = (
-	source: TownTemperaturesPerYearModel,
-	sourceToCompare: TownTemperaturesPerYearModel | undefined
-): ChartData<'line'> => {
+export const getChartData = (source: YearInfoModel, sourceToCompare: YearInfoModel | undefined): ChartData<'line'> => {
 	if (isNil(source) || isNil(source.days) || source.days.length === 0)
 		return {
 			labels: [],
@@ -24,20 +23,19 @@ export const getChartData = (
 	const labels: string[] = Array(source.days.length)
 	const dataMin = Array(source.days.length)
 	const dataMax = Array(source.days.length)
-	const data = Array(source.days.length)
+	const dataAvg = Array(source.days.length)
 	let index = 0
 	source.days.forEach((temperatureModel) => {
-		let dateToDisplay = temperatureModel.datetime
-		if (!isNil(sourceToCompare)) {
-			// When comparing dates, remove the year in the
-			// horizontal axis ticks labels
-			dateToDisplay = dateToDisplay.substring(5)
-		}
+		// When comparing dates, remove the year in the
+		// horizontal axis ticks labels
+		const dateToDisplay = isNil(sourceToCompare)
+			? format(new Date(temperatureModel.date), 'dd-MM-yyyy')
+			: format(new Date(temperatureModel.date), 'dd-MM')
 
 		labels[index] = dateToDisplay
-		dataMin[index] = temperatureModel.tempmin
-		dataMax[index] = temperatureModel.tempmax
-		data[index] = temperatureModel.temp
+		dataMin[index] = temperatureModel.tempMin
+		dataMax[index] = temperatureModel.tempMax
+		dataAvg[index] = temperatureModel.tempAvg
 		index++
 	})
 
@@ -58,7 +56,7 @@ export const getChartData = (
 		},
 		{
 			label: 'Moyenne ' + source.year,
-			data: data,
+			data: dataAvg,
 			borderColor: mediumTempColor,
 			backgroundColor: hexToRGBA(mediumTempColor, 0.5),
 			borderWidth: 1,
@@ -70,10 +68,10 @@ export const getChartData = (
 		const dataToCompareMax = Array(sourceToCompare.days.length)
 		const dataToCompare = Array(sourceToCompare.days.length)
 		let index = 0
-		sourceToCompare.days.forEach((temperatureModel) => {
-			dataToCompareMin[index] = temperatureModel.tempmin
-			dataToCompareMax[index] = temperatureModel.tempmax
-			dataToCompare[index] = temperatureModel.temp
+		sourceToCompare?.days.forEach((temperatureModel) => {
+			dataToCompareMin[index] = temperatureModel.tempMin
+			dataToCompareMax[index] = temperatureModel.tempMax
+			dataToCompare[index] = temperatureModel.tempAvg
 			index++
 		})
 

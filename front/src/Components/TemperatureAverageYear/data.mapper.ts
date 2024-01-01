@@ -1,8 +1,9 @@
 import { ChartData } from 'chart.js'
-import { hexToRGBA, isNil } from '../utils'
+import { hexToRGBA } from '../utils'
 import { copyFile } from 'fs'
 import { maxTempColor, mediumTempColor, minTempColor } from '../theme'
-import { TemperatureAveragePerYearModel } from './types'
+import { TemperatureAveragePerYearModel } from '../types'
+import { isNil } from 'lodash'
 
 export const getChartData = (source: TemperatureAveragePerYearModel[]): ChartData<'line'> => {
 	if (isNil(source) || source.length === 0)
@@ -12,9 +13,9 @@ export const getChartData = (source: TemperatureAveragePerYearModel[]): ChartDat
 		}
 
 	const labels: string[] = source.slice(0, source.length - 1).map((x) => x.year.toString())
-	const dataMin = source.map((x) => x.meanMin)
-	const dataMax = source.map((x) => x.meanMax)
-	const data = source.map((x) => x.mean)
+	const dataMin = source.map((x) => x.averageOfMin)
+	const dataMax = source.map((x) => x.averageOfMax)
+	const data = source.map((x) => x.averageOfAverage)
 
 	const datasets = [
 		{

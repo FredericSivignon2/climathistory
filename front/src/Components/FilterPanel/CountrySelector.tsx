@@ -18,15 +18,15 @@ import {
 } from '@mui/material'
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone'
 import { useQuery } from '@tanstack/react-query'
-import { getAllCountries, getAllTownsByCountry } from '../Api/api'
-import { isNil } from '../utils'
+import { getAllCountries } from '../Api/api'
 import { CountryModel, GlobalData } from '../types'
 import { GlobalContext } from '../../App'
 import { defaultFormControlVariant } from '../constants'
+import { isNil } from 'lodash'
 // import flagFrance from '@Assets/flag_france.png'
 
 const CountrySelector: FC<CountrySelectorProps> = (props: CountrySelectorProps): ReactElement | null => {
-	const [selectedCountry, setSelectedCountry] = useState<string>(props.defaultCountry)
+	const [selectedCountryId, setSelectedCountryId] = useState<number>(props.countryId)
 
 	const {
 		isLoading,
@@ -39,10 +39,12 @@ const CountrySelector: FC<CountrySelectorProps> = (props: CountrySelectorProps):
 	})
 
 	const handleChange = (event: SelectChangeEvent) => {
-		setSelectedCountry(event.target.value)
-		props.onSelectedCountryChange(event.target.value)
+		const newCountryId = allCountries?.find((country) => country.name === event.target.value)?.countryId
+		setSelectedCountryId(newCountryId ?? 0)
+		props.onSelectedCountryChange(newCountryId)
 	}
 
+	const country = allCountries?.find((country) => country.countryId === props.countryId) ?? null
 	return (
 		<ThemeProvider theme={theme}>
 			{/* <img src={flagFrance} /> */}
@@ -53,14 +55,14 @@ const CountrySelector: FC<CountrySelectorProps> = (props: CountrySelectorProps):
 						<Select
 							labelId='labelCountry'
 							id='selectCountry'
-							value={selectedCountry}
+							value={country?.name ?? ''}
 							label='Pays'
 							sx={sxSelect}
 							size='small'
 							onChange={handleChange}>
 							{allCountries.map((country: CountryModel) => (
 								<MenuItem
-									key={country.name}
+									key={country.countryId}
 									value={country.name}>
 									{country.name}
 								</MenuItem>

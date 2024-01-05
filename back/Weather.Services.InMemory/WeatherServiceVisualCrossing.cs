@@ -22,6 +22,16 @@ namespace Weather.Services.VisualCrossing
             return await Task.FromResult(_store.GetAllCountriesNames().Select(country => new VisualCrossingCountryModel(country)));
         }
 
+        public IEnumerable<string> GetAllLocationsNames(string countryName)
+        {
+            return _store.GetAllLocationsNames(countryName);
+        }
+
+        public VisualCrossingLocationModel? GetLocationByCountry(string countryName, string locationName)
+        {
+            return _store.GetDataPerLocation(countryName, locationName)?.MapToVisualCrossingLocationModel(locationName);
+        }
+
         public IEnumerable<VisualCrossingLocationModel> GetAllLocationsByCountry(string countryName)
         {
             var dataPerCountry = _store.GetDataPerCountry(countryName);

@@ -67,7 +67,7 @@ namespace Weather.Database.Postgres
         {
             EnsureConnectionOpen();
 
-            return await _connection.QueryAsync<CountryData>("SELECT * FROM Country");
+            return await _connection.QueryAsync<CountryData>("SELECT * FROM Country ORDER BY Name ASC");
         }
 
         public async Task AddCountryAsync(CountryData country)
@@ -90,7 +90,7 @@ namespace Weather.Database.Postgres
         public async Task<IEnumerable<LocationData>> GetAllLocationsAsync()
         {
             EnsureConnectionOpen();
-            return await _connection.QueryAsync<LocationData>("SELECT * FROM Location");
+            return await _connection.QueryAsync<LocationData>("SELECT * FROM Location ORDER BY Name ASC");
         }
 
         public async Task<IEnumerable<LocationData>> GetAllLocationsAsync(long countryId)
@@ -98,7 +98,7 @@ namespace Weather.Database.Postgres
             EnsureConnectionOpen();
 
             var parameters = new { CountryId = countryId };
-            var sql = "SELECT * FROM Location WHERE CountryId = @CountryId";
+            var sql = "SELECT * FROM Location WHERE CountryId = @CountryId ORDER BY Name ASC";
             return await _connection.QueryAsync<LocationData>(sql, parameters);
         }
 
@@ -145,7 +145,7 @@ namespace Weather.Database.Postgres
             EnsureConnectionOpen();
 
             var parameters = new { LocationId = locationId, DateFrom = new DateTime(year, 1, 1), DateTo = new DateTime(year, 12, 31) };
-            var sql = "SELECT * FROM Temperatures WHERE LocationId = @LocationId AND Date >= @DateFrom AND Date <= @DateTo";
+            var sql = "SELECT * FROM Temperatures WHERE LocationId = @LocationId AND Date >= @DateFrom AND Date <= @DateTo ORDER BY Date ASC";
 
             return await _connection.QueryAsync<TemperaturesData>(sql, parameters);
         }
@@ -168,6 +168,12 @@ namespace Weather.Database.Postgres
         {
             EnsureConnectionOpen();
             await _connection.ExecuteAsync("UPDATE Temperatures SET MinTemperature = @MinTemperature, MaxTemperature = @MaxTemperature, AvgTemperature = @AvgTemperature WHERE LocationId = @LocationId AND Date = @Date", temperature);
+        }
+
+        public async Task UpdateTemperaturesBulkAsync(IEnumerable<TemperaturesData> temperatures)
+        {
+            EnsureConnectionOpen();
+            await _connection.ExecuteAsync("UPDATE Temperatures SET MinTemperature = @MinTemperature, MaxTemperature = @MaxTemperature, AvgTemperature = @AvgTemperature WHERE LocationId = @LocationId AND Date = @Date", temperatures);
         }
 
         public async Task<IEnumerable<AverageTemperaturesByYearData>> GetAvgTemperaturesForAllYearsDataAsync(long locationId)

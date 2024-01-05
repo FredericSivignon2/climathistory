@@ -1,4 +1,5 @@
-﻿using Weather.Application.VisualCrossing.Model;
+﻿using Microsoft.Extensions.Options;
+using Weather.Application.VisualCrossing.Model;
 using Weather.Application.VisualCrossing.Queries;
 using Weather.Database;
 using Weather.Database.Model;
@@ -7,13 +8,15 @@ namespace DatabaseFeeder.Services
 {
     internal class FeederService : IFeederService
     {
+        private readonly ImportSettings _settings;
         private IVisualCrossingReader _locationInfo;
         private IWeatherRepository _weatherRepository;
 
-        public FeederService(IVisualCrossingReader locationInfo, IWeatherRepository weatherRepository)
+        public FeederService(IVisualCrossingReader locationInfo, IWeatherRepository weatherRepository, IOptions<ImportSettings> settings)
         {
             _locationInfo = locationInfo;
             _weatherRepository = weatherRepository;
+            _settings = settings.Value;
         }
 
         public async Task Feed()
@@ -36,6 +39,7 @@ namespace DatabaseFeeder.Services
         private async Task<IEnumerable<CountryData>> AddCountries()
         {
             var countries = await _locationInfo.GetAllCountries();
+            bool noCountryAdded = true;
             foreach (var country in countries)
             {
                 var isExistingCountry = await _weatherRepository.IsExistingCountry(country.Name);
@@ -43,40 +47,57 @@ namespace DatabaseFeeder.Services
                 {
                     Console.WriteLine($"Adding new country {country.Name}...");
                     await _weatherRepository.AddCountryAsync(new CountryData() { Name = country.Name });
+                    noCountryAdded = false;
                 }
+            }
+            if (noCountryAdded)
+            {
+                Console.WriteLine("No new country added.");
             }
             return await _weatherRepository.GetAllCountriesAsync();
         }
 
         private async Task AddLocations(IEnumerable<CountryData> countries)
         {
+            bool noLocationAdded = true;
             foreach (var country in countries)
             {
-                var locations = _locationInfo.GetAllLocationsByCountry(country.Name);
-                foreach (var location in locations)
+                var locationsNames = _locationInfo.GetAllLocationsNames(country.Name);
+                foreach (var locationName in locationsNames)
                 {
-                    long locationId = 0;
-                    var locationData = await _weatherRepository.GetLocation(country.CountryId, location.Name);
+                    var locationData = await _weatherRepository.GetLocation(country.CountryId, locationName);
+                    if (locationData != null && _settings.SkipExistingLocations) continue;
+
+                    var location = _locationInfo.GetLocationByCountry(country.Name, locationName);
+
+                    long locationId;
                     if (locationData == null)
                     {
-                        Console.WriteLine($"Adding new location {location.Name} for country {country.Name}...");
-                        locationId = await _weatherRepository.AddLocationAsync(new LocationData() { Name = location.Name, CountryId = country.CountryId });
+                        Console.WriteLine($"Adding new location {locationName} for country {country.Name}...");
+                        locationId = await _weatherRepository.AddLocationAsync(new LocationData() { Name = locationName, CountryId = country.CountryId });
+                        noLocationAdded = false;
                     }
                     else
                     {
                         locationId = locationData.LocationId;
                     }
 
-                    await AddTemperaturesForLocation(location, locationId);
+                    if (location != null)
+                    {
+                        await AddOrUpdateTemperaturesForLocation(location, locationId);
+                    }
                 }
+            }
+            if (noLocationAdded)
+            {
+                Console.WriteLine("No new location added.");
             }
         }
 
-        private async Task AddTemperaturesForLocation(VisualCrossingLocationModel location, long locationId)
+        private async Task AddOrUpdateTemperaturesForLocation(VisualCrossingLocationModel location, long locationId)
         {
-            int intermediateUpdateCount = 0;
             var temperaturesToAdd = new List<TemperaturesData>(20000);
-            intermediateUpdateCount = 0;
+            var temperaturesToUpdate = new List<TemperaturesData>(20000);
             foreach (VisualCrossingYearTemperatureModel yim in location.TemperaturesPerYear)
             {
                 foreach (VisualCrossingDayTemperatureModel dim in yim.TemperaturesPerDay)
@@ -97,14 +118,14 @@ namespace DatabaseFeeder.Services
                     {
                         // If there is something to update
                         if (temperatureData.AvgTemperature != dim.TemperatureAverage ||
-                            temperatureData.MinTemperature != dim.TemperatureMax ||
-                            temperatureData.MaxTemperature != dim.TemperatureMin)
+                            temperatureData.MinTemperature != dim.TemperatureMin ||
+                            temperatureData.MaxTemperature != dim.TemperatureMax)
                         {
                             temperatureData.AvgTemperature = dim.TemperatureAverage;
                             temperatureData.MinTemperature = dim.TemperatureMin;
                             temperatureData.MaxTemperature = dim.TemperatureMax;
                             await _weatherRepository.UpdateTemperatureAsync(temperatureData);
-                            intermediateUpdateCount++;
+                            temperaturesToUpdate.Add(temperatureData);
                         }
                     }
                 }
@@ -112,7 +133,12 @@ namespace DatabaseFeeder.Services
             if (temperaturesToAdd.Any())
             {
                 await _weatherRepository.AddTemperaturesBulkAsync(temperaturesToAdd);
-                Console.WriteLine($"{temperaturesToAdd.Count} temperatures info added and {intermediateUpdateCount} updated for location {location.Name}.");
+                Console.WriteLine($"{temperaturesToAdd.Count} temperatures info added for location {location.Name}.");
+            }
+            if (temperaturesToUpdate.Any())
+            {
+                await _weatherRepository.UpdateTemperaturesBulkAsync(temperaturesToUpdate);
+                Console.WriteLine($"{temperaturesToUpdate.Count} temperatures info updated for location {location.Name}.");
             }
         }
     }

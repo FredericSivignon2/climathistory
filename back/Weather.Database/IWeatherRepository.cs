@@ -28,8 +28,9 @@ namespace Weather.Database
         Task<TemperaturesData?> GetTemperaturesAsync(long locationId, DateTime date);
         Task<IEnumerable<TemperaturesData>> GetTemperaturesAsync(long locationId, int year);
 
-       Task UpdateCountryAsync(CountryData country);
+        Task UpdateCountryAsync(CountryData country);
         Task UpdateTemperatureAsync(TemperaturesData temperature);
+        Task UpdateTemperaturesBulkAsync(IEnumerable<TemperaturesData> temperatures);
         Task UpdateLocationAsync(LocationData town);
 
         Task<IEnumerable<AverageTemperaturesByYearData>> GetAvgTemperaturesForAllYearsDataAsync(long locationId);

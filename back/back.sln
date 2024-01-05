@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Database.Postgres",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Application.VisualCrossing", "Weather.Application.VisualCrossing\Weather.Application.VisualCrossing.csproj", "{0CCDAE37-6A3B-494D-8469-9352B4BA3336}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisualCrossingDataGrabber", "VisualCrossingDataGrabber\VisualCrossingDataGrabber.csproj", "{D800761E-6C11-4E7B-A8F9-F04539C30FCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{0CCDAE37-6A3B-494D-8469-9352B4BA3336}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CCDAE37-6A3B-494D-8469-9352B4BA3336}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CCDAE37-6A3B-494D-8469-9352B4BA3336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D800761E-6C11-4E7B-A8F9-F04539C30FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D800761E-6C11-4E7B-A8F9-F04539C30FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D800761E-6C11-4E7B-A8F9-F04539C30FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D800761E-6C11-4E7B-A8F9-F04539C30FCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{AC6C4A64-7145-43E0-B49A-CC966B3BB278} = {9369C316-9CA0-4B38-90CF-AFAB9F02FB47}
 		{DD5D4C3C-F09B-447F-BF86-3A4698D9AFE2} = {DAB4BE88-5C5F-45E9-B5CA-BB637FB162A1}
 		{A7F216D2-2DB1-4CA3-85E6-3D3DCBDD2ED3} = {DAB4BE88-5C5F-45E9-B5CA-BB637FB162A1}
+		{D800761E-6C11-4E7B-A8F9-F04539C30FCC} = {9369C316-9CA0-4B38-90CF-AFAB9F02FB47}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A007AE25-4063-4221-B54E-2B226EE06F63}

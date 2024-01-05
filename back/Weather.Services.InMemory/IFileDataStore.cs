@@ -6,6 +6,8 @@
     public interface IFileDataStore
     {
         IEnumerable<string> GetAllCountriesNames();
+        IEnumerable<string> GetAllLocationsNames(string countryName);
+        VisualCrossingLocationFileData? GetDataPerLocation(string countryName, string locationName);
         VisualCrossingLocationFileData[] GetDataPerCountry(string country);
     }
 }

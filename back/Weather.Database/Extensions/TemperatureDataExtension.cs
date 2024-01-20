@@ -5,15 +5,14 @@ namespace Weather.Database.Extensions
 {
     public static class TemperatureDataExtension
     {
-        public static TemperaturesYearInfoModel MapToYearInfoModel(this IEnumerable<TemperaturesData> data, int year)
+        public static TemperatureModel? MapToTemperatureModel(this TemperatureData? data)
         {
-            return new TemperaturesYearInfoModel(
-                year, 
-                data.Select(td => new TemperaturesInfoModel(
-                    td.Date, 
-                    td.MaxTemperature, 
-                    td.MinTemperature, 
-                    td.AvgTemperature)).ToArray());
+            if (data == null)
+            {
+                return null;
+            }
+
+            return new TemperatureModel(data.Value);
         }
     }
 }

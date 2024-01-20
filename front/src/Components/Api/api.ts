@@ -1,14 +1,19 @@
+import { format } from 'date-fns'
 import {
 	CountryModel,
 	LocationModel,
 	TemperatureAveragePerYearModel,
 	TemperatureMinMaxPerYearModel,
+	TemperatureModel,
 	YearInfoModel,
 } from '../types'
 import { apiVersion } from './constants'
 
+const baseUrl = `https://localhost:4000/api/${apiVersion}`
+const formatDateUrl = 'yyyy-MM-dd'
+
 export const getTemperatureHistory = async (locationId: number, year: number): Promise<YearInfoModel> => {
-	const url = `https://localhost:4000/api/${apiVersion}/location/${locationId}/temperatures/${year}`
+	const url = `${baseUrl}/location/${locationId}/temperatures/${year}`
 	const response = await fetch(url, {
 		method: 'GET',
 	})
@@ -21,7 +26,7 @@ export const getTemperatureHistory = async (locationId: number, year: number): P
 }
 
 export const getAllLocationsByCountry = async (countryId: number): Promise<LocationModel[]> => {
-	const url = `https://localhost:4000/api/${apiVersion}/country/${countryId}/all-locations`
+	const url = `${baseUrl}/country/${countryId}/all-locations`
 	const response = await fetch(url, {
 		method: 'GET',
 	})
@@ -34,7 +39,7 @@ export const getAllLocationsByCountry = async (countryId: number): Promise<Locat
 }
 
 export const getAllCountries = async (): Promise<CountryModel[]> => {
-	const url = `https://localhost:4000/api/${apiVersion}/country/all`
+	const url = `${baseUrl}/country/all`
 	const response = await fetch(url, {
 		method: 'GET',
 	})
@@ -47,7 +52,7 @@ export const getAllCountries = async (): Promise<CountryModel[]> => {
 }
 
 export const getAverageTemperaturesPerYear = async (locationId: number): Promise<TemperatureAveragePerYearModel[]> => {
-	const url = `https://localhost:4000/api/${apiVersion}/location/${locationId}/temperatures/average-per-year`
+	const url = `${baseUrl}/location/${locationId}/temperatures/average-per-year`
 	const response = await fetch(url, {
 		method: 'GET',
 	})
@@ -60,13 +65,33 @@ export const getAverageTemperaturesPerYear = async (locationId: number): Promise
 }
 
 export const getMinMaxTemperaturesPerYear = async (locationId: number): Promise<TemperatureMinMaxPerYearModel[]> => {
-	const url = `https://localhost:4000/api/${apiVersion}/location/${locationId}/temperatures/minmax-per-year`
+	const url = `${baseUrl}/location/${locationId}/temperatures/minmax-per-year`
 	const response = await fetch(url, {
 		method: 'GET',
 	})
 
 	if (response.ok) {
 		return (await response.json()) as TemperatureMinMaxPerYearModel[]
+	} else {
+		throw new Error(response.statusText)
+	}
+}
+
+export const getAverageTemperatureByDateRange = async (
+	locationId: number,
+	startDate: Date,
+	endDate: Date
+): Promise<TemperatureModel> => {
+	const url = `${baseUrl}/location/${locationId}/temperatures/average/${format(startDate, formatDateUrl)}/${format(
+		endDate,
+		formatDateUrl
+	)}`
+	const response = await fetch(url, {
+		method: 'GET',
+	})
+
+	if (response.ok) {
+		return (await response.json()) as TemperatureModel
 	} else {
 		throw new Error(response.statusText)
 	}

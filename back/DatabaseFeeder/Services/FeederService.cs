@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using System.Diagnostics;
 using Weather.Application.VisualCrossing.Model;
 using Weather.Application.VisualCrossing.Queries;
 using Weather.Database;
@@ -132,8 +133,10 @@ namespace DatabaseFeeder.Services
             }
             if (temperaturesToAdd.Any())
             {
+                Stopwatch stopWatch = Stopwatch.StartNew();
                 await _weatherRepository.AddTemperaturesBulkAsync(temperaturesToAdd);
-                Console.WriteLine($"{temperaturesToAdd.Count} temperatures info added for location {location.Name}.");
+                stopWatch.Stop();
+                Console.WriteLine($"{temperaturesToAdd.Count} temperatures info added for location {location.Name} in {stopWatch.Elapsed.TotalSeconds} seconds.");
             }
             if (temperaturesToUpdate.Any())
             {

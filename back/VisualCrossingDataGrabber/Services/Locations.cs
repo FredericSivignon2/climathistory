@@ -106,8 +106,7 @@
             "versailles, france",
             "vichy, france",
             // -------------------------------------
-            // ESPAGNE ; jusqu'à 40 depuis https://fr.wikipedia.org/wiki/Liste_de_villes_d%27Espagne
-            // + quelques villes
+            // ESPAGNE
             // -------------------------------------
             "albacete, espagne",
             "alcalá de henares, espagne",
@@ -175,8 +174,7 @@
             "vitoria-gasteiz, espagne",
             "zamora, espagne",
             // -------------------------------------
-            // ITALIE ; jusqu'à 44 depuis https://fr.wikipedia.org/wiki/Liste_des_villes_d%27Italie_par_nombre_d%27habitants
-            // + quelques autres.
+            // ITALIE
             // -------------------------------------
             "ancone, italie",
             "arezzo, italie",
@@ -262,7 +260,7 @@
             "viterbo, italie",
             "vérone, italie",
             // -------------------------------------
-            // ALLEMAGNE ; jusqu'à 48 depuis https://fr.wikipedia.org/wiki/Liste_des_plus_grandes_villes_d%27Allemagne
+            // ALLEMAGNE
             // -------------------------------------
             "aix-la-chapelle, allemagne",
             "augsbourg, allemagne",
@@ -340,7 +338,7 @@
             "wuppertal, allemagne",
             "zwickau, allemagne",
             // -------------------------------------
-            // SUISSE ; jusqu'à 15 depuis https://fr.wikipedia.org/wiki/Liste_des_villes_de_Suisse
+            // SUISSE
             // -------------------------------------
             "aigle, suisse",
             "bellinzone, suisse",
@@ -367,19 +365,16 @@
             "neuchâtel, suisse",
             "olten, suisse",
             "saint-gall, suisse",
-            "schaan, suisse",
             "schaffhouse, suisse",
             "sion, suisse",
             "soleure, suisse",
-            "thoune, suisse",
             "uster, suisse",
             "vevey, suisse",
-            "winterthour, suisse",
             "yverdon-les-bains, suisse",
             "zoug, suisse",
             "zurich, suisse",
             // -------------------------------------
-            // BELGIQUE ; jusqu'à 21 depuis https://fr.wikipedia.org/wiki/Liste_des_communes_de_Belgique_par_population
+            // BELGIQUE
             // -------------------------------------
             "alost, belgique",
             "anderlecht, belgique",
@@ -419,7 +414,7 @@
             "yprès, belgique",
             "zaventem, belgique",
             // -------------------------------------
-            // USA ; jusqu'à 36 depuis https://fr.wikipedia.org/wiki/Liste_des_villes_les_plus_peupl%C3%A9es_des_%C3%89tats-Unis
+            // USA 
             // -------------------------------------
             "albuquerque, usa",
             "anchorage, usa",
@@ -505,7 +500,7 @@
             "washington DC, usa",
             "wichita, usa",
             // -------------------------------------
-            // Bresil ; jusqu'à 8 depuis https://fr.wikipedia.org/wiki/Liste_de_villes_du_Br%C3%A9sil
+            // Bresil 
             // -------------------------------------
             "anápolis, brésil",
             "aracaju, brésil",
@@ -548,7 +543,7 @@
             "teresina, brésil",
             "uberlândia, brésil",
             // -------------------------------------
-            // Japon ; jusqu'à 18 depuis https://fr.wikipedia.org/wiki/Liste_des_villes_du_Japon_par_nombre_d%27habitants
+            // Japon
             // -------------------------------------
             "akita, japon",
             "chiba, japon",
@@ -589,7 +584,7 @@
             "yokohama, japon",
             "ōsaka, japon",
             // -------------------------------------
-            // Australie ; jusqu'à 10 depuis https://fr.wikipedia.org/wiki/Liste_des_villes_d%27Australie_par_nombre_d%27habitants
+            // Australie
             // -------------------------------------
             "adélaïde, australie",
             "albury, australie",
@@ -629,7 +624,7 @@
             "wagga wagga, australie",
             "wollongong, australie",
             // -------------------------------------
-            // CANADA ; jusqu'à 14 depuis https://fr.wikipedia.org/wiki/Villes_du_Canada_par_population
+            // CANADA
             // -------------------------------------
             "abbotsford, canada",
             "ajax, canada",
@@ -683,7 +678,7 @@
             "whitby, canada",
             "winnipeg, canada",
             // -------------------------------------
-            // POLOGNE ; jusqu'à 15 depuis https://fr.wikipedia.org/wiki/Liste_des_plus_grandes_villes_de_Pologne
+            // POLOGNE
             // -------------------------------------
             "białystok, pologne",
             "bielsko-biała, pologne",
@@ -724,7 +719,7 @@
             "łódź, pologne",
             "śląsk, pologne",
             // -------------------------------------
-            // AFRIQUE DU SUD ; jusqu'à 12 depuis https://fr.wikipedia.org/wiki/Liste_de_villes_d%27Afrique_du_Sud
+            // AFRIQUE DU SUD
             // -------------------------------------
             "benoni, afrique du sud",
             "bloemfontein, afrique du sud",
@@ -757,7 +752,7 @@
             "vereeniging, afrique du sud",
             "welkom, afrique du sud",
             // -------------------------------------
-            // NORVEGE ; depuis https://fr.wikipedia.org/wiki/Liste_de_villes_de_Norv%C3%A8ge
+            // NORVEGE 
             // -------------------------------------
             "arendal, norvège",
             "askøy, norvège",
@@ -872,7 +867,7 @@
             "valledupar, colombie",
             "villavicencio, colombie",
             // -------------------------------------
-            // ARGENTINE ; depuis https://fr.wikipedia.org/wiki/Liste_de_villes_d%27Argentine
+            // ARGENTINE
             // -------------------------------------
             "bahía blanca, argentine",
             "buenos aires, argentine",
@@ -901,7 +896,7 @@
             "tucumán, argentine",
             "ushuaia, argentine",
             // -------------------------------------
-            // ALGERIE ; depuis https://fr.wikipedia.org/wiki/Liste_de_villes_d%27Alg%C3%A9rie
+            // ALGERIE
             // -------------------------------------
             "ain defla, algérie",
             "alger, algérie",
@@ -934,7 +929,7 @@
             "tlemcen, algérie",
             "tébessa, algérie",
             // -------------------------------------
-            // MAROC ; depuis https://fr.wikipedia.org/wiki/Liste_des_grandes_villes_du_Maroc_par_population
+            // MAROC 
             // -------------------------------------
             "agadir, maroc",
             "al hoceima, maroc",
@@ -963,25 +958,22 @@
             "settat, maroc",
             "tanger, maroc",
             "taourirt, maroc",
-            "taroudant, maroc",
             "tetouan, maroc",
             "tiznit, maroc",
             "témara, maroc",
             // -------------------------------------
-            // ARABIE SAOUDITE ; depuis https://fr.wikipedia.org/wiki/Liste_des_grandes_villes_du_Maroc_par_population
+            // ARABIE SAOUDITE
             // -------------------------------------
             "abha, arabie saoudite",
             "al hufuf, arabie saoudite",
             "al khobar, arabie saoudite",
             "al mubarraz, arabie saoudite",
             "al qatif, arabie saoudite",
-            "buraidah, arabie saoudite",
             "dammam, arabie saoudite",
             "djeddah, arabie saoudite",
             "ha'il, arabie saoudite",
             "jizan, arabie saoudite",
             "jubail, arabie saoudite",
-            "khamis mushait, arabie saoudite",
             "khobar, arabie saoudite",
             "la mecque, arabie saoudite",
             "médine, arabie saoudite",
@@ -991,7 +983,7 @@
             "tabuk, arabie saoudite",
             "yanbu, arabie saoudite",
             // -------------------------------------
-            // CHINE ; depuis https://fr.wikipedia.org/wiki/Liste_des_villes_de_Chine_par_nombre_d%27habitants
+            // CHINE 
             // -------------------------------------
             "changsha, chine",
             "changzhou, chine",
@@ -1030,7 +1022,7 @@
             "yinchuan, chine",
             "zhengzhou, chine",
             // -------------------------------------
-            // INDE ; depuis https://fr.wikipedia.org/wiki/Liste_des_villes_d%27Inde
+            // INDE
             // -------------------------------------
             "agra, inde",
             "ahmedabad, inde",
@@ -1074,7 +1066,7 @@
             "vijayawada, inde",
             "visakhapatnam, inde",
             // -------------------------------------
-            // ROYAUME-UNI ; depuis https://fr.wikipedia.org/wiki/Liste_de_villes_du_Royaume-Uni
+            // ROYAUME-UNI 
             // -------------------------------------
             "aberdeen, royaume-uni",
             "bath, royaume-uni",
@@ -1114,7 +1106,7 @@
             "york, royaume-uni",
             "édimbourg, royaume-uni",
             // -------------------------------------
-            // IRLANDE ; depuis https://fr.wikipedia.org/wiki/Liste_des_villes_de_l%27%C3%89tat_d%27Irlande
+            // IRLANDE 
             // -------------------------------------
             "athlone, irlande",
             "bray, irlande",
@@ -1136,7 +1128,7 @@
             "tralee, irlande",
             "waterford, irlande",
             // -------------------------------------
-            // ISLAND ; depuis https://fr.wikipedia.org/wiki/Liste_des_localit%C3%A9s_d%27Islande
+            // ISLAND 
             // -------------------------------------
             "akranes, islande",
             "akureyri, islande",
@@ -1155,150 +1147,580 @@
             "siglufjörður, islande",
             "ísafjörður, islande",
             // -------------------------------------
-            // MADAGASCAR ; depuis https://fr.wikipedia.org/wiki/Liste_des_villes_de_Madagascar
+            // MADAGASCAR 
             // -------------------------------------
+            "ambatondrazaka, madagascar",
+            "ambositra, madagascar",
+            "antalaha, madagascar",
+            "antananarivo, madagascar",
+            "antsirabe, madagascar",
+            "antsohihy, madagascar",
+            "fianarantsoa, madagascar",
+            "fort-dauphin, madagascar",
+            "mahajanga, madagascar",
+            "manakara, madagascar",
+            "morondava, madagascar",
+            "nosy be, madagascar",
+            "sambava, madagascar",
             "tananarive, madagascar",
+            "toamasina, madagascar",
+            "toliara, madagascar",
             // -------------------------------------
-            // PORTUGAL ; depuis https://herald-dick-magazine.blogspot.com/2015/06/top-10-des-plus-grandes-villes-du.html
+            // PORTUGAL
             // -------------------------------------
-            "lisbonne, portugal",
-            "porto, portugal",
-            "vila nova de gaia, portugal",
+            "agualva-cacém, portugal",
+            "almada, portugal",
             "amadora, portugal",
+            "aveiro, portugal",
+            "barreiro, portugal",
+            "braga, portugal",
+            "coimbra, portugal",
+            "faró, portugal",
+            "funchal, portugal",
+            "gondomar, portugal",
+            "guimarães, portugal",
+            "leiria, portugal",
+            "lisbonne, portugal",
+            "matosinhos, portugal",
+            "oeiras, portugal",
+            "ponta delgada, portugal",
+            "porto, portugal",
+            "quarteira, portugal",
+            "rio tinto, portugal",
+            "sesimbra, portugal",
+            "setúbal, portugal",
+            "vila nova de gaia, portugal",
+            "viseu, portugal",
+            "évora, portugal",
             // -------------------------------------
             // PAYS-BAS ; depuis 
             // -------------------------------------
+            "'s-hertogenbosch, pays-bas",
+            "almere, pays-bas",
+            "amersfoort, pays-bas",
             "amsterdam, pays-bas",
+            "arnhem, pays-bas",
+            "breda, pays-bas",
+            "deventer, pays-bas",
+            "dordrecht, pays-bas",
+            "eindhoven, pays-bas",
+            "emmen, pays-bas",
+            "enschede, pays-bas",
+            "groningen, pays-bas",
+            "haarlem, pays-bas",
             "la haye, pays-bas",
+            "leeuwarden, pays-bas",
+            "leiden, pays-bas",
+            "maastricht, pays-bas",
+            "nijmegen, pays-bas",
             "rotterdam, pays-bas",
+            "tilburg, pays-bas",
+            "utrecht, pays-bas",
+            "venlo, pays-bas",
+            "zaanstad, pays-bas",
+            "zwolle, pays-bas",
             // -------------------------------------
-            // GRECE ; depuis https://fr.wikipedia.org/wiki/Liste_de_villes_de_Gr%C3%A8ce
+            // GRECE 
             // -------------------------------------
+            "agrinio, grèce",
+            "alexandroupoli, grèce",
             "athènes, grèce",
-            "thessalonique, grèce",
-            "patras, grèce",
+            "chalcis, grèce",
+            "chania, grèce",
+            "giannitsa, grèce",
+            "heraklion, grèce",
+            "ioannina, grèce",
+            "kalamata, grèce",
+            "katerini, grèce",
+            "kavala, grèce",
+            "komotini, grèce",
+            "lamia, grèce",
             "larissa, grèce",
+            "mytilene, grèce",
+            "patras, grèce",
+            "piraeus, grèce",
+            "rhodes, grèce",
+            "serres, grèce",
+            "thessalonique, grèce",
+            "trikala, grèce",
+            "veria, grèce",
+            "volos, grèce",
+            "xanthi, grèce",
             // -------------------------------------
             // TUNISIE ; depuis 
             // -------------------------------------
-            "tunis, tunisie",
-            "sfax, tunisie",
-            "sousse, tunisie",
-            "kairouan, tunisie",
+            "ariana, tunisie",
+            "beja, tunisie",
+            "ben arous, tunisie",
             "bizerte, tunisie",
+            "gabès, tunisie",
+            "gafsa, tunisie",
+            "jendouba, tunisie",
+            "kairouan, tunisie",
+            "kasserine, tunisie",
+            "kef, tunisie",
+            "la manouba, tunisie",
+            "mahdia, tunisie",
+            "medenine, tunisie",
+            "monastir, tunisie",
+            "nabeul, tunisie",
+            "sfax, tunisie",
+            "sid bouzid, tunisie",
+            "siliana, tunisie",
+            "sousse, tunisie",
+            "tataouine, tunisie",
+            "tozeur, tunisie",
+            "tunis, tunisie",
+            "zaghouan, tunisie",
+            "zarzis, tunisie",
             // -------------------------------------
-            // MALTE ; depuis https://fr.wikipedia.org/wiki/Liste_des_villes_de_Malte
+            // MALTE
             // -------------------------------------
             "birkirkara, malte",
             "il-mosta, malte",
+            "mdina, malte",
+            "qormi, malte",
+            "rabat, malte",
+            "sliema, malte",
+            "valletta, malte",
             // -------------------------------------
-            // ISRAËL ; depuis https://fr.wikipedia.org/wiki/Liste_des_villes_d%27Isra%C3%ABl
+            // ISRAËL 
             // -------------------------------------
-            "jérusalem, israël",
-            "tel aviv, israël",
+            "ashdod, israël",
+            "ashkelon, israël",
+            "beer sheva, israël",
+            "beit shemesh, israël",
+            "bnei brak, israël",
+            "eilat, israël",
+            "hadera, israël",
             "haïfa, israël",
-            "rishon lezion, israël",
             "holon, israël",
+            "jérusalem, israël",
+            "kfar saba, israël",
+            "modiin-maccabim-reut, israël",
+            "nazareth, israël",
+            "netanya, israël",
+            "petah tikva, israël",
+            "ramat gan, israël",
+            "rishon lezion, israël",
+            "tel aviv, israël",
             // -------------------------------------
-            // COREE DU SUD ; depuis 
+            // COREE DU SUD 
             // -------------------------------------
-            "séoul, corée du sud",
+            "ansan, corée du sud",
             "busan, corée du sud",
+            "changwon, corée du sud",
+            "cheonan, corée du sud",
+            "daegu, corée du sud",
+            "daejeon, corée du sud",
+            "gochang, corée du sud",
+            "gwangju, corée du sud",
+            "gyeongju, corée du sud",
             "incheon, corée du sud",
+            "jeju, corée du sud",
+            "jeonju, corée du sud",
+            "pohang, corée du sud",
+            "seongnam, corée du sud",
+            "suwon, corée du sud",
+            "séoul, corée du sud",
+            "ulsan, corée du sud",
+            "yongin, corée du sud",
             // -------------------------------------
-            // NEPAL ; depuis 
+            // NEPAL 
             // -------------------------------------
+            "bhaktapur, népal",
+            "bharatpur, népal",
+            "biratnagar, népal",
+            "butwal, népal",
+            "dhangadhi, népal",
+            "dharan, népal",
+            "gulariya, népal",
+            "hetauda, népal",
+            "itahari, népal",
+            "janakpur, népal",
             "katmandou, népal",
+            "lalitpur, népal",
+            "nepalgunj, népal",
+            "pokhara, népal",
+            "sidharthanagar, népal",
             // -------------------------------------
-            // RUSSIE ; depuis 
+            // RUSSIE 
             // -------------------------------------
-            "moscou, russie",
-            "saint-pétersbourg, russie",
-            "novossibirsk, russie",
+            "astrakhan, russie",
+            "barnaul, russie",
             "iekaterinbourg, russie",
-            "nijni novgorod, russie",
+            "irkoutsk, russie",
+            "izhevsk, russie",
             "kazan, russie",
-            "samara, russie",
-            "tcheliabinsk, russie",
+            "krasnodar, russie",
+            "krasnoïarsk, russie",
+            "moscou, russie",
+            "naberejnye tchelny, russie",
+            "nijni novgorod, russie",
+            "novokuznetsk, russie",
+            "novossibirsk, russie",
             "omsk, russie",
+            "oufa, russie",
+            "penza, russie",
+            "perm, russie",
+            "rostov-sur-le-don, russie",
+            "ryazan, russie",
+            "saint-pétersbourg, russie",
+            "samara, russie",
+            "saratov, russie",
+            "tcheliabinsk, russie",
+            "toliatti, russie",
+            "tyumen, russie",
+            "vladivostok, russie",
+            "volgograd, russie",
+            "voronej, russie",
+            "yekaterinburg, russie",
             // -------------------------------------
-            // TCHEQUIE; depuis 
+            // TCHEQUIE
             // -------------------------------------
-            "prague, tchéquie",
             "brno, tchéquie",
+            "havířov, tchéquie",
+            "hradec králové, tchéquie",
+            "jihlava, tchéquie",
+            "karlovy vary, tchéquie",
+            "kroměříž, tchéquie",
+            "liberec, tchéquie",
+            "olomouc, tchéquie",
+            "ostrava, tchéquie",
+            "pardubice, tchéquie",
+            "plzeň, tchéquie",
+            "prague, tchéquie",
+            "zlin, tchéquie",
+            "ústí nad labem, tchéquie",
+            "české budějovice, tchéquie",
             // -------------------------------------
-            // SLOVAQUIE; depuis 
+            // SLOVAQUIE
             // -------------------------------------
+            "banská bystrica, slovaquie",
             "bratislava, slovaquie",
+            "humenné, slovaquie",
+            "košice, slovaquie",
+            "martin, slovaquie",
+            "michalovce, slovaquie",
+            "nitra, slovaquie",
+            "nové zámky, slovaquie",
+            "poprad, slovaquie",
+            "prešov, slovaquie",
+            "prievidza, slovaquie",
+            "spišská nová ves, slovaquie",
+            "trenčín, slovaquie",
+            "trnava, slovaquie",
+            "zvolen, slovaquie",
+            "žilina, slovaquie",
             // -------------------------------------
-            // ROUMANIE; depuis 
+            // ROUMANIE
             // -------------------------------------
+            "arad, roumanie",
+            "bacau, roumanie",
+            "baia mare, roumanie",
+            "botosani, roumanie",
+            "braila, roumanie",
+            "brasov, roumanie",
             "bucarest, roumanie",
+            "buzau, roumanie",
             "cluj, roumanie",
             "constanta, roumanie",
+            "craiova, roumanie",
+            "focsani, roumanie",
+            "galati, roumanie",
+            "iasi, roumanie",
+            "oradea, roumanie",
+            "piatra neamt, roumanie",
+            "pitesti, roumanie",
+            "ploiesti, roumanie",
+            "ramnicu valcea, roumanie",
+            "satu mare, roumanie",
+            "sibiu, roumanie",
+            "suceava, roumanie",
+            "targu mures, roumanie",
             "timisoara, roumanie",
             // -------------------------------------
-            // HONGRIE; depuis 
+            // HONGRIE
             // -------------------------------------
+            "békéscsaba, hongrie",
             "budapest, hongrie",
+            "debrecen, hongrie",
+            "dunaújváros, hongrie",
+            "eger, hongrie",
+            "győr, hongrie",
+            "hódmezővásárhely, hongrie",
+            "kaposvár, hongrie",
+            "kecskemét, hongrie",
+            "miskolc, hongrie",
+            "nagykanizsa, hongrie",
+            "nyíregyháza, hongrie",
+            "pécs, hongrie",
+            "szeged, hongrie",
+            "szigetszentmiklós, hongrie",
+            "szolnok, hongrie",
+            "szombathely, hongrie",
+            "székesfehérvár, hongrie",
+            "tatabánya, hongrie",
+            "vasvár, hongrie",
+            "vác, hongrie",
             // -------------------------------------
-            // MOLDAVIE; depuis 
+            // MOLDAVIE
             // -------------------------------------
+            "bender, moldavie",
+            "bălți, moldavie",
+            "cahul, moldavie",
             "chisinau, moldavie",
+            "comrat, moldavie",
+            "criuleni, moldavie",
+            "dubăsari, moldavie",
+            "edineț, moldavie",
+            "florești, moldavie",
+            "hîncești, moldavie",
+            "orhei, moldavie",
+            "soroca, moldavie",
+            "strășeni, moldavie",
+            "tiraspol, moldavie",
+            "ungheni, moldavie",
+            "șoldănești, moldavie",
             // -------------------------------------
-            // UKRAINE; depuis 
+            // UKRAINE
             // -------------------------------------
-            "kiev, ukraine",
-            "kharkiv, ukraine",
-            "odessa, ukraine",
             "dnipro, ukraine",
             "donetsk, ukraine",
+            "ivanofrankivsk, ukraine",
+            "kharkiv, ukraine",
+            "kherson, ukraine",
+            "khmelnytskyï, ukraine",
+            "kiev, ukraine",
+            "kropyvnytskyï, ukraine",
+            "loutsk, ukraine",
+            "lviv, ukraine",
+            "marioupol, ukraine",
+            "mykolaïv, ukraine",
+            "odessa, ukraine",
+            "poltava, ukraine",
+            "rivne, ukraine",
+            "sumy, ukraine",
+            "tcherkassy, ukraine",
+            "tchernihiv, ukraine",
+            "tchernivtsi, ukraine",
+            "vinnytsia, ukraine",
+            "zaporijia, ukraine",
+            "zhytomyr, ukraine",
             // -------------------------------------
-            // SUEDE; depuis 
+            // SUEDE
             // -------------------------------------
-            "stockholm, suede",
+            "borås, suede",
+            "eskilstuna, suede",
+            "gävle, suede",
             "göteborg, suede",
+            "halmstad, suede",
+            "helsingborg, suede",
+            "jonköping, suede",
+            "karlstad, suede",
             "kiruna, suede",
+            "linköping, suede",
+            "lund, suede",
+            "malmö, suede",
+            "norrköping, suede",
+            "stockholm, suede",
+            "sundsvall, suede",
+            "södertälje, suede",
+            "täby, suede",
+            "umeå, suede",
+            "uppsala, suede",
+            "västerås, suede",
+            "växjö, suede",
+            "örebro, suede",
             // -------------------------------------
-            // DANEMARK; depuis 
+            // DANEMARK
             // -------------------------------------
-            "copenhague, danemark",
+            "aalborg, danemark",
             "aarhus, danemark",
+            "copenhague, danemark",
+            "esbjerg, danemark",
+            "frederiksberg, danemark",
+            "herning, danemark",
+            "hilleroed, danemark",
+            "holstebro, danemark",
+            "horsens, danemark",
+            "hørsholm, danemark",
+            "kolding, danemark",
+            "køge, danemark",
+            "næstved, danemark",
             "odense, danemark",
+            "randers, danemark",
+            "roskilde, danemark",
+            "silkeborg, danemark",
+            "slagelse, danemark",
+            "tårnby, danemark",
+            "vejle, danemark",
+            "viborg, danemark",
             // -------------------------------------
-            // FINLANDE; depuis 
+            // FINLANDE
             // -------------------------------------
+            "espoo, finlande",
             "helsinki, finlande",
+            "imatra, finlande",
+            "joensuu, finlande",
+            "jyväskylä, finlande",
+            "kajaani, finlande",
+            "kotka, finlande",
+            "kouvola, finlande",
+            "kuopio, finlande",
+            "lahti, finlande",
+            "lappeenranta, finlande",
+            "mikkeli, finlande",
             "oulu, finlande",
-            "tampere, finlande",
+            "pori, finlande",
+            "rauma, finlande",
+            "riihimäki, finlande",
             "rovaniemi, finlande",
+            "salo, finlande",
+            "savonlinna, finlande",
+            "seinaejoki, finlande",
+            "tampere, finlande",
+            "turku, finlande",
+            "vaasa, finlande",
+            "vantaa, finlande",
             // -------------------------------------
-            // GROENLAND; depuis 
+            // GROENLAND
             // -------------------------------------
+            "aasiaat, groenland",
+            "ilulissat, groenland",
+            "ittoqqortoormiit, groenland",
+            "kangaatsiaq, groenland",
+            "maniitsoq, groenland",
+            "nanortalik, groenland",
             "nuuk, groenland",
+            "paamiut, groenland",
+            "qaqortoq, groenland",
+            "qasigiannguit, groenland",
+            "qeqertarsuaq, groenland",
+            "qeqertarsuatsiaat, groenland",
+            "sisimiut, groenland",
+            "tasiilaq, groenland",
+            "upernavik, groenland",
             // -------------------------------------
-            // COSTA RICA; depuis 
+            // COSTA RICA
             // -------------------------------------
+            "alajuela, costa rica",
+            "cartago, costa rica",
+            "golfito, costa rica",
+            "grecia, costa rica",
+            "guapiles, costa rica",
+            "heredia, costa rica",
+            "liberia, costa rica",
+            "limon, costa rica",
+            "palmares, costa rica",
+            "puntarenas, costa rica",
+            "quesada, costa rica",
+            "san isidro, costa rica",
             "san josé, costa rica",
+            "san ramon, costa rica",
+            "siquirres, costa rica",
+            "zacatecoluca, costa rica",
             // -------------------------------------
-            // NIGERIA; depuis 
+            // NIGERIA 
             // -------------------------------------
+            "aba, nigeria",
             "abuja, nigeria",
+            "akure, nigeria",
+            "bauchi, nigeria",
+            "benin city, nigeria",
+            "calabar, nigeria",
+            "ebonyi, nigeria",
+            "enugu, nigeria",
+            "ibadan, nigeria",
+            "ilorin, nigeria",
+            "jos, nigeria",
+            "kaduna, nigeria",
+            "kano, nigeria",
+            "lagos, nigeria",
+            "maiduguri, nigeria",
+            "minna, nigeria",
+            "owerri, nigeria",
+            "port harcourt, nigeria",
+            "sokoto, nigeria",
+            "warri, nigeria",
+            "zaria, nigeria",
             // -------------------------------------
-            // PHILIPPINES; depuis 
+            // PHILIPPINES 
             // -------------------------------------
-            "quezon city, philippines",
-            "manille, philippines",
-            "davao, philippines",
+            "angeles, philippines",
+            "antipolo, philippines",
+            "bacolod, philippines",
+            "baguio, philippines",
+            "batangas, philippines",
+            "biñan, philippines",
+            "cagayan de oro, philippines",
             "caloocan, philippines",
+            "cebu, philippines",
+            "davao, philippines",
+            "iloilo city, philippines",
+            "lapu-lapu, philippines",
+            "las piñas, philippines",
+            "makati, philippines",
+            "mandaluyong, philippines",
+            "manille, philippines",
+            "marikina, philippines",
+            "muntinlupa, philippines",
+            "parañaque, philippines",
+            "pasig, philippines",
+            "quezon city, philippines",
+            "san jose del monte, philippines",
+            "taguig, philippines",
+            "zamboanga, philippines",
             // -------------------------------------
-            // NOUVELLE-ZELANDE; depuis https://destination-nouvellezelande.com/villes-incontournables-nouvelle-zelande/
+            // NOUVELLE-ZELANDE
             // -------------------------------------
+            "ashburton, nouvelle-zélande",
             "auckland, nouvelle-zélande",
+            "blenheim, nouvelle-zélande",
             "christchurch, nouvelle-zélande",
-            "wellington, nouvelle-zélande",
-            "nelson, nouvelle-zélande",
             "dunedin, nouvelle-zélande",
+            "gisborne, nouvelle-zélande",
+            "greymouth, nouvelle-zélande",
+            "hamilton, nouvelle-zélande",
+            "invercargill, nouvelle-zélande",
+            "napier-hastings, nouvelle-zélande",
+            "nelson, nouvelle-zélande",
+            "new plymouth, nouvelle-zélande",
+            "palmerston north, nouvelle-zélande",
+            "queenstown, nouvelle-zélande",
+            "rotorua, nouvelle-zélande",
+            "taupo, nouvelle-zélande",
+            "tauranga, nouvelle-zélande",
+            "timaru, nouvelle-zélande",
+            "wanaka, nouvelle-zélande",
+            "wellington, nouvelle-zélande",
+            "whakatane, nouvelle-zélande",
+            "whanganui, nouvelle-zélande",
+            "whangarei, nouvelle-zélande",
+            // -------------------------------------
+            // EGYPTE
+            // -------------------------------------
+            "alexandrie, égypte",
+            "asieut, égypte",
+            "assouan, égypte",
+            "beni suef, égypte",
+            "damiette, égypte",
+            "el-mahalla el-kubra, égypte",
+            "fayoum, égypte",
+            "gizeh, égypte",
+            "hurghada, égypte",
+            "ismaïlia, égypte",
+            "le caire, égypte",
+            "louxor, égypte",
+            "mansoura, égypte",
+            "minya, égypte",
+            "port-saïd, égypte",
+            "qena, égypte",
+            "sharm el-cheikh, égypte",
+            "sohag, égypte",
+            "suez, égypte",
+            "tanta, égypte",
+            "zagazig, égypte"
         };
 
     }

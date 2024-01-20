@@ -33,6 +33,11 @@ namespace WeatherAPI
             {
                 return await tempInfo.GetMinMaxTemperaturesDataFrom(locationId);
             });
+
+            app.MapGet($"{BaseRoute}/location/{{locationId:long}}/temperatures/average/{{startDate:DateTime}}/{{endDate:DateTime}}", async ([FromServices] IWeatherReader tempInfo, long locationId, DateTime startDate, DateTime endDate) =>
+            {
+                return await tempInfo.GetAverageTemperatureByDateRange(locationId, startDate, endDate);
+            });
         }
     }
 }

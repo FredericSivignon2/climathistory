@@ -50,6 +50,11 @@ namespace Weather.Services.VisualCrossing
             return (await _repository.GetMinMaxTemperaturesForAllYearsDataAsync(locationId)).MapToMinMaxPerYearModels();
         }
 
+        public async Task<TemperatureModel?> GetAverageTemperatureByDateRange(long locationId, DateTime startDate, DateTime endDate)
+        {
+            return (await _repository.GetAverageTemperatureByDateRangeAsync(locationId, startDate, endDate)).MapToTemperatureModel();
+        }
+
         public async Task<TemperaturesLocationInfoModel> GetLocationInfoFrom(long locationId)
         {
             throw new NotImplementedException();

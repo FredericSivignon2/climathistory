@@ -10,6 +10,8 @@ SELECT EXTRACT(YEAR FROM Date) As Year,
 						
 SELECT * FROM country
 
+SELECT * FROM location
+
 DELETE FROM Temperatures WHERE locationid IN
 (SElECT locationid FROM location WHERE countryid=51)
 
@@ -18,7 +20,7 @@ SELECT * FROM location WHERE countryid=2
 SELECT l.Name, t.* 
 FROM temperatures t
 INNER JOIN location l ON t.locationid=l.locationid
-WHERE t.locationid=289
+WHERE t.locationid=23
 
 UPDATE Temperatures
 SET MinTemperature = MaxTemperature,
@@ -30,3 +32,5 @@ INNER JOIN Location l ON l.locationid=t.locationid
 
 SELECT COUNT(1)
 FROM Temperatures
+
+

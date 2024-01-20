@@ -14,5 +14,7 @@ namespace Weather.Application.Query
         
         Task<IEnumerable<AveragePerYearModel>> GetAvgTemperaturesForAllYears(long locationId);
         Task<IEnumerable<MinMaxPerYearModel>> GetMinMaxTemperaturesDataFrom(long locationId);
+
+        Task<TemperatureModel?> GetAverageTemperatureByDateRange(long locationId, DateTime startDate, DateTime endDate);
     }
 }

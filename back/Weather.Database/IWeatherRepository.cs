@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using Weather.Application.Model;
 using Weather.Database.Model;
 
 namespace Weather.Database
@@ -35,5 +36,7 @@ namespace Weather.Database
 
         Task<IEnumerable<AverageTemperaturesByYearData>> GetAvgTemperaturesForAllYearsDataAsync(long locationId);
         Task<IEnumerable<MinMaxTemperaturesByYearData>> GetMinMaxTemperaturesForAllYearsDataAsync(long locationId);
+
+        Task<TemperatureData> GetAverageTemperatureByDateRangeAsync(long locationId, DateTime startDate, DateTime endDate);
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System.Data;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using Dapper;
+using Weather.Application.Model;
 using Weather.Database.Model;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -209,6 +211,17 @@ namespace Weather.Database.Postgres
 
 
             return await _connection.QueryAsync<MinMaxTemperaturesByYearData>(sql, parameters);
+        }
+
+        public async Task<TemperatureData> GetAverageTemperatureByDateRangeAsync(long locationId, DateTime startDate, DateTime endDate)
+        {
+            EnsureConnectionOpen();
+
+            var parameters = new { LocationId = locationId, StartDate = startDate, EndDate = endDate };
+            var sql = "SELECT AVG(avgtemperature) AS Value FROM temperatures WHERE locationId=@LocationId AND date > @StartDate AND date < @EndDate GROUP BY locationid";
+
+            var temperatureValue = await _connection.ExecuteScalarAsync<decimal>(sql, parameters);
+            return new TemperatureData() { Value = temperatureValue };
         }
 
         public void Dispose()

@@ -52,3 +52,7 @@ export interface TemperatureAveragePerYearModel {
 	averageOfMax: number
 	averageOfMin: number
 }
+
+export interface TemperatureModel {
+	value: number
+}

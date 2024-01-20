@@ -61,6 +61,10 @@ export const sxBoxDisplayArea = {
 	margin: '4px',
 }
 
+export const sxHorizontalFlex = {
+	display: 'flex',
+}
+
 export const sxDisplayTabs = {
 	width: '100%',
 	backgroundColor: (theme: Theme) => theme.palette.primary.light,

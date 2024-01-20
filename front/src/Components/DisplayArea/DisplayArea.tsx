@@ -1,9 +1,14 @@
-import { Box, Grid, Tab, Tabs } from '@mui/material'
+import { Box, Container, Grid, Tab, Tabs } from '@mui/material'
 import { DisplayAreaProps } from './types'
-import { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import TabPanelHistory from './TabPanelHistory'
 import TabPanelStatistics from './TabPanelStatistics'
-import { sxBoxDisplayArea, sxDisplayTabs } from '../theme'
+import { sxBoxDisplayArea, sxDisplayTabs, sxHorizontalFlex } from '../theme'
+import { TemperatureCard } from '../TemperatureCard'
+import { getAverageTemperatureByDateRange } from '../Api/api'
+import { GlobalContext } from '../../App'
+import { GlobalData } from '../types'
+import { isNil } from 'lodash'
 
 const tabHistorique = 'Historique'
 const tabStatistics = 'Statistiques'
@@ -17,14 +22,34 @@ function a11yProps(index: number) {
 
 const DisplayArea: FC<DisplayAreaProps> = (props: DisplayAreaProps) => {
 	const [selectedTab, setSelectedTab] = useState<number>(0)
+	const { locationId } = useContext<GlobalData>(GlobalContext)
 
 	const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
 		setSelectedTab(newValue)
 	}
 
+	if (isNil(locationId)) {
+		return <></>
+	}
+
+	const tmpApi = (id: number) => 23.2
 	return (
 		<Box sx={sxBoxDisplayArea}>
-			<Tabs
+			<Container sx={sxHorizontalFlex}>
+				<TemperatureCard
+					getTemperatureValueCallback={async () =>
+						await getAverageTemperatureByDateRange(locationId, new Date(1973, 0, 1), new Date(1983, 11, 31))
+					}
+					title='Moyenne des températures sur la période 1973-1983'></TemperatureCard>
+				<TemperatureCard
+					getTemperatureValueCallback={async () =>
+						await getAverageTemperatureByDateRange(locationId, new Date(2013, 0, 1), new Date(2023, 11, 31))
+					}
+					title='Moyenne des températures sur la période 2013-2023'></TemperatureCard>
+			</Container>
+			<TabPanelStatistics />
+			<TabPanelHistory />
+			{/* <Tabs
 				sx={sxDisplayTabs}
 				textColor='secondary'
 				value={selectedTab}
@@ -34,7 +59,7 @@ const DisplayArea: FC<DisplayAreaProps> = (props: DisplayAreaProps) => {
 				<Tab label={tabStatistics} />
 			</Tabs>
 			{selectedTab === 0 && <TabPanelHistory />}
-			{selectedTab === 1 && <TabPanelStatistics />}
+			{selectedTab === 1 && <TabPanelStatistics />} */}
 		</Box>
 	)
 }

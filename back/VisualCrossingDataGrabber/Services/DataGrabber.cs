@@ -6,13 +6,13 @@ namespace VisualCrossingDataGrabber.Services
 {
     internal class DataGrabber : IDataGrabber
     {
-        private IVisualCrossingReader _reader;
+        private IVisualCrossingReader _visualCrossingReader;
         private GrabberSettings _settings;
         private ILog log = LogManager.GetLogger(typeof(DataGrabber));
 
         public DataGrabber(IVisualCrossingReader reader, IOptions<GrabberSettings> settings)
         {
-            _reader = reader;
+            _visualCrossingReader = reader;
             _settings = settings.Value;
         }
 
@@ -35,12 +35,8 @@ namespace VisualCrossingDataGrabber.Services
                 {
                     log.Info($"Reading information for {fullLocationName}");
 
-                    string[] tokens = fullLocationName.Split(',');
-                    if (tokens.Length != 2)
-                        throw new ArgumentException($"Invalid location name: ${fullLocationName}");
-
-                    string locationName = tokens[0].Trim();
-                    string countryName = tokens[1].Trim();
+                    string locationName, countryName;
+                    GetLocationAndCountryFromPath(fullLocationName, out locationName, out countryName);
 
                     string countryPath = Path.Combine(_settings.DataRootPath, char.ToUpper(countryName[0]) + countryName.Substring(1));
                     if (!Directory.Exists(countryPath))
@@ -85,7 +81,7 @@ namespace VisualCrossingDataGrabber.Services
                         {
                             log.Info($"Creating the file {filePath}");
                         }
-                        string result = await _reader.ReadLocationInfoPerYearAsync(year, fullLocationName);
+                        string result = await _visualCrossingReader.ReadLocationInfoPerYearAsync(year, fullLocationName);
                         if (result.Length > 0)
                         {
                             result = result.Insert(1, string.Format("\t\"year\": {0},\r\n", year));
@@ -102,8 +98,23 @@ namespace VisualCrossingDataGrabber.Services
             }
             catch (Exception e)
             {
-                log.Fatal("A fatal error occured.", e);
+                log.Fatal("A fatal error occured. Data grabbing aborted.", e);
             }
+            DisplayStats();
+        }
+
+        private static void GetLocationAndCountryFromPath(string fullLocationName, out string locationName, out string countryName)
+        {
+            string[] tokens = fullLocationName.Split(',');
+            if (tokens.Length != 2)
+                throw new ArgumentException($"Invalid location name: ${fullLocationName}");
+
+            locationName = tokens[0].Trim();
+            countryName = tokens[1].Trim();
+        }
+
+        private static void DisplayStats()
+        {
 
         }
     }

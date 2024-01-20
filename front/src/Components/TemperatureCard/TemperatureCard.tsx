@@ -5,20 +5,10 @@ import { useQuery } from '@tanstack/react-query'
 import { isNil } from 'lodash'
 import { sxBoxTemperatureCard, sxTemperatureValue, sxTitle } from './styles'
 
-const TemperatureCard: FC<TemperatureCardProps> = ({ getTemperatureValueCallback, title }) => {
-	const {
-		isLoading,
-		isError,
-		data: temperatureValue,
-		error,
-	} = useQuery({
-		queryKey: ['callBack' + title],
-		queryFn: () => getTemperatureValueCallback(),
-	})
-
+const TemperatureCard: FC<TemperatureCardProps> = ({ value, title }) => {
 	return (
 		<Container sx={sxBoxTemperatureCard}>
-			<Typography sx={sxTemperatureValue}>{`${temperatureValue?.value.toFixed(2)} °C`}</Typography>
+			<Typography sx={sxTemperatureValue}>{`${value.toFixed(2)} °C`}</Typography>
 			<Typography sx={sxTitle}>{title}</Typography>
 		</Container>
 	)

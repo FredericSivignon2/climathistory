@@ -9,6 +9,7 @@ import { getAverageTemperatureByDateRange } from '../Api/api'
 import { GlobalContext } from '../../App'
 import { GlobalData } from '../types'
 import { isNil } from 'lodash'
+import { useQueries } from '@tanstack/react-query'
 
 const tabHistorique = 'Historique'
 const tabStatistics = 'Statistiques'
@@ -28,38 +29,32 @@ const DisplayArea: FC<DisplayAreaProps> = (props: DisplayAreaProps) => {
 		setSelectedTab(newValue)
 	}
 
-	if (isNil(locationId)) {
-		return <></>
-	}
+	const results = useQueries({
+		queries: [
+			{
+				queryKey: ['getAverageTemperatureByDateRange1', locationId],
+				queryFn: () => getAverageTemperatureByDateRange(locationId, new Date(1973, 0, 1), new Date(1983, 11, 31)),
+			},
+			{
+				queryKey: ['getAverageTemperatureByDateRange2', locationId],
+				queryFn: () => getAverageTemperatureByDateRange(locationId, new Date(2013, 0, 1), new Date(2023, 11, 31)),
+			},
+		],
+	})
 
 	const tmpApi = (id: number) => 23.2
 	return (
 		<Box sx={sxBoxDisplayArea}>
 			<Container sx={sxHorizontalFlex}>
 				<TemperatureCard
-					getTemperatureValueCallback={async () =>
-						await getAverageTemperatureByDateRange(locationId, new Date(1973, 0, 1), new Date(1983, 11, 31))
-					}
+					value={results[0].data?.value ?? NaN}
 					title='Moyenne des températures sur la période 1973-1983'></TemperatureCard>
 				<TemperatureCard
-					getTemperatureValueCallback={async () =>
-						await getAverageTemperatureByDateRange(locationId, new Date(2013, 0, 1), new Date(2023, 11, 31))
-					}
+					value={results[1].data?.value ?? NaN}
 					title='Moyenne des températures sur la période 2013-2023'></TemperatureCard>
 			</Container>
 			<TabPanelStatistics />
 			<TabPanelHistory />
-			{/* <Tabs
-				sx={sxDisplayTabs}
-				textColor='secondary'
-				value={selectedTab}
-				onChange={handleTabChange}
-				aria-label='chart type tabs'>
-				<Tab label={tabHistorique} />
-				<Tab label={tabStatistics} />
-			</Tabs>
-			{selectedTab === 0 && <TabPanelHistory />}
-			{selectedTab === 1 && <TabPanelStatistics />} */}
 		</Box>
 	)
 }

@@ -8,6 +8,7 @@ import {
 	YearInfoModel,
 } from '../types'
 import { apiVersion } from './constants'
+import { isNil } from 'lodash'
 
 const baseUrl = `https://localhost:4000/api/${apiVersion}`
 const formatDateUrl = 'yyyy-MM-dd'
@@ -78,10 +79,14 @@ export const getMinMaxTemperaturesPerYear = async (locationId: number): Promise<
 }
 
 export const getAverageTemperatureByDateRange = async (
-	locationId: number,
+	locationId: number | undefined | null,
 	startDate: Date,
 	endDate: Date
 ): Promise<TemperatureModel> => {
+	if (isNil(locationId)) {
+		return { value: NaN }
+	}
+
 	const url = `${baseUrl}/location/${locationId}/temperatures/average/${format(startDate, formatDateUrl)}/${format(
 		endDate,
 		formatDateUrl

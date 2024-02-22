@@ -1039,7 +1039,6 @@
             "firozabad, inde",
             "guwahati, inde",
             "gwalior, inde",
-            "hubli–dharwad, inde",
             "hyderabad, inde",
             "indore, inde",
             "jabalpur, inde",
@@ -1156,7 +1155,6 @@
             "antsirabe, madagascar",
             "antsohihy, madagascar",
             "fianarantsoa, madagascar",
-            "fort-dauphin, madagascar",
             "mahajanga, madagascar",
             "manakara, madagascar",
             "morondava, madagascar",
@@ -1225,7 +1223,6 @@
             "agrinio, grèce",
             "alexandroupoli, grèce",
             "athènes, grèce",
-            "chalcis, grèce",
             "chania, grèce",
             "giannitsa, grèce",
             "heraklion, grèce",
@@ -1315,7 +1312,6 @@
             "daejeon, corée du sud",
             "gochang, corée du sud",
             "gwangju, corée du sud",
-            "gyeongju, corée du sud",
             "incheon, corée du sud",
             "jeju, corée du sud",
             "jeonju, corée du sud",
@@ -1360,7 +1356,6 @@
             "novokuznetsk, russie",
             "novossibirsk, russie",
             "omsk, russie",
-            "oufa, russie",
             "penza, russie",
             "perm, russie",
             "rostov-sur-le-don, russie",
@@ -1586,21 +1581,8 @@
             // -------------------------------------
             // GROENLAND
             // -------------------------------------
-            "aasiaat, groenland",
-            "ilulissat, groenland",
-            "ittoqqortoormiit, groenland",
-            "kangaatsiaq, groenland",
-            "maniitsoq, groenland",
-            "nanortalik, groenland",
             "nuuk, groenland",
-            "paamiut, groenland",
-            "qaqortoq, groenland",
-            "qasigiannguit, groenland",
-            "qeqertarsuaq, groenland",
-            "qeqertarsuatsiaat, groenland",
             "sisimiut, groenland",
-            "tasiilaq, groenland",
-            "upernavik, groenland",
             // -------------------------------------
             // COSTA RICA
             // -------------------------------------
@@ -1619,7 +1601,6 @@
             "san josé, costa rica",
             "san ramon, costa rica",
             "siquirres, costa rica",
-            "zacatecoluca, costa rica",
             // -------------------------------------
             // NIGERIA 
             // -------------------------------------
@@ -1702,16 +1683,12 @@
             // -------------------------------------
             "alexandrie, égypte",
             "asieut, égypte",
-            "assouan, égypte",
             "beni suef, égypte",
-            "damiette, égypte",
             "el-mahalla el-kubra, égypte",
             "fayoum, égypte",
-            "gizeh, égypte",
             "hurghada, égypte",
             "ismaïlia, égypte",
             "le caire, égypte",
-            "louxor, égypte",
             "mansoura, égypte",
             "minya, égypte",
             "port-saïd, égypte",
@@ -1720,7 +1697,113 @@
             "sohag, égypte",
             "suez, égypte",
             "tanta, égypte",
-            "zagazig, égypte"
+            "zagazig, égypte",
+            // -------------------------------------
+            // VIETNAM
+            // -------------------------------------
+            "bac lieu, vietnam",
+            "binh duong, vietnam",
+            "buon ma thuot, vietnam",
+            "can tho, vietnam",
+            "da nang, vietnam",
+            "dong nai, vietnam",
+            "ha tinh, vietnam",
+            "hai duong, vietnam",
+            "haiphong, vietnam",
+            "hanoï, vietnam",
+            "ho chi minh-ville, vietnam",
+            "hue, vietnam",
+            "nha trang, vietnam",
+            "phu quoc, vietnam",
+            "phu yen, vietnam",
+            "quy nhon, vietnam",
+            "soc trang, vietnam",
+            "thanh hoa, vietnam",
+            "vinh, vietnam",
+            // -------------------------------------
+            // LAOS
+            // -------------------------------------
+            "attapeu, laos",
+            "champasak, laos",
+            "luang namtha, laos",
+            "luang prabang, laos",
+            "pakse, laos",
+            "phonsavan, laos",
+            "saravane, laos",
+            "savannakhet, laos",
+            "vientiane, laos",
+            // -------------------------------------
+            // KENYA
+            // -------------------------------------
+            "eldoret, kenya",
+            "embu, kenya",
+            "garissa, kenya",
+            "isiolo, kenya",
+            "kakamega, kenya",
+            "kericho, kenya",
+            "kilifi, kenya",
+            "kisumu, kenya",
+            "kitale, kenya",
+            "lamu, kenya",
+            "machakos, kenya",
+            "malindi, kenya",
+            "meru, kenya",
+            "migori, kenya",
+            "mombasa, kenya",
+            "nairobi, kenya",
+            "naivasha, kenya",
+            "nakuru, kenya",
+            "nanyuki, kenya",
+            "narok, kenya",
+            "nyeri, kenya",
+            "thika, kenya",
+             // -------------------------------------
+            // GUATEMALA
+            // -------------------------------------
+            "antigua guatemala, guatemala",
+            "chimaltenango, guatemala",
+            "chiquimula, guatemala",
+            "cobán, guatemala",
+            "escuintla, guatemala",
+            "guatemala city, guatemala",
+            "huehuetenango, guatemala",
+            "jalapa, guatemala",
+            "jutiapa, guatemala",
+            "mazatenango, guatemala",
+            "mixco, guatemala",
+            "petapa, guatemala",
+            "puerto barrios, guatemala",
+            "quetzaltenango, guatemala",
+            "quiché, guatemala",
+            "retalhuleu, guatemala",
+            "san juan sacatepéquez, guatemala",
+            "sololá, guatemala",
+            "villa nueva, guatemala",
+            "zacapa, guatemala",
+             // -------------------------------------
+            // GUATEMALA
+            // -------------------------------------
+            "bayamo, cuba",
+            "camagüey, cuba",
+            "cardenas, cuba",
+            "ciego de ávila, cuba",
+            "cienfuegos, cuba",
+            "contramaestre, cuba",
+            "guantánamo, cuba",
+            "holguín, cuba",
+            "la havane, cuba",
+            "las tunas, cuba",
+            "manzanillo, cuba",
+            "matanzas, cuba",
+            "moa, cuba",
+            "morón, cuba",
+            "nueva gerona, cuba",
+            "palma soriano, cuba",
+            "pinar del río, cuba",
+            "sancti spíritus, cuba",
+            "santa clara, cuba",
+            "santiago de cuba, cuba"
+
         };
 
     }

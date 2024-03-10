@@ -9,6 +9,11 @@ namespace WeatherAPI
 
         public static void MapTemperatureRoutes(this IEndpointRouteBuilder app)
         {
+            app.MapGet($"{BaseRoute}/health", async ([FromServices] IWeatherReader locInfo) =>
+            {
+                return await locInfo.Health();
+            });
+
             app.MapGet($"{BaseRoute}/country/all", async ([FromServices] IWeatherReader locInfo) =>
             {
                 return await locInfo.GetAllCountries();

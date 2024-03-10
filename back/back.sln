@@ -31,6 +31,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Application.VisualC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisualCrossingDataGrabber", "VisualCrossingDataGrabber\VisualCrossingDataGrabber.csproj", "{D800761E-6C11-4E7B-A8F9-F04539C30FCC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{56DEB875-2A5C-4B8C-9CD0-5BE2EFBE75A1}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

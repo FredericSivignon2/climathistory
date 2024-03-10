@@ -6,6 +6,8 @@ namespace Weather.Application.Query
 {
     public interface IWeatherReader
     {
+        Task<bool> Health();
+
         Task<IEnumerable<CountryModel>> GetAllCountries();
         Task<IEnumerable<LocationModel>> GetAllLocationsByCountry(long countryId);
 

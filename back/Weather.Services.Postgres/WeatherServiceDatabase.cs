@@ -1,11 +1,6 @@
-﻿using System.Text.Encodings.Web;
-using System.Text;
-using System.Text.Json;
-using System.Text.Unicode;
-using Weather.Application.Query;
+﻿using Weather.Application.Query;
 using Weather.Application.Model;
 using Weather.Application.Models;
-using Npgsql;
 using Weather.Database;
 using Weather.Database.Extensions;
 
@@ -18,6 +13,19 @@ namespace Weather.Services.VisualCrossing
         public WeatherServiceDatabase(IWeatherRepository repository)
         {
             _repository = repository;
+        }
+
+        public async Task<bool> Health()
+        {
+            try
+            {
+                await _repository.GetCountriesCountAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public async Task<IEnumerable<CountryModel>> GetAllCountries()

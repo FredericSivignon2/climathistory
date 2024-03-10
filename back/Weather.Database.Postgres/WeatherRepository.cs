@@ -12,6 +12,7 @@ namespace Weather.Database.Postgres
 
     public class WeatherRepository : IWeatherRepository
     {
+        private const string sqlSchemaCreation = "-- Création de la table Country\r\nCREATE TABLE Country (\r\n    CountryId BIGSERIAL PRIMARY KEY,\r\n    Name VARCHAR(255) NOT NULL\r\n);\r\n\r\n-- Création de la table Location\r\nCREATE TABLE Location (\r\n    LocationId BIGSERIAL PRIMARY KEY,\r\n    Name VARCHAR(255) NOT NULL,\r\n    CountryId BIGINT NOT NULL,\r\n    FOREIGN KEY (CountryId) REFERENCES Country(CountryId)\r\n);\r\n\r\n-- Création de la table Temperatures\r\nCREATE TABLE Temperatures (\r\n    LocationId BIGINT NOT NULL,\r\n    Date DATE NOT NULL,\r\n    MinTemperature DECIMAL,\r\n    MaxTemperature DECIMAL,\r\n    AvgTemperature DECIMAL,\r\n    PRIMARY KEY (LocationId, Date),\r\n    FOREIGN KEY (LocationId) REFERENCES Location(LocationId)\r\n);";
         private bool _disposed = false;
         private IDbConnection _connection;
 
@@ -32,6 +33,45 @@ namespace Weather.Database.Postgres
         {
             _connection.Close();
         }
+
+        public async Task<bool> IntializeSchema()
+        {
+            EnsureConnectionOpen();
+
+            var parameters = new { Schema = "public", TableName = "country" };
+            var sql = "SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_schema = @Schema AND table_name = @TableName)";
+            var exists = _connection.ExecuteScalar<bool>(sql, parameters);
+            if (!exists)
+            {
+                _connection.Execute(sqlSchemaCreation);
+            }
+            return exists;
+        }
+
+        public async Task<int> GetCountriesCountAsync()
+        {
+            EnsureConnectionOpen();
+            var sql = "SELECT COUNT(1) FROM Country";
+
+            return await _connection.ExecuteScalarAsync<int>(sql);
+        }
+
+        public async Task<int> GetLocationsCountAsync()
+        {
+            EnsureConnectionOpen();
+            var sql = "SELECT COUNT(1) FROM Location";
+
+            return await _connection.ExecuteScalarAsync<int>(sql);
+        }
+
+        public async Task<int> GetTemperaturesCountAsync()
+        {
+            EnsureConnectionOpen();
+            var sql = "SELECT COUNT(1) FROM Temperatures";
+
+            return await _connection.ExecuteScalarAsync<int>(sql);
+        }
+
 
         // Méthodes pour Country
         public async Task<bool> IsExistingCountry(string name)

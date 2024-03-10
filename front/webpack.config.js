@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
 	entry: './src/index.tsx', // Point d'entrée modifié pour TypeScript
@@ -22,4 +23,9 @@ module.exports = {
 		],
 	},
 	// Ajoutez d'autres configurations ici si nécessaire
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: './public/index.html',
+		}),
+	],
 }

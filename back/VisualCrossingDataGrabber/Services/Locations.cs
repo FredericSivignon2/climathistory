@@ -16,6 +16,7 @@
             "antibes, france",
             "arras, france",
             "aurillac, france",
+            "auxerre, france",
             "avignon, france",
             "bayonne, france",
             "bergerac, france",
@@ -39,6 +40,7 @@
             "clermont-ferrand, france",
             "colmar, france",
             "courchevel, france",
+            "dax, france",
             "foix, france",
             "forbach, france",
             "digoin, france",
@@ -1127,7 +1129,7 @@
             "tralee, irlande",
             "waterford, irlande",
             // -------------------------------------
-            // ISLAND 
+            // ISLANDE 
             // -------------------------------------
             "akranes, islande",
             "akureyri, islande",
@@ -1780,7 +1782,7 @@
             "sololá, guatemala",
             "villa nueva, guatemala",
             "zacapa, guatemala",
-             // -------------------------------------
+            // -------------------------------------
             // GUATEMALA
             // -------------------------------------
             "bayamo, cuba",
@@ -1802,7 +1804,114 @@
             "pinar del río, cuba",
             "sancti spíritus, cuba",
             "santa clara, cuba",
-            "santiago de cuba, cuba"
+            "santiago de cuba, cuba",
+            // -------------------------------------
+            // VENEZUELA
+            // -------------------------------------
+            "barcelona, venezuela",
+            "barquisimeto, venezuela",
+            "cabimas, venezuela",
+            "caracas, venezuela",
+            "ciudad bolivar, venezuela",
+            "ciudad guayana, venezuela",
+            "coro, venezuela",
+            "cumana, venezuela",
+            "guarenas, venezuela",
+            "guatire, venezuela",
+            "los teques, venezuela",
+            "maracaibo, venezuela",
+            "maracay, venezuela",
+            "maturin, venezuela",
+            "merida, venezuela",
+            "puerto cabello, venezuela",
+            "puerto la cruz, venezuela",
+            "punto fijo, venezuela",
+            "san cristobal, venezuela",
+            "valencia, venezuela",
+            // -------------------------------------
+            // VENEZUELA
+            // -------------------------------------
+            "antofagasta, chili",
+            "arica, chili",
+            "calama, chili",
+            "chillan, chili",
+            "concepcion, chili",
+            "copiapo, chili",
+            "coquimbo, chili",
+            "iquique, chili",
+            "la serena, chili",
+            "los angeles, chili",
+            "osorno, chili",
+            "puerto montt, chili",
+            "punta arenas, chili",
+            "quillota, chili",
+            "rancagua, chili",
+            "santiago, chili",
+            "talca, chili",
+            "temuco, chili",
+            "valdivia, chili",
+            "valparaiso, chili",
+            // -------------------------------------
+            // PEROU
+            // -------------------------------------
+            "lima, pérou",
+            "trujillo, pérou",
+            // -------------------------------------
+            // CROATIE
+            // -------------------------------------
+            "bjelovar, croatie",
+            "dubrovnik, croatie",
+            "karlovac, croatie",
+            "koprivnica, croatie",
+            "krapina, croatie",
+            "osijek, croatie",
+            "pozega, croatie",
+            "pula, croatie",
+            "rijeka, croatie",
+            "sibenik, croatie",
+            "sisak, croatie",
+            "slavonski brod, croatie",
+            "split, croatie",
+            "varazdin, croatie",
+            "velika gorica, croatie",
+            "vinkovci, croatie",
+            "vukovar, croatie",
+            "zadar, croatie",
+            "zagreb, croatie",
+            "zupanja, croatie",
+            // -------------------------------------
+            // NOUVELLE-CALEDONIE
+            // -------------------------------------
+            "bourail, nouvelle-calédonie",
+            "canala, nouvelle-calédonie",
+            "dumbéa, nouvelle-calédonie",
+            "houaïlou, nouvelle-calédonie",
+            "koné, nouvelle-calédonie",
+            "koumac, nouvelle-calédonie",
+            "la fôa, nouvelle-calédonie",
+            "lifou, nouvelle-calédonie",
+            "maré, nouvelle-calédonie",
+            "mont-dore, nouvelle-calédonie",
+            "nouméa, nouvelle-calédonie",
+            "païta, nouvelle-calédonie",
+            "poindimié, nouvelle-calédonie",
+            "thio, nouvelle-calédonie",
+            "yate, nouvelle-calédonie",
+            // -------------------------------------
+            // FIDJI
+            // -------------------------------------
+            "ba, fidji",
+            "labasa, fidji",
+            "lautoka, fidji",
+            "nadi, fidji",
+            "nasinu, fidji",
+            "navua, fidji",
+            "pacifique harbour, fidji",
+            "rakiraki, fidji",
+            "savusavu, fidji",
+            "sigatoka, fidji",
+            "suva, fidji",
+            "tavua, fidji"
 
         };
 

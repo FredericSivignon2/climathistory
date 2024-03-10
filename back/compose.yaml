@@ -1,0 +1,58 @@
+version: '3.8'
+services:
+  climathistory:
+    image: climathistory
+    ports:
+      - "8080:80"
+    expose:
+      - 8080
+    depends_on:
+      weatherapi:
+        condition: service_healthy
+  weatherapi:
+    image: weatherapi
+    ports:
+      - "4000:4000"
+    environment:
+      ASPNETCORE_URLS: "https://+:4000"
+      ASPNETCORE_ENVIRONMENT: "Development"
+    expose:
+      - 4000
+    volumes:
+      - ${APPDATA}/microsoft/UserSecrets:/root/.microsoft/usersecrets
+      - ${USERPROFILE}/.aspnet/https:/root/.aspnet/https/
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f https://localhost:4000/api/v1.0/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+  db:
+   image: postgres
+   restart: always
+   user: postgres
+   secrets:
+      - db-password
+   volumes:
+      - db-data:/var/lib/postgresql/data
+   environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
+   ports:
+      - "5432:5432"
+   expose:
+      - 5432
+   healthcheck:
+      test: [ "CMD", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  db-data:
+secrets:
+  db-password:
+    file: db/password.txt

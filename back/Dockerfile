@@ -40,12 +40,6 @@ RUN dotnet publish -c Release -o /app --no-restore
 # Générer l'image de runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
+EXPOSE 4000
 COPY --from=build /app ./
 ENTRYPOINT ["dotnet", "WeatherAPI.dll"]
-
-
-#To Build the image
-# docker build --pull -t weatherapi .  
-
-# To Start the image
-# docker run --rm -it -p 4000:4000 -e ASPNETCORE_URLS=https://localhost:4000 -e ASPNETCORE_ENVIRONMENT=Development -v %APPDATA%\microsoft\UserSecrets:/root/.microsoft/usersecrets -v %USERPROFILE%\.aspnet\https:/root/.aspnet/https/ weatherapi

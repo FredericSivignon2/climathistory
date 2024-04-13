@@ -19,6 +19,7 @@ namespace Weather.Database.Postgres
         public WeatherRepository(IDbConnection connection)
         {
             _connection = connection;
+            Console.WriteLine($"> Creating WeatherRepository. Connection string is: {_connection.ConnectionString}");
         }
 
         private void EnsureConnectionOpen()
@@ -43,7 +44,7 @@ namespace Weather.Database.Postgres
             var exists = _connection.ExecuteScalar<bool>(sql, parameters);
             if (!exists)
             {
-                _connection.Execute(sqlSchemaCreation);
+                await _connection.ExecuteAsync(sqlSchemaCreation);
             }
             return exists;
         }

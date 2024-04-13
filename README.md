@@ -40,3 +40,4 @@ docker push fredericsivignon/climathistory:<version>
 <image id> is the ID of the image to push (you can copy it from Docker Desktop)
 
 `<version>` could be any label like "version1.0". If not specified, the "lastest" label for the tag is set.
+For example, right now, it's something like "api_v0.1" for API, "front_v0.1" for front.

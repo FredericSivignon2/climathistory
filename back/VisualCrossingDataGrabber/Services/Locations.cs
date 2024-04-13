@@ -9,11 +9,14 @@
             "agde, france",
             "aix-en-provence, france",
             "ajaccio, france",
+            "albi, france",
+            "aléria, france",
             "amiens, france",
             "agen, france",
             "angers, france",
             "annecy, france",
             "antibes, france",
+            "argenteuil, france",
             "arras, france",
             "aurillac, france",
             "auxerre, france",
@@ -24,8 +27,12 @@
             "besançon, france",
             "béziers, france",
             "biarritz, france",
+            "biguglia, france",
+            "blois, france",
+            "bonifacio, france",
             "bordeau, france",
             "bordeaux, france",
+            "bretigny-sur-orge, france",
             "bourges, france",
             "brest, france",
             "briançon, france",
@@ -33,14 +40,20 @@
             "caen, france",
             "calais, france",
             "cannes, france",
+            "capbreton, france",
             "castres, france",
+            "chalon-sur-saône, france",
             "chambéry, france",
             "champagnole, france",
             "châteauroux, france",
             "clermont-ferrand, france",
             "colmar, france",
             "courchevel, france",
+            "créteil, france",
             "dax, france",
+            "dourdan, france",
+            "draguignan, france",
+            "étampes, france",
             "foix, france",
             "forbach, france",
             "digoin, france",
@@ -50,26 +63,33 @@
             "gap, france",
             "grenoble, france",
             "isola, france",
+            "l'île-rousse, france",
             "la rochelle, france",
             "laruns, france",
             "le havre, france",
             "le mans , france",
-            "le puy-en-vela, france",
+            "le puy-en-vela, france", // le puy-en-velay avec un y
             "lembach, france",
             "les abymes, france",
+            "les deux alpes, france",
             "les menuires, france",
             "les Sables-d'Olonne, france",
             "lille, france",
             "limoges, france",
+            "lons-le-saunier, france",
             "lourdes, france",
             "lyon, france",
+            "mâcon, france",
             "marseille, france",
             "mérignac, france",
             "metz, france",
+            "millau, france",
+            "mimizan, france",
             "mont-de-marsan, france",
             "montélimar, france",
             "montpellier, france",
             "mouthe, france",
+            "moutier, france",
             "mulhouse, france",
             "nancy, france",
             "nantes, france",
@@ -86,17 +106,24 @@
             "perpignan, france",
             "poitiers, france",
             "pontarlier, france",
+            "porto-vecchio, france",
+            "propriano, france",
             "quimper, france",
             "reins, france",
             "rennes, france",
+            "roanne, france",
             "roubaix, france",
             "rouen, france",
+            "saint-dizier, france",
+            "saint-claude, france",
             "saint-étienne, france",
             "saint-jean-de-maurienne, france",
+            "saint-malo, france",
             "saint-nazaire, france",
             "saint-pierre, france",
             "saint-tropez, france",
             "strasbourg, france",
+            "tignes, france",
             "toulon, france",
             "toulouse, france",
             "tourcoing, france",
@@ -105,6 +132,7 @@
             "troyes, france",
             "val thorens, france",
             "valence, france",
+            "vars, france",
             "versailles, france",
             "vichy, france",
             // -------------------------------------
@@ -811,6 +839,7 @@
             "durango, mexique",
             "ecatepec, mexique",
             "guadalajara, mexique",
+            "guadalupe, mexique",
             "hermosillo, mexique",
             "irapuato, mexique",
             "juárez, mexique",
@@ -828,6 +857,7 @@
             "saltillo, mexique",
             "san luis potosí, mexique",
             "tijuana, mexique",
+            "tlalnepantla, mexique",
             "tlaquepaque, mexique",
             "torreón, mexique",
             "tuxtla gutiérrez, mexique",
@@ -987,41 +1017,91 @@
             // -------------------------------------
             // CHINE 
             // -------------------------------------
+            "baoji, chine",
+            "bengbu, chine",
+            "benxi, chine",
+            "changchun, chine",
             "changsha, chine",
             "changzhou, chine",
             "chengdu, chine",
+            "chifeng, chine",
             "chongqing, chine",
             "dalian, chine",
+            "dandong, chine",
+            "daqing, chine",
+            "datong, chine",
             "dongguan, chine",
+            "ezhou, chine",
+            "foshan, chine",
+            "fuxin, chine",
             "fuzhou, chine",
+            "gongzhuling, chine",
             "guangzhou, chine",
+            "guilin, chine",
             "guiyang, chine",
             "haikou, chine",
+            "handan, chine",
             "hangzhou, chine",
             "harbin, chine",
+            "hefei, chine",
+            "hengyang, chine",
+            "hohhot, chine",
+            "huaibei, chine",
+            "huainan, chine",
+            "humen, chine",
             "huzhou, chine",
+            "jiamusi, chine",
+            "jilin, chine",
             "jinan, chine",
+            "jingzhou, chine",
+            "jining, chine",
+            "jixi, chine",
+            "kaifeng, chine",
             "kunming, chine",
             "lanzhou, chine",
+            "leshan, chine",
+            "liaoyang, chine",
             "luoyang, chine",
             "nanchang, chine",
+            "nanchong, chine",
             "nanjing, chine",
             "nanning, chine",
+            "nanyang, chine",
             "ningbo, chine",
             "pékin, chine",
+            "pingdingshan, chine",
             "qingdao, chine",
+            "qiqihar, chine",
             "shanghai, chine",
+            "shantou, chine",
             "shenyang, chine",
             "shenzhen, chine",
+            "shijiazhuang, chine",
             "suzhou, chine",
+            "tai'an, chine",
+            "taiyuan, chine",
+            "tangshan, chine",
             "tianjin, chine",
             "urumqi, chine",
+            "weifang, chine",
             "wuhan, chine",
+            "wuhu, chine",
             "wuxi, chine",
-            "xi'an, chine",
             "xiamen, chine",
+            "xi'an, chine",
+            "xiangfan, chine",
+            "xinxiang, chine",
             "xining, chine",
+            "yangzhou, chine",
+            "yantai, chine",
+            "yichang, chine",
+            "yichun, chine",
             "yinchuan, chine",
+            "yingkou, chine",
+            "yueyang, chine",
+            "zaozhuang, chine",
+            "zhangjiakou, chine",
+            "zhanjiang, chine",
             "zhengzhou, chine",
             // -------------------------------------
             // INDE
@@ -1783,7 +1863,7 @@
             "villa nueva, guatemala",
             "zacapa, guatemala",
             // -------------------------------------
-            // GUATEMALA
+            // CUBA
             // -------------------------------------
             "bayamo, cuba",
             "camagüey, cuba",
@@ -1829,7 +1909,7 @@
             "san cristobal, venezuela",
             "valencia, venezuela",
             // -------------------------------------
-            // VENEZUELA
+            // CHILI
             // -------------------------------------
             "antofagasta, chili",
             "arica, chili",
@@ -1852,7 +1932,7 @@
             "valdivia, chili",
             "valparaiso, chili",
             // -------------------------------------
-            // PEROU
+            // PEROU (autres villes sans données)
             // -------------------------------------
             "lima, pérou",
             "trujillo, pérou",
@@ -1904,16 +1984,605 @@
             "labasa, fidji",
             "lautoka, fidji",
             "nadi, fidji",
-            "nasinu, fidji",
             "navua, fidji",
-            "pacifique harbour, fidji",
             "rakiraki, fidji",
-            "savusavu, fidji",
-            "sigatoka, fidji",
             "suva, fidji",
-            "tavua, fidji"
-
-        };
+            "tavua, fidji",
+            // -------------------------------------
+            // AUTRICHE
+            // -------------------------------------
+            "graz, autriche",
+            "linz, autriche",
+            "salzbourg, autriche",
+            "vienne, autriche",
+            // -------------------------------------
+            // MALI
+            // -------------------------------------
+            "bamako, mali",
+            "sikasso, mali",
+            "mopti, mali",
+            "koutiala, mali",
+            // -------------------------------------
+            // SOUDAN
+            // -------------------------------------
+            "al-qadarif, soudan",
+            "al-ubayyid, soudan",
+            "bahri, soudan",
+            "kassala, soudan",
+            "khartoum, soudan",
+            "kosti, soudan",
+            "nyala, soudan",
+            "omdourman, soudan",
+            "port-soudan, soudan",
+            "wad madani, soudan",
+            // -------------------------------------
+            // OUGANDA
+            // -------------------------------------
+            "gulu, ouganda",
+            "jinja, ouganda",
+            "kampala, ouganda",
+            "lira, ouganda",
+            // -------------------------------------
+            // TANZANIE
+            // -------------------------------------
+            "dar es salaam, tanzanie",
+            "mwanza, tanzanie",
+            "zanzibar, tanzanie",
+            "arusha, tanzanie",
+            "mbeya, tanzanie",
+            "morogoro, tanzanie",
+            "tanga, tanzanie",
+            "dodoma, tanzanie",
+            "kigoma, tanzanie",
+            "moshi, tanzanie",
+            "tabora, tanzanie",
+            // -------------------------------------
+            // MOZAMBIQUE
+            // -------------------------------------
+            "maputo, mozambique",
+            "matola, mozambique",
+            "beira, mozambique",
+            "nampula, mozambique",
+            "chimoio, mozambique",
+            "nacala, mozambique",
+            "quelimane, mozambique",
+            "mocuba, mozambique",
+            "tete, mozambique",
+            "xai-xai, mozambique",
+            // -------------------------------------
+            // ZIMBABWE
+            // -------------------------------------
+            "harare, zimbabwe",
+            "bulawayo, zimbabwe",
+            "chitungwiza, zimbabwe",
+            "mutare, zimbabwe",
+            "gweru, zimbabwe",
+            "epworth, zimbabwe",
+            // -------------------------------------
+            // NAMIBIE
+            // -------------------------------------
+            "windhoek, namibie",
+            "walvis bay, namibie",
+            "swakopmund, namibie",
+            "ondangwa, namibie",
+            // -------------------------------------
+            // ANGOLA
+            // -------------------------------------
+            "luanda, angola",
+            "huambo, angola",
+            "lobito, angola",
+            "benguela, angola",
+            "lucapa, angola",
+            "lubango, angola",
+            // -------------------------------------
+            // REPUBLIQUE DU CONGO
+            // -------------------------------------
+            "brazzaville, république du congo",
+            "pointe-noire, république du congo",
+            "dolisie, république du congo",
+            "nkayui, république du congo",
+            "loango, république du congo",
+            // -------------------------------------
+            // REPUBLIQUE DEMOCRATIQUE DU CONGO
+            // -------------------------------------
+            "kinshasa, république démocratique du congo",
+            "mbujimayi, république démocratique du congo",
+            "lubumbashi, république démocratique du congo",
+            "kananga, république démocratique du congo",
+            "kisangani, république démocratique du congo",
+            "goma, république démocratique du congo",
+            "bukavu, république démocratique du congo",
+            "tshikapa, république démocratique du congo",
+            "kolwezi, république démocratique du congo",
+            "likasi, république démocratique du congo",
+            "kikwit, république démocratique du congo",
+            "uvira, république démocratique du congo",
+            "bunia, république démocratique du congo",
+            "kalemie, république démocratique du congo",
+            "mbandaka, république démocratique du congo",
+            "matadi, république démocratique du congo",
+            "kadinda, république démocratique du congo",
+            // -------------------------------------
+            // REPUBLIQUE CENTRAFRICAINE 
+            // -------------------------------------
+            "bangui, république centrafricaine",
+            "bimbo, république centrafricaine",
+            "berbérati, république centrafricaine",
+            "carnot, république centrafricaine",
+            "balbari, république centrafricaine",
+            // -------------------------------------
+            // SOUDAN DU SUD
+            // -------------------------------------
+            "djouba, soudan du sud",
+            "wau, soudan du sud",
+            "malakal, soudan du sud",
+            "yei, soudan du sud",
+            "yambio, soudan du sud",
+            // -------------------------------------
+            // TCHAD
+            // -------------------------------------
+            "n'djaména, tchad",
+            "moundou, tchad",
+            "abeche, tchad",
+            "sarh, tchad",
+            // -------------------------------------
+            // IRAN
+            // -------------------------------------
+            "téhéran, iran",
+            "ispahan, iran",
+            "tabriz, iran",
+            "karadj, iran",
+            "chiraz, iran",
+            "ahvaz, iran",
+            "kermanchah, iran",
+            "zahedan, iran",
+            "racht, iran",
+            "kerman, iran",
+            "hamadan, iran",
+            "arak, iran",
+            "yazd, iran",
+            "ardabil, iran",
+            "bandar abbas, iran",
+            // -------------------------------------
+            // IRAK
+            // -------------------------------------
+            "bagdad, irak",
+            "bassorah, irak",
+            "mossoul, irak",
+            "arbil, irak",
+            "souleimaniye, irak",
+            "kirkuk, irak",
+            "kerbela, irak",
+            "nassiriya, irak",
+            "amara, irak",
+            "diwaniya, irak",
+            "kut, irak",
+            "hilla, irak",
+            "ramadi, irak",
+            "tall afar, irak",
+            // -------------------------------------
+            // TURQUIE
+            // -------------------------------------
+            "istanbul, turquie",
+            "ankara, turquie",
+            "izmir, turquie",
+            "bursa, turquie",
+            "adana, turquie",
+            "gaziantep, turquie",
+            "konya, turquie",
+            "antalya, turquie",
+            "kayseri, turquie",
+            "mersin, turquie",
+            "diyarbakır, turquie",
+            "eskişehir, turquie",
+            "denizli, turquie",
+            "sanlıurfa, turquie",
+            "samsun, turquie",
+            "malatya, turquie",
+            "adapazarı, turquie",
+            "kahramanmaraş, turquie",
+            "esenyurt, turquie",
+            "erzurum, turquie",
+            "van, turquie",
+            "elâzığ, turquie",
+            "batman, turquie",
+            "izmit, turquie",
+            "sivas, turquie",
+            "sultanbeyli, turquie",
+            "manisa, turquie",
+            "gebze, turquie",
+            "balıkesir, turquie",
+            "tarsus, turquie",
+            "sancaktepe, turquie",
+            // -------------------------------------
+            // SYRIE
+            // -------------------------------------
+            "alep, syrie",
+            "damas, syrie",
+            "homs, syrie",
+            "lattaquié, syrie",
+            "hama, syrie",
+            "al-hasaka, syrie",
+            "tartous, syrie",
+            "duma, syrie",
+            // -------------------------------------
+            // PAKISTAN
+            // -------------------------------------
+            "karachi, pakistan",
+            "lahore, pakistan",
+            "faisalabad, pakistan",
+            "rawalpindi, pakistan",
+            "gujranwala, pakistan",
+            "peshawar, pakistan",
+            "multan, pakistan",
+            "hyderabad, pakistan",
+            "islamabad, pakistan",
+            "quetta, pakistan",
+            "bahawalpur, pakistan",
+            "sargodha, pakistan",
+            "sialkot, pakistan",
+            "sukkur, pakistan",
+            "larkana, pakistan",
+            "shekhupura, pakistan",
+            "rahim yar khan, pakistan",
+            "jhang, pakistan",
+            // -------------------------------------
+            // AFGHANISTAN
+            // -------------------------------------
+            "kaboul, afghanistan",
+            "hérat, afghanistan",
+            "kandahâr, afghanistan",
+            "mazar-e-charif, afghanistan",
+            "jalalabad, afghanistan",
+            "kondôz, afghanistan",
+            // -------------------------------------
+            // BANGLADESH
+            // -------------------------------------
+            "dhaka, bangladesh",
+            "chittagong, bangladesh",
+            "khulna, bangladesh",
+            "râjshâhî, bangladesh",
+            "sylhet, bangladesh",
+            "tongi, bangladesh",
+            "rangpur, bangladesh",
+            "narayanganj, bangladesh",
+            "maimansingh, bangladesh",
+            "barisal, bangladesh",
+            // -------------------------------------
+            // BIRMANIE
+            // -------------------------------------
+            // "rangoon, myanmar",  UNABLE TO RETRIEVE DATA FROM Visual Crossing (BAD REQUEST)
+            "mandalay, myanmar",
+            "naypyidaw, myanmar",
+            "bago, myanmar",
+            // -------------------------------------
+            // CAMBODGE
+            // -------------------------------------
+            "phnom penh, cambodge",
+            "sihanoukville, cambodge",
+            "battambang, cambodge",
+            "siem reap, cambodge",
+            // -------------------------------------
+            // URUGUAY
+            // -------------------------------------
+            "montevideo, uruguay",
+            "salto, uruguay",
+            "paysandu, uruguay",
+            "maldonado, uruguay",
+            // -------------------------------------
+            // PARAGUAY
+            // -------------------------------------
+            "asuncion, paraguay",
+            "ciudad del este, paraguay",
+            "san lorenzo, paraguay",
+            "luque, paraguay",
+            "capiatá, paraguay",
+            "lambaré, paraguay",
+            "fernando de la mora, paraguay",
+            "limpio, paraguay",
+            "ñemby, paraguay",
+            // -------------------------------------
+            // BOLIVIE
+            // -------------------------------------
+            "santa cruz de la sierra, bolivie",
+            "el alto, bolivie",
+            "la paz, bolivie",
+            "cochabamba, bolivie",
+            "oruro, bolivie",
+            "sucre, bolivie",
+            "tarija, bolivie",
+            "potosí, bolivie",
+            "sacaba, bolivie",
+            "quillacollo, bolivie",
+            "montero, bolivie",
+            "trinidad, bolivie",
+            "yacuiba, bolivie",
+            // -------------------------------------
+            // EQUATEUR
+            // -------------------------------------
+            "guayaquil, équateur",
+            "quito, équateur",
+            "cuenca, équateur",
+            "santo domingo, équateur",
+            "machala, équateur",
+            "durán, équateur",
+            "portoviejo, équateur",
+            "manta, équateur",
+            "loja, équateur",
+            "ambato, équateur",
+            // -------------------------------------
+            // GUYANE FRANÇAISE
+            // -------------------------------------
+            "Cayenne, guyane française",
+            "Kourou, guyane française",
+            "Matoury, guyane française",
+            // -------------------------------------
+            // PANAMA
+            // -------------------------------------
+            "panama, panama",
+            "san miguelito, panama",
+            "tocumen, panama",
+            // -------------------------------------
+            // NICARAGUA
+            // -------------------------------------
+            "managua, nicaragua",
+            "león, nicaragua",
+            "chinandega, nicaragua",
+            "masaya, nicaragua",
+            "estelí, nicaragua",
+            // -------------------------------------
+            // HONDURAS
+            // -------------------------------------
+            "tegucigalpa, honduras",
+            "san pedro sula, honduras",
+            "choloma, honduras",
+            "la ceiba, honduras",
+            "el progreso, honduras",
+            "choluteca, honduras",
+            "comayagua, honduras",
+            // -------------------------------------
+            // SALVADOR
+            // -------------------------------------
+            "san salvador, salvador",
+            "soyapango, salvador",
+            "santa ana, salvador",
+            "san miguel, salvador",
+            "mejicanos, salvador",
+            "apopa, salvador",
+            "delgado, salvador",
+            "santa tecla, salvador",
+            "ilopango, salvador",
+            // -------------------------------------
+            // TADJIKISTAN
+            // -------------------------------------*
+            "douchanbé, tadjikistan",
+            "kulob, tadjikistan",
+            // -------------------------------------
+            // KIRGHIZISTAN
+            // -------------------------------------
+            "bichkek, kirghizistan",
+            "och, kirghizistan",
+            "jalal-abad, kirghizistan",
+            // -------------------------------------
+            // KAZAKHSTAN
+            // -------------------------------------
+            "almaty, kazakhstan",
+            "astana, kazakhstan",
+            "chimkent, kazakhstan",
+            "karaganda, kazakhstan",
+            "aktioubé, kazakhstan",
+            "pavlodar, kazakhstan",
+            "taraz, kazakhstan",
+            "semeï, kazakhstan",
+            "öskemen, kazakhstan",
+            // -------------------------------------
+            // GÉORGIE
+            // -------------------------------------
+            "tbilissi, géorgie",
+            "batoumi, géorgie",
+            "koutaïssi, géorgie",
+            "roustavi, géorgie",
+            "gori, géorgie",
+            // -------------------------------------
+            // ARMÉNIE
+            // -------------------------------------
+            "yerevan, arméni",
+            "gyumri, arméni",
+            "vanadzor, arméni",
+            // -------------------------------------
+            // AZERBAÏDJAN
+            // -------------------------------------
+            "bakou, azerbaïdjan",
+            "gandja, azerbaïdjan",
+            "sumqayıt, azerbaïdjan",
+            "mingachevir, azerbaïdjan",
+            // -------------------------------------
+            // TURKMÉNISTAN
+            // -------------------------------------
+            "achgabat, turkménistan",
+            "türkmenabat, turkménistan",
+            "daşoguz, turkménistan",
+            "mary, turkménistan",
+            // -------------------------------------
+            // OUZBÉKISTAN
+            // -------------------------------------
+            "tachkent, ouzbékistan",
+            "samarcande, ouzbékistan",
+            "namangan, ouzbékistan",
+            "andijan, ouzbékistan",
+            "boukhara, ouzbékistan",
+            "karchi, ouzbékistan",
+            "kokand, ouzbékistan",
+            "ferghana, ouzbékistan",
+            "termez, ouzbékistan",
+            "navoï, ouzbékistan",
+            "angren, ouzbékistan",
+            // -------------------------------------
+            // BIÉLORUSSIE
+            // -------------------------------------
+            "minsk, biélorussie",
+            "homiel, biélorussie",
+            "mahiliow, biélorussie",
+            "vitebsk, biélorussie",
+            "hrodna, biélorussie",
+            "brest, biélorussie",
+            "babrouïsk, biélorussie",
+            "baranavitchy, biélorussie",
+            "baryssaw, biélorussie",
+            "pinsk, biélorussie",
+            "orcha, biélorussie",
+            "mazyr, biélorussie",
+            "salihorsk, biélorussie",
+            "navapolatsk, biélorussie",
+            "lida, biélorussie",
+            // -------------------------------------
+            // LITUANIE
+            // -------------------------------------
+            "vilnius, lituanie",
+            "kaunas, lituanie",
+            "klaipėda, lituanie",
+            "šiauliai, lituanie",
+            "panevėžys, lituanie",
+            // -------------------------------------
+            // LETTONIE
+            // -------------------------------------
+            "riga, lettonie",
+            "daugavpils, lettonie",
+            "liepāja, lettonie",
+            // -------------------------------------
+            // ESTONIE
+            // -------------------------------------
+            "tallinn, estonie",
+            "narva, estonie",
+            "pärnu, estonie",
+            "tartu, estonie",
+            "rae, estonie",
+            // -------------------------------------
+            // JORDANIE
+            // -------------------------------------
+            "amman, jordanie",
+            "zarqa, jordanie",
+            "irbid, jordanie",
+            "wadi as-sir, jordanie",
+            // -------------------------------------
+            // CHYPRE
+            // -------------------------------------
+            "nicosie, chypre",
+            "limassol, chypre",
+            "stróvolos, chypre",
+            // -------------------------------------
+            // LIBAN
+            // -------------------------------------
+            "beyrouth, liban",
+            "tripoli, liban",
+            "sidon, liban",
+            "nabatieh, liban",
+            // -------------------------------------
+            // KOWEÏT
+            // -------------------------------------
+            "hawalli, koweït",
+            "mubarak al-kabeer, koweït",
+            "koweït, koweït",
+            // -------------------------------------
+            // ÉMIRATS ARABES UNIS
+            // -------------------------------------
+            "dubaï1, émirats arabes unis",
+            "abou dabi, émirats arabes unis",
+            "charjah, émirats arabes unis",
+            "ras el-khaïmah, émirats arabes unis",
+            "al ain, émirats arabes unis",
+            "ajman, émirats arabes unis",
+            // -------------------------------------
+            // SOMALIE
+            // -------------------------------------
+            "mogadiscio, somalie",
+            "hargeisa, somalie",
+            "borama, somalie",
+            "merka, somalie",
+            "kismaayo, somalie",
+            "jamaame, somalie",
+            "burao, somalie",
+            // -------------------------------------
+            // ZAMBIE
+            // -------------------------------------
+            "lusaka, zambie",
+            "ndola, zambie",
+            "kitwe, zambie",
+            "kabwe, zambie",
+            "chingola, zambie",
+            "mufulira, zambie",
+            "livingstone, zambie",
+            "luanshya, zambie",
+            // -------------------------------------
+            // RWANDA
+            // -------------------------------------
+            "kigali, rwanda",
+            "butare, rwanda",
+            "gitarama, rwanda",
+            "byumba, rwanda",
+            "cyangugu, rwanda",
+            "kibungo, rwanda",
+            // -------------------------------------
+            // BURUNDI
+            // -------------------------------------
+            "bujumbura, burundi",
+            "gitega, burundi",
+            "ngozi, burundi",
+            "rumonge, burundi",
+            // -------------------------------------
+            // MONACO
+            // -------------------------------------
+            "monaco, monaco",
+            // -------------------------------------
+            // PAPOUASIE-NOUVELLE-GUINÉE
+            // -------------------------------------
+            "port moresby, papouasie-nouvelle-guinée",
+            "lae, papouasie-nouvelle-guinée",
+            // -------------------------------------
+            // GHANA
+            // -------------------------------------
+            "accra, ghana",
+            "kumasi, ghana",
+            "tamale, ghana",
+            "sekondi-takoradi, ghana",
+            "ashaiman, ghana",
+            "sunyani, ghana",
+            "cape coast, ghana",
+            "obuasi, ghana",
+            "teshie, ghana",
+            "tema, ghana",
+            "madina, ghana",
+            "koforidua, ghana",
+            "wa, ghana",
+            // -------------------------------------
+            // MONGOLIE
+            // -------------------------------------
+            "oulan-bator, mongolie",
+            "darkhan, mongolie",
+            "erdenet, mongolie",
+            // -------------------------------------
+            // RÉPUBLIQUE DOMINICAINE
+            // -------------------------------------
+            "saint-domingue, république dominicaine",
+            "santiago de los caballeros, république dominicaine",
+            "san pedro de macorís, république dominicaine",
+            "la romana, république dominicaine",
+            "los alcarrizos, république dominicaine",
+            "san cristóbal, république dominicaine",
+            "higüey, république dominicaine",
+            "san francisco de macorís, république dominicaine",
+            "puerto plata, république dominicaine",
+            "concepción de la vega, république dominicaine",
+            "santa cruz de barahona, république dominicaine",
+            // -------------------------------------
+            // GUADELOUPE
+            // -------------------------------------
+            "pointe-à-pitre, guadeloupe",
+            // -------------------------------------
+            // MARTINIQUE
+            // -------------------------------------
+            "fort-de-france, martinique",
+         };
 
     }
 }

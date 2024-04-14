@@ -15,9 +15,9 @@ Console.WriteLine("Starting...");
 var app = Host.CreateDefaultBuilder(args)
     .ConfigureServices((hostContext, services) =>
     {
-        services.Configure<ImportSettings>(hostContext.Configuration.GetSection("ImportSettings"));
+        services.Configure<ImportSettings>(hostContext.Configuration.GetSection("ImportSettings")); 
         services.AddFileDataServices();
-        services.AddTransient<IDbConnection>(sp => new NpgsqlConnection("Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=weaTHERapp_2024"));
+        services.AddTransient<IDbConnection>(sp => new NpgsqlConnection("Host=magellanstore;Port=5555;Database=postgres;Username=postgres;Password=weaTHERapp_2024"));
         services.AddTransient<IVisualCrossingReader, WeatherServiceVisualCrossing>();
         services.AddTransient<IWeatherRepository, WeatherRepository>();
         services.AddTransient<IFeederService, FeederService>();

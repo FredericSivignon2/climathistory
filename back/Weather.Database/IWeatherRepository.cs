@@ -33,6 +33,7 @@ namespace Weather.Database
         Task<int> GetCountriesCountAsync();
         Task<int> GetLocationsCountAsync();
         Task<int> GetTemperaturesCountAsync();
+        Task<int> GetTemperaturesCountAsync(long locationId);
         #endregion
 
         #region Reading data

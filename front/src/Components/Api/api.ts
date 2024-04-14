@@ -10,7 +10,7 @@ import {
 import { apiVersion } from './constants'
 import { isNil } from 'lodash'
 
-const baseUrl = `https://localhost:4000/api/${apiVersion}`
+const baseUrl = `http://magellanstore:4000/api/${apiVersion}`
 const formatDateUrl = 'yyyy-MM-dd'
 
 export const getTemperatureHistory = async (locationId: number, year: number): Promise<YearInfoModel> => {

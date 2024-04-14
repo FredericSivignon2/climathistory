@@ -2,9 +2,13 @@
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Dapper;
+using Z;
+using Z.BulkOperations;
+using Z.Dapper;
 using Weather.Application.Model;
 using Weather.Database.Model;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Z.Dapper.Plus;
 
 namespace Weather.Database.Postgres
 {
@@ -20,6 +24,8 @@ namespace Weather.Database.Postgres
         {
             _connection = connection;
             Console.WriteLine($"> Creating WeatherRepository. Connection string is: {_connection.ConnectionString}");
+
+            DapperPlusManager.Entity<TemperaturesData>().Table("temperatures");
         }
 
         private void EnsureConnectionOpen()
@@ -73,6 +79,14 @@ namespace Weather.Database.Postgres
             return await _connection.ExecuteScalarAsync<int>(sql);
         }
 
+        public async Task<int> GetTemperaturesCountAsync(long locationId)
+        {
+            EnsureConnectionOpen();
+
+            var parameters = new { LocationId = locationId };
+            var sql = "SELECT COUNT(1) FROM Temperatures WHERE LocationId = @LocationId";
+            return await _connection.ExecuteScalarAsync<int>(sql, parameters);
+        }
 
         // Méthodes pour Country
         public async Task<bool> IsExistingCountry(string name)
@@ -174,6 +188,7 @@ namespace Weather.Database.Postgres
             return await _connection.QueryAsync<TemperaturesData>("SELECT * FROM Temperatures WHERE LocationId = @LocationId", new { LocationId = locationId });
         }
 
+
         public async Task<TemperaturesData?> GetTemperaturesAsync(long locationId, DateTime date)
         {
             EnsureConnectionOpen();
@@ -203,8 +218,8 @@ namespace Weather.Database.Postgres
         {
             EnsureConnectionOpen();
 
-            var sql = "INSERT INTO Temperatures (LocationId, Date, MinTemperature, MaxTemperature, AvgTemperature) VALUES (@LocationId, @Date, @MinTemperature, @MaxTemperature, @AvgTemperature)";
-            await _connection.ExecuteAsync(sql, temperatures);
+            //var sql = "INSERT INTO Temperatures (LocationId, Date, MinTemperature, MaxTemperature, AvgTemperature) VALUES (@LocationId, @Date, @MinTemperature, @MaxTemperature, @AvgTemperature)";
+            await _connection.BulkInsertAsync(temperatures);
         }
 
         public async Task UpdateTemperatureAsync(TemperaturesData temperature)
@@ -243,8 +258,8 @@ namespace Weather.Database.Postgres
 
             var parameters = new { LocationId = locationId };
             var sql = @"SELECT EXTRACT(YEAR FROM Date) As Year,
-                               MIN(MaxTemperature) AS MinTemperature,
-                               MAX(MinTemperature) AS MaxTemperature
+                               MIN(MinTemperature) AS MinTemperature,
+                               MAX(MaxTemperature) AS MaxTemperature
                         FROM Temperatures
                         WHERE LocationId = @LocationId
                         GROUP BY EXTRACT(YEAR FROM Date)

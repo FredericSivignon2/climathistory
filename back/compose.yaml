@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   climathistory:
-    image: climathistory
+    image: climathistory:v0.0.1
     ports:
       - "8080:80"
     expose:
@@ -10,7 +10,7 @@ services:
       weatherapi:
         condition: service_healthy
   weatherapi:
-    image: weatherapi
+    image: weatherapi:v0.0.1
     ports:
       - "4000:4000"
     environment:
@@ -18,9 +18,6 @@ services:
       ASPNETCORE_ENVIRONMENT: "Development"
     expose:
       - 4000
-    volumes:
-      - ${APPDATA}/microsoft/UserSecrets:/root/.microsoft/usersecrets
-      - ${USERPROFILE}/.aspnet/https:/root/.aspnet/https/
     restart: unless-stopped
     depends_on:
       db:

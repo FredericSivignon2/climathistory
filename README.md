@@ -77,3 +77,8 @@ URL des repos:
 https://hub.docker.com/_/postgres
 https://hub.docker.com/r/fredericsivignon/climathistory
 https://hub.docker.com/r/fredericsivignon/weatherapi
+
+#### Accéder à la console du container en cours d'execution
+
+Pour accéder à la console du container docker créé (et vérifier ce qu'il y a dans /usr/share/nginx/html):
+docker exec -it fredericsivignon+-climathistory-1 /bin/sh

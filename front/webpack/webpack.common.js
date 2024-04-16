@@ -5,7 +5,8 @@ module.exports = {
 	entry: './src/index.tsx', // Point d'entrée modifié pour TypeScript
 	output: {
 		filename: '[name]-[contenthash].js',
-		path: path.resolve(__dirname, 'dist'),
+		// filename: 'bundle.js',
+		path: path.resolve(__dirname, '../dist'),
 	},
 	resolve: {
 		// Ajouter des résolutions d'extension pour TypeScript
@@ -25,6 +26,7 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './public/index.html',
+			inject: true,
 		}),
 	],
 }

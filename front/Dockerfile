@@ -25,6 +25,3 @@ EXPOSE 80
 
 # Lancer nginx en mode foreground
 CMD ["nginx", "-g", "daemon off;"]
-
-# Pour accéder à la console du container docker créé (et vérifier ce qu'il y a dans /usr/share/nginx/html):
-# docker exec -it back-climathistory-1 /bin/sh

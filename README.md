@@ -82,3 +82,5 @@ https://hub.docker.com/r/fredericsivignon/weatherapi
 
 Pour accéder à la console du container docker créé (et vérifier ce qu'il y a dans /usr/share/nginx/html):
 docker exec -it fredericsivignon+-climathistory-1 /bin/sh
+
+climathistory.FamilyDS.net
